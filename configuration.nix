@@ -5,7 +5,9 @@
   config,
   pkgs,
   ...
-}: {
+}: let
+  unstable = import <unstable> {config = {allowUnfree = true;};};
+in {
   imports = [
     ./hardware-configuration.nix
   ];
@@ -19,10 +21,8 @@
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-
   boot.initrd.luks.devices."luks-83b3ed89-8d91-4d72-a61b-ad00a1819542".device = "/dev/disk/by-uuid/83b3ed89-8d91-4d72-a61b-ad00a1819542";
-  networking.hostName = "nix"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+  networking.hostName = "nix";
 
   # Enable networking
   networking.networkmanager.enable = true;
@@ -67,8 +67,6 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
   environment.systemPackages = with pkgs; [
     neovim
     vim
@@ -83,7 +81,7 @@
     keepassxc
     bash
     waybar
-    ly
+    unstable.ly
     autotiling
     signal-desktop
     vesktop
@@ -95,6 +93,7 @@
     git
     gcc
     rofi
+    flameshot
   ];
 
   fonts.packages = with pkgs; [
@@ -113,17 +112,7 @@
       enable = true;
     };
   };
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
 
-  # List services that you want to enable:
-
-  # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
 
   services = {
@@ -147,5 +136,6 @@
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
+
   system.stateVersion = "24.05"; # Did you read the comment?
 }
