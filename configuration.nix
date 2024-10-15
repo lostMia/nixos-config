@@ -114,6 +114,7 @@ in {
     btop
     dunst
     libnotify
+    file
   ];
 
   services.dbus.enable = true;
