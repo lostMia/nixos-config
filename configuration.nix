@@ -106,6 +106,7 @@ in {
     blueman
     sway-audio-idle-inhibit
     fw-ectool
+    fwupd
     xfce.thunar
     pamixer
     killall
