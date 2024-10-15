@@ -94,6 +94,7 @@ in {
     gcc
     rofi
     flameshot
+    teams-for-linux
   ];
 
   fonts.packages = with pkgs; [
