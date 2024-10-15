@@ -108,11 +108,11 @@ in {
   systemd.services.ly = {
     description = "Ly Display Manager";
     after = ["network.target"];
+    wantedBy = ["multi-user.target"];
     serviceConfig = {
       ExecStart = "${unstable.ly}/bin/ly";
       Restart = "always";
     };
-    wantedBy = ["graphical.target"];
   };
 
   # Disable any other display managers (like GDM, SDDM, etc.)
