@@ -112,7 +112,6 @@ in {
     killall
     libreoffice-qt6-still
     btop
-    neofetch
     dunst
     libnotify
   ];
