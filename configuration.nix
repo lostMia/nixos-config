@@ -110,19 +110,10 @@ in {
     killall
     libreoffice-qt6-still
     btop
+    neofetch
   ];
 
   services.dbus.enable = true;
-
-  systemd.services.ly = {
-    description = "Ly Display Manager";
-    after = ["network.target"];
-    wantedBy = ["multi-user.target"];
-    serviceConfig = {
-      ExecStart = "${unstable.ly}/bin/ly";
-      Restart = "always";
-    };
-  };
 
   # Disable any other display managers (like GDM, SDDM, etc.)
   #services.xserver.enable = false;
