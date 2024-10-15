@@ -84,6 +84,7 @@ in {
     unstable.ly
     autotiling
     signal-desktop
+    electron
     vesktop
     thunderbird
     power-profiles-daemon
