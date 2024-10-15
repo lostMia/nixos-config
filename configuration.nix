@@ -116,6 +116,8 @@ in {
     libnotify
     file
     jq
+    protonvpn-cli
+    protonvpn-cli_2
   ];
 
   services.dbus.enable = true;
