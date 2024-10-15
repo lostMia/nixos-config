@@ -130,6 +130,8 @@ in {
     (nerdfonts.override {fonts = ["Hack"];})
   ];
 
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
   xdg.portal = {
     enable = true;
     wlr.enable = true;
