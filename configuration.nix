@@ -112,6 +112,7 @@ in {
     libreoffice-qt6-still
     btop
     neofetch
+    dunst
   ];
 
   services.dbus.enable = true;
