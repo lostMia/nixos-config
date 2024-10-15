@@ -115,6 +115,7 @@ in {
     dunst
     libnotify
     file
+    jq
   ];
 
   services.dbus.enable = true;
