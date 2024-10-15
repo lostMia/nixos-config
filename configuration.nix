@@ -113,6 +113,7 @@ in {
     btop
     neofetch
     dunst
+    libnotify
   ];
 
   services.dbus.enable = true;
