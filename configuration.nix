@@ -31,6 +31,11 @@ in {
   # Set your time zone.
   time.timeZone = "Europe/Vienna";
 
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
+
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
 
@@ -130,8 +135,6 @@ in {
     (nerdfonts.override {fonts = ["Hack"];})
   ];
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
-
   xdg.portal = {
     enable = true;
     wlr.enable = true;
@@ -150,7 +153,6 @@ in {
       enable = true;
     };
   };
-
 
   # services.openssh.enable = true;
 
