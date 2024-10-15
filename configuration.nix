@@ -118,6 +118,7 @@ in {
     jq
     protonvpn-cli
     protonvpn-cli_2
+    satty
   ];
 
   services.dbus.enable = true;
