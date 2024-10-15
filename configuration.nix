@@ -108,6 +108,7 @@ in {
     xfce.thunar
     pamixer
     killall
+    libreoffice-qt6-still
   ];
 
   services.dbus.enable = true;
