@@ -95,11 +95,24 @@ in {
     rofi
     flameshot
     teams-for-linux
+    wayland
+    xdg-utils
+    glib
+    grim
+    slurp
   ];
+
+  services.dbus.enable = true;
 
   fonts.packages = with pkgs; [
     (nerdfonts.override {fonts = ["Hack"];})
   ];
+
+  xdg.portal = {
+    enable = true;
+    wlr.enable = true;
+    extraPortals = [pkgs.xdg-desktop-portal-gtk];
+  };
 
   programs = {
     sway = {
