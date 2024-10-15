@@ -109,6 +109,7 @@ in {
     pamixer
     killall
     libreoffice-qt6-still
+    btop
   ];
 
   services.dbus.enable = true;
