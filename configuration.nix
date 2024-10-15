@@ -124,6 +124,7 @@ in {
     protonvpn-cli
     protonvpn-cli_2
     satty
+    neofetch
   ];
 
   services.dbus.enable = true;
