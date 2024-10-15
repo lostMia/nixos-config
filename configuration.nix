@@ -94,13 +94,20 @@ in {
     git
     gcc
     rofi
-    flameshot
     teams-for-linux
     wayland
     xdg-utils
     glib
     grim
     slurp
+    shikane
+    networkmanagerapplet
+    blueman
+    sway-audio-idle-inhibit
+    fw-ectool
+    xfce.thunar
+    pamixer
+    killall
   ];
 
   services.dbus.enable = true;
