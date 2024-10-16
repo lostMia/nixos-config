@@ -142,7 +142,6 @@ in {
     protonvpn-cli_2
     satty
     neofetch
-    #obsidian
     sublime3
     fprintd
     nur.repos.kira-bruneau.swaylock-fprintd
