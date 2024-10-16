@@ -150,6 +150,7 @@ in {
     corrupter
     feh
     pwvucontrol
+    cmatrix
   ];
 
   services.displayManager.ly = {
