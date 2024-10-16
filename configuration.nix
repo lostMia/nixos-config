@@ -138,6 +138,7 @@ in {
     satty
     neofetch
     #obsidian
+    sublime3
   ];
 
   services.dbus.enable = true;
