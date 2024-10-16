@@ -13,6 +13,14 @@
     }) {
       inherit pkgs;
     };
+  /*
+  xdg_old = import (pkgs.fetchFromGitHub {
+    owner = "flatpak";
+    repo = "xdg-desktop-portal";
+    rev = "bd1eab9";
+    sha256 = "MD1zjKDWwvVTui0nYPgvVjX48DaHWcP7Q10vDrNKYz0="; # Replace with the correct hash
+  }) {};
+  */
 in {
   imports = [
     <unstable/nixos/modules/services/display-managers/ly.nix>
