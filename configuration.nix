@@ -151,8 +151,6 @@ in {
     feh
   ];
 
-  services.dbus.enable = true;
-
   # Disable any other display managers (like GDM, SDDM, etc.)
   #services.xserver.enable = false;
 
@@ -182,12 +180,10 @@ in {
   # services.openssh.enable = true;
 
   services = {
-    udisks2 = {
-      enable = true;
-    };
-    power-profiles-daemon = {
-      enable = true;
-    };
+    udisks2.enable = true;
+    power-profiles-daemon.enable = true;
+    fprintd.enable = true;
+    dbus.enable = true;
   };
 
   # Open ports in the firewall.
