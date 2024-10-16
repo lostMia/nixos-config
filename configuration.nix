@@ -154,7 +154,6 @@ in {
 
   services.displayManager.ly = {
     enable = true;
-    package = unstable.ly; # Use the unstable version of Ly
   };
 
   services.xserver.enable = false;
