@@ -24,9 +24,13 @@ in {
   boot.loader.efi.canTouchEfiVariables = true;
   boot.initrd.luks.devices."luks-83b3ed89-8d91-4d72-a61b-ad00a1819542".device = "/dev/disk/by-uuid/83b3ed89-8d91-4d72-a61b-ad00a1819542";
   boot.kernelParams = ["mem_sleep_default=deep"];
+
   systemd.sleep.extraConfig = ''
     HibernateDelaySec=60m
     SuspendState=mem
+  '';
+
+  services.logind.extraConfig = ''
     HandleLidSwitch=suspend-then-hibernate
     HandleLidSwitchExternalPower=suspend-then-hibernate
     HandleLidSwitchDocked=suspend-then-hibernate
@@ -133,6 +137,7 @@ in {
     protonvpn-cli_2
     satty
     neofetch
+    #obsidian
   ];
 
   services.dbus.enable = true;
