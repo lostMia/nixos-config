@@ -101,6 +101,9 @@ in {
     firefox
     swayfx
     wl-clipboard
+    (pkgs.flameshot.overrideAttrs (oldAttrs: {
+      enableWlrSupport = true;
+    }))
     zoxide
     alacritty
     keepassxc
