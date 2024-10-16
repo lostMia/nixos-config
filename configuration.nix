@@ -15,6 +15,7 @@
     };
 in {
   imports = [
+    <unstable/nixos/modules/services/display-managers/ly.nix>
     ./hardware-configuration.nix
   ];
 
@@ -150,6 +151,13 @@ in {
     corrupter
     feh
   ];
+
+  services.displayManager.ly = {
+    enable = true;
+    package = unstable.ly; # Use the unstable version of Ly
+  };
+
+  services.xserver.enable = false;
 
   fonts.packages = with pkgs; [
     (nerdfonts.override {fonts = ["Hack"];})
