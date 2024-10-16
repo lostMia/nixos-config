@@ -149,6 +149,7 @@ in {
     feh
     pwvucontrol
     cmatrix
+    flameshot
   ];
 
   services.displayManager.ly = {
