@@ -147,6 +147,8 @@ in {
     sublime3
     fprintd
     nur.repos.kira-bruneau.swaylock-fprintd
+    corrupter
+    feh
   ];
 
   services.dbus.enable = true;
