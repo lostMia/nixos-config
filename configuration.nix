@@ -27,6 +27,9 @@ in {
   systemd.sleep.extraConfig = ''
     HibernateDelaySec=60m
     SuspendState=mem
+    HandleLidSwitch=suspend-then-hibernate
+    HandleLidSwitchExternalPower=suspend-then-hibernate
+    HandleLidSwitchDocked=suspend-then-hibernate
   '';
 
   networking.hostName = "nix";
@@ -127,7 +130,6 @@ in {
     libnotify
     file
     jq
-    protonvpn-cli
     protonvpn-cli_2
     satty
     neofetch
