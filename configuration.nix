@@ -160,6 +160,7 @@ in {
     flameshot
     xdg-desktop-portal
     xdg-desktop-portal-wlr
+    dolphin
   ];
 
   services.displayManager.ly = {
