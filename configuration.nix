@@ -7,6 +7,12 @@
   ...
 }: let
   unstable = import <unstable> {config = {allowUnfree = true;};};
+  nur =
+    import (builtins.fetchTarball {
+      url = "https://github.com/nix-community/NUR/archive/master.tar.gz";
+    }) {
+      inherit pkgs;
+    };
 in {
   imports = [
     ./hardware-configuration.nix
@@ -139,6 +145,8 @@ in {
     neofetch
     #obsidian
     sublime3
+    fprintd
+    nur.repos.kira-bruneau.swaylock-fprintd
   ];
 
   services.dbus.enable = true;
