@@ -133,7 +133,6 @@ in {
     fw-ectool
     fwupd
     xfce.thunar
-    pamixer
     killall
     libreoffice-qt6-still
     btop
@@ -150,6 +149,7 @@ in {
     nur.repos.kira-bruneau.swaylock-fprintd
     corrupter
     feh
+    pwvucontrol
   ];
 
   services.displayManager.ly = {
