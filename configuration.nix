@@ -150,6 +150,8 @@ in {
     pwvucontrol
     cmatrix
     flameshot
+    xdg-desktop-portal
+    xdg-desktop-portal-wlr
   ];
 
   services.displayManager.ly = {
