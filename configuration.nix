@@ -98,7 +98,7 @@ in {
     vim
     wget
     fish
-    unstable.firefox
+    firefox
     swayfx
     flameshot
     wl-clipboard
