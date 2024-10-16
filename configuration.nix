@@ -100,7 +100,6 @@ in {
     fish
     firefox
     swayfx
-    flameshot
     wl-clipboard
     zoxide
     alacritty
