@@ -172,14 +172,11 @@ in {
     python3
     fd
     tldr
-    esptool
-    platformio
-    platformio-core
   ];
 
   programs.nix-ld.enable = true;
-  #programs.nix-ld.libraries = with pkgs; [
-  #];
+  programs.nix-ld.libraries = with pkgs; [
+  ];
 
   environment.variables = {
     GTK_THEME = "Adwaita:dark";
