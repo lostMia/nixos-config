@@ -169,6 +169,7 @@ in {
     graphite-gtk-theme
     gimp
     vscode
+    python3
   ];
 
   environment.variables = {
