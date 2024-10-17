@@ -162,6 +162,7 @@ in {
     xdg-desktop-portal-wlr
     dolphin
     obsidian
+    syncthing
   ];
 
   services.displayManager.ly = {
