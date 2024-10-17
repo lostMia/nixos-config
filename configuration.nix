@@ -165,7 +165,13 @@ in {
     obsidian
     syncthing
     auto-cpufreq
+    tela-icon-theme
+    graphite-gtk-theme
   ];
+
+  environment.variables = {
+    GTK_THEME = "Adwaita:dark"; # Set your GTK theme
+  };
 
   services.displayManager.ly = {
     enable = true;
