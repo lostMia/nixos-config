@@ -174,15 +174,15 @@ in {
     tldr
   ];
 
-  programs.nix-ld.enable = true;
-  programs.nix-ld.libraries = with pkgs; [
-  ];
-
-  services.udev.packages = [
-    pkgs.platformio-core
-    pkgs.openocd
-  ];
-
+  # programs.nix-ld.enable = true;
+  # programs.nix-ld.libraries = with pkgs; [
+  # ];
+  #
+  # services.udev.packages = [
+  #   pkgs.platformio-core
+  #   pkgs.openocd
+  # ];
+  #
   environment.variables = {
     GTK_THEME = "Adwaita:dark";
   };
