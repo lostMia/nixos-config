@@ -167,6 +167,7 @@ in {
     auto-cpufreq
     tela-icon-theme
     graphite-gtk-theme
+    gimp
   ];
 
   environment.variables = {
