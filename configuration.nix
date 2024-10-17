@@ -168,6 +168,7 @@ in {
     tela-icon-theme
     graphite-gtk-theme
     gimp
+    vscode
   ];
 
   environment.variables = {
