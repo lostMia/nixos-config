@@ -161,6 +161,7 @@ in {
     xdg-desktop-portal
     xdg-desktop-portal-wlr
     dolphin
+    obsidian
   ];
 
   services.displayManager.ly = {
