@@ -178,6 +178,11 @@ in {
   programs.nix-ld.libraries = with pkgs; [
   ];
 
+  services.udev.packages = [
+    pkgs.platformio-core
+    pkgs.openocd
+  ];
+
   environment.variables = {
     GTK_THEME = "Adwaita:dark";
   };
