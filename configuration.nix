@@ -171,11 +171,12 @@ in {
     vscode
     python3
     fd
+    tldr
   ];
 
   programs.nix-ld.enable = true;
-  programs.nix-ld.libraries = with pkgs; [
-  ];
+  #programs.nix-ld.libraries = with pkgs; [
+  #];
 
   environment.variables = {
     GTK_THEME = "Adwaita:dark";
