@@ -170,6 +170,7 @@ in {
     gimp
     vscode
     python3
+    fd
   ];
 
   programs.nix-ld.enable = true;
