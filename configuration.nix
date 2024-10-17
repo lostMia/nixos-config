@@ -6,6 +6,7 @@
   pkgs,
   ...
 }: let
+  # nixos-hardware/framework/13-inch/7040-amd> for framework specific stuff (todo)
   unstable = import <unstable> {config = {allowUnfree = true;};};
   nur =
     import (builtins.fetchTarball {
@@ -163,6 +164,7 @@ in {
     dolphin
     obsidian
     syncthing
+    auto-cpufreq
   ];
 
   services.displayManager.ly = {
@@ -171,6 +173,20 @@ in {
   };
 
   services.xserver.enable = false;
+
+  services.fwupd.enable = true;
+
+  services.auto-cpufreq.enable = true;
+  services.auto-cpufreq.settings = {
+    battery = {
+      governor = "powersave";
+      turbo = "never";
+    };
+    charger = {
+      governor = "performance";
+      turbo = "auto";
+    };
+  };
 
   fonts.packages = with pkgs; [
     (nerdfonts.override {fonts = ["Hack"];})
