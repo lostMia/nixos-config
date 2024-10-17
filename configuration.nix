@@ -173,6 +173,8 @@ in {
     fd
     tldr
     esptool
+    platformio
+    platformio-core
   ];
 
   programs.nix-ld.enable = true;
