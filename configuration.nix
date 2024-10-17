@@ -172,6 +172,7 @@ in {
     python3
     fd
     tldr
+    esptool
   ];
 
   programs.nix-ld.enable = true;
