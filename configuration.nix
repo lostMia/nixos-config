@@ -104,6 +104,7 @@ in {
 
   environment.systemPackages = with pkgs; [
     unstable.neovim
+    unstable.neovide
     vim
     wget
     fish
