@@ -169,6 +169,10 @@ in {
     graphite-gtk-theme
   ];
 
+  environment.variables = {
+    GTK_THEME = "Adwaita:dark";
+  };
+
   services.displayManager.ly = {
     enable = true;
   };
