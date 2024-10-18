@@ -186,6 +186,13 @@ in {
   #   pkgs.openocd
   # ];
 
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
+  };
+
   environment.variables = {
     GTK_THEME = "Adwaita:dark";
   };
