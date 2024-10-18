@@ -173,8 +173,8 @@ in {
     python3
     fd
     tldr
-    platformio
-    platformio-core
+    #platformio
+    #platformio-core
   ];
 
   # programs.nix-ld.enable = true;
