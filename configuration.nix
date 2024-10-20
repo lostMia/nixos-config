@@ -43,7 +43,6 @@ in {
     systemd-boot.enable = false;
     efi.canTouchEfiVariables = true;
     grub = {
-      version = 2;
       enable = true;
       devices = ["nodev"];
       efiSupport = true;
