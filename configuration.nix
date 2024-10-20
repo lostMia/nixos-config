@@ -64,7 +64,7 @@ in {
     AllowSuspendThenHibernate=yes
     AllowSuspend=yes
     SuspendEstimationSec=1min
-    HibernateDelaySec=60min
+    HibernateDelaySec=20min
     SuspendState=freeze
     HibernateMode=shutdown
   '';
