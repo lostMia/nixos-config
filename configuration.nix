@@ -173,6 +173,7 @@ in {
     python3
     fd
     tldr
+    pamixer
     #platformio
     #platformio-core
   ];
