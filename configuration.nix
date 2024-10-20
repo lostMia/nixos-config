@@ -176,6 +176,7 @@ in {
     pamixer
     pipewire
     wireplumber
+    pavucontrol
     #platformio
     #platformio-core
   ];
