@@ -93,7 +93,7 @@ in {
   users.users.mia = {
     isNormalUser = true;
     description = "mia";
-    extraGroups = ["networkmanager" "wheel"];
+    extraGroups = ["networkmanager" "wheel" "mia"];
     packages = with pkgs; [];
   };
 
@@ -223,15 +223,6 @@ in {
       governor = "performance";
       turbo = "auto";
     };
-  };
-
-  security.pam.services.sudo = {
-    useDefaultConfig = false;
-    text = ''
-      auth      sufficient  pam_unix.so
-      account   required    pam_unix.so
-      session   required    pam_unix.so
-    '';
   };
 
   fonts.packages = with pkgs; [
