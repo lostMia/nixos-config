@@ -60,8 +60,12 @@ in {
   };
 
   systemd.sleep.extraConfig = ''
-    HibernateDelaySec=60m
-    SuspendState=mem
+    AllowSuspendThenHibernate=yes
+    AllowSuspend=yes
+    SuspendEstimationSec=1min
+    HibernateDelaySec=60min
+    SuspendState=freeze
+    HibernateMode=shutdown
   '';
 
   services.logind.extraConfig = ''
