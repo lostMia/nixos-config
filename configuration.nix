@@ -206,7 +206,7 @@ in {
   };
 
   services.displayManager.ly = {
-    enable = false;
+    enable = true;
   };
 
   services.xserver.enable = false;
