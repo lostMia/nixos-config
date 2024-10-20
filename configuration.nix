@@ -225,6 +225,15 @@ in {
     };
   };
 
+  security.pam.services.sudo = {
+    useDefaultConfig = false;
+    text = ''
+      auth      sufficient  pam_unix.so
+      account   required    pam_unix.so
+      session   required    pam_unix.so
+    '';
+  };
+
   fonts.packages = with pkgs; [
     (nerdfonts.override {fonts = ["Hack"];})
   ];
