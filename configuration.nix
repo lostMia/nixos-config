@@ -115,7 +115,7 @@ in {
   users.users.mia = {
     isNormalUser = true;
     description = "mia";
-    extraGroups = ["networkmanager" "wheel" "mia" "libvirtd"];
+    extraGroups = ["networkmanager" "wheel" "mia" "libvirtd" "libvirt" "kvm"];
     packages = with pkgs; [];
   };
 
