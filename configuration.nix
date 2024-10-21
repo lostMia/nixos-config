@@ -115,7 +115,7 @@ in {
   users.users.mia = {
     isNormalUser = true;
     description = "mia";
-    extraGroups = ["networkmanager" "wheel" "mia" "libvirtd" "libvirt" "kvm" "user-with-access-to-virtualbox"];
+    extraGroups = ["networkmanager" "wheel" "mia" "libvirtd" "libvirt" "kvm" "docker" "user-with-access-to-virtualbox"];
     packages = with pkgs; [];
   };
 
@@ -283,7 +283,7 @@ in {
     wlr.enable = true;
     extraPortals = [pkgs.xdg-desktop-portal-gtk];
   };
-
+  virtualisation.docker.enable = true;
   virtualisation.libvirtd.enable = true;
   programs.virt-manager.enable = true;
 
