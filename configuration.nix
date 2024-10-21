@@ -75,11 +75,8 @@ in {
   '';
 
   networking.hostName = "nix";
-
-  # Enable networking
   networking.networkmanager.enable = true;
 
-  # Set your time zone.
   time.timeZone = "Europe/Vienna";
 
   nix.settings.experimental-features = [
@@ -115,7 +112,7 @@ in {
   users.users.mia = {
     isNormalUser = true;
     description = "mia";
-    extraGroups = ["networkmanager" "wheel" "mia" "libvirtd" "libvirt" "kvm" "docker" "user-with-access-to-virtualbox"];
+    extraGroups = ["networkmanager" "wheel" "mia" "libvirtd" "kvm" "docker"];
     packages = with pkgs; [];
   };
 
@@ -200,7 +197,6 @@ in {
     pavucontrol
     greetd.greetd
     greetd.tuigreet
-    virtualbox
     uwufetch
     # Don't forget to get the debian Package first:
     # nix-store --add-fixed sha256 Packet_Tracer822_amd64_signed.deb
@@ -210,16 +206,12 @@ in {
     platformio-core
   ];
 
-  virtualisation.virtualbox.host.enable = true;
-  virtualisation.virtualbox.host.enableExtensionPack = true;
-
-  virtualisation.libvirtd = {
-    allowedBridges = [
-      "virbr0"
-      "virbr1"
-      "br0"
-    ];
-  };
+  # virtualisation.libvirtd = {
+  #   allowedBridges = [
+  #     "virbr0"
+  #     "br0"
+  #   ];
+  # };
 
   programs.nix-ld.enable = true;
   programs.nix-ld.libraries = with pkgs; [
@@ -237,10 +229,6 @@ in {
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
-  };
-
-  security.pam.services.default = {
-    fprintAuth = false;
   };
 
   hardware.pulseaudio.enable = false;
@@ -284,9 +272,10 @@ in {
     wlr.enable = true;
     extraPortals = [pkgs.xdg-desktop-portal-gtk];
   };
+
   virtualisation.docker.enable = true;
-  virtualisation.libvirtd.enable = true;
-  programs.virt-manager.enable = true;
+  # virtualisation.libvirtd.enable = true;
+  # programs.virt-manager.enable = true;
 
   programs = {
     sway = {
@@ -327,13 +316,13 @@ in {
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 
-  networking.interfaces.eth0.useDHCP = true;
-  networking.interfaces.br0.useDHCP = true;
-  networking.bridges = {
-    "br0" = {
-      interfaces = ["eth0"];
-    };
-  };
+  #networking.interfaces.eth0.useDHCP = true;
+  # networking.interfaces.br0.useDHCP = true;
+  # networking.bridges = {
+  #   "br0" = {
+  #     interfaces = ["eth0"];
+  #   };
+  # };
 
   system.autoUpgrade = {
     enable = true;
