@@ -237,7 +237,7 @@ in {
     settings = {
       default_session = {
         command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd sway";
-        user = "greeter";
+        user = "mia";
       };
     };
   };
