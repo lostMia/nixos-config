@@ -115,7 +115,7 @@ in {
   users.users.mia = {
     isNormalUser = true;
     description = "mia";
-    extraGroups = ["networkmanager" "wheel" "mia" "libvirtd" "libvirt" "kvm"];
+    extraGroups = ["networkmanager" "wheel" "mia" "libvirtd" "libvirt" "kvm" "user-with-access-to-virtualbox"];
     packages = with pkgs; [];
   };
 
@@ -208,6 +208,9 @@ in {
     platformio
     platformio-core
   ];
+
+  virtualisation.virtualbox.host.enable = true;
+  virtualisation.virtualbox.host.enableExtensionPack = true;
 
   programs.nix-ld.enable = true;
   programs.nix-ld.libraries = with pkgs; [
