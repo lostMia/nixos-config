@@ -318,7 +318,7 @@ in {
   networking.interfaces.br0.useDHCP = true;
   networking.bridges = {
     "br0" = {
-      interfaces = ["enp195s0f4u1"];
+      interfaces = ["eth0"];
     };
   };
 
