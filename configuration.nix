@@ -212,6 +212,14 @@ in {
   virtualisation.virtualbox.host.enable = true;
   virtualisation.virtualbox.host.enableExtensionPack = true;
 
+  virtualisation.libvirtd = {
+    allowedBridges = [
+      "virbr0"
+      "virbr1"
+      "br0"
+    ];
+  };
+
   programs.nix-ld.enable = true;
   programs.nix-ld.libraries = with pkgs; [
   ];
