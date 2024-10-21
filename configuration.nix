@@ -217,7 +217,6 @@ in {
       "virbr0"
       "virbr1"
       "br0"
-      "eth0"
     ];
   };
 
