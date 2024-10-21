@@ -116,7 +116,7 @@ in {
   users.users.mia = {
     isNormalUser = true;
     description = "mia";
-    extraGroups = ["networkmanager" "wheel" "mia"];
+    extraGroups = ["networkmanager" "wheel" "mia" "libvirtd"];
     packages = with pkgs; [];
   };
 
@@ -257,6 +257,9 @@ in {
     wlr.enable = true;
     extraPortals = [pkgs.xdg-desktop-portal-gtk];
   };
+
+  virtualisation.libvirtd.enable = true;
+  programs.virt-manager.enable = true;
 
   programs = {
     sway = {
