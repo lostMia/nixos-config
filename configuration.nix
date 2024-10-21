@@ -24,7 +24,6 @@
   */
 in {
   imports = [
-    <unstable/nixos/modules/services/display-managers/ly.nix>
     ./hardware-configuration.nix
   ];
 
@@ -139,7 +138,6 @@ in {
     keepassxc
     bash
     waybar
-    unstable.ly
     autotiling
     signal-desktop
     electron
@@ -200,6 +198,8 @@ in {
     pipewire
     wireplumber
     pavucontrol
+    greetd.greetd
+    greetd.tuigreet
     #platformio
     #platformio-core
   ];
@@ -232,8 +232,14 @@ in {
     GTK_THEME = "Adwaita:dark";
   };
 
-  services.displayManager.ly = {
+  services.greetd = {
     enable = true;
+    settings = {
+      default_session = {
+        command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd sway";
+        user = "greeter";
+      };
+    };
   };
 
   services.xserver.enable = false;
