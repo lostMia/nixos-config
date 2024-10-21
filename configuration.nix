@@ -203,18 +203,19 @@ in {
     # Don't forget to get the debian Package first:
     # nix-store --add-fixed sha256 Packet_Tracer822_amd64_signed.deb
     ciscoPacketTracer8
-    #platformio
-    #platformio-core
+
+    platformio
+    platformio-core
   ];
 
-  # programs.nix-ld.enable = true;
-  # programs.nix-ld.libraries = with pkgs; [
-  # ];
-  #
-  # services.udev.packages = [
-  #   pkgs.platformio-core
-  #   pkgs.openocd
-  # ];
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = with pkgs; [
+  ];
+
+  services.udev.packages = [
+    pkgs.platformio-core
+    pkgs.openocd
+  ];
 
   hardware.bluetooth.enable = true;
 
