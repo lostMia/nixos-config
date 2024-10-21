@@ -222,6 +222,10 @@ in {
     pulse.enable = true;
   };
 
+  security.pam.services.default = {
+    fprintAuth = false;
+  };
+
   hardware.pulseaudio.enable = false;
 
   environment.variables = {
