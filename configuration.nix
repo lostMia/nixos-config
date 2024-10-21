@@ -314,6 +314,14 @@ in {
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 
+  networking.interfaces.eth0.useDHCP = true;
+  networking.interfaces.br0.useDHCP = true;
+  networking.bridges = {
+    "br0" = {
+      interfaces = ["enp195s0f4u1"];
+    };
+  };
+
   system.autoUpgrade = {
     enable = true;
     flags = [
