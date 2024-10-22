@@ -180,7 +180,6 @@ in {
     flameshot
     xdg-desktop-portal
     xdg-desktop-portal-wlr
-    dolphin
     obsidian
     syncthing
     auto-cpufreq
@@ -198,6 +197,7 @@ in {
     greetd.greetd
     greetd.tuigreet
     uwufetch
+    graphite-gtk-theme
 
     # Don't forget to get the debian Package first:
     # nix-store --add-fixed sha256 Packet_Tracer822_amd64_signed.deb
@@ -243,9 +243,13 @@ in {
 
   hardware.pulseaudio.enable = false;
 
-  environment.variables = {
-    GTK_THEME = "Adwaita:dark";
-  };
+  # gtk = {
+  #   enable = true;
+  #   theme = {
+  #     name = "Graphite-Dark";
+  #     package = pkgs.graphite-gtk-theme;
+  #   };
+  # };
 
   services.greetd = {
     enable = true;
