@@ -218,6 +218,15 @@ in {
   programs.nix-ld.libraries = with pkgs; [
   ];
 
+  services = {
+    syncthing = {
+      enable = true;
+      user = "mia";
+      dataDir = "/home/mia/Documents";
+      configDir = "/home/mia/Documents/.config/syncthing";
+    };
+  };
+
   services.udev.packages = [
     pkgs.platformio-core
     pkgs.openocd
