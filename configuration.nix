@@ -198,6 +198,7 @@ in {
     greetd.greetd
     greetd.tuigreet
     uwufetch
+
     # Don't forget to get the debian Package first:
     # nix-store --add-fixed sha256 Packet_Tracer822_amd64_signed.deb
     ciscoPacketTracer8
@@ -206,12 +207,12 @@ in {
     platformio-core
   ];
 
-  # virtualisation.libvirtd = {
-  #   allowedBridges = [
-  #     "virbr0"
-  #     "br0"
-  #   ];
-  # };
+  virtualisation.libvirtd = {
+    allowedBridges = [
+      "virbr0"
+      "br0"
+    ];
+  };
 
   programs.nix-ld.enable = true;
   programs.nix-ld.libraries = with pkgs; [
@@ -274,8 +275,8 @@ in {
   };
 
   virtualisation.docker.enable = true;
-  # virtualisation.libvirtd.enable = true;
-  # programs.virt-manager.enable = true;
+  virtualisation.libvirtd.enable = true;
+  programs.virt-manager.enable = true;
 
   programs = {
     sway = {
