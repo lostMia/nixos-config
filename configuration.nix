@@ -63,7 +63,7 @@ in {
     AllowSuspendThenHibernate=yes
     AllowSuspend=yes
     SuspendEstimationSec=1min
-    HibernateDelaySec=10min
+    HibernateDelaySec=60min
     SuspendState=freeze
     HibernateMode=shutdown
   '';
@@ -316,7 +316,7 @@ in {
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 
-  #networking.interfaces.eth0.useDHCP = true;
+  # networking.interfaces.eth0.useDHCP = true;
   # networking.interfaces.br0.useDHCP = true;
   # networking.bridges = {
   #   "br0" = {
