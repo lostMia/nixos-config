@@ -261,13 +261,11 @@ in {
 
   hardware.pulseaudio.enable = false;
 
-  # gtk = {
-  #   enable = true;
-  #   theme = {
-  #     name = "Graphite-Dark";
-  #     package = pkgs.graphite-gtk-theme;
-  #   };
-  # };
+  qt = {
+    enable = true;
+    platformTheme = "gtk2";
+    style = "gtk2";
+  };
 
   services.greetd = {
     enable = true;
@@ -278,6 +276,10 @@ in {
       };
     };
   };
+
+  hardware.opengl.extraPackages = [
+    pkgs.amdvlk
+  ];
 
   services.xserver.enable = false;
 
