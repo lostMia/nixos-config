@@ -25,6 +25,7 @@
 in {
   imports = [
     ./hardware-configuration.nix
+    ./udev-rules.nix
   ];
 
   nix.nixPath = [
