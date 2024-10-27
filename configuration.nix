@@ -154,7 +154,7 @@ in {
     glib
     grim
     slurp
-    shikane
+    unstable.shikane
     networkmanagerapplet
     blueman
     sway-audio-idle-inhibit
