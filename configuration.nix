@@ -202,6 +202,7 @@ in {
     nwg-look
     nwg-displays
     lxappearance-gtk2
+    dconf
     fishPlugins.foreign-env
 
     # Don't forget to get the debian Package first:
