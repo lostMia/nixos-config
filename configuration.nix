@@ -201,6 +201,7 @@ in {
     graphite-gtk-theme
     nwg-look
     nwg-displays
+    lxappearance
 
     # Don't forget to get the debian Package first:
     # nix-store --add-fixed sha256 Packet_Tracer822_amd64_signed.deb
