@@ -202,6 +202,7 @@ in {
     nwg-look
     nwg-displays
     lxappearance-gtk2
+    fishPlugins.foreign-env
 
     # Don't forget to get the debian Package first:
     # nix-store --add-fixed sha256 Packet_Tracer822_amd64_signed.deb
