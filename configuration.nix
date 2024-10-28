@@ -4,6 +4,8 @@
 {
   config,
   pkgs,
+  unstable,
+  nur,
   ...
 }: let
   # nixos-hardware/framework/13-inch/7040-amd> for framework specific stuff (todo)
@@ -289,7 +291,7 @@ in {
     };
   };
 
-  hardware.opengl.extraPackages = [
+  hardware.graphics.extraPackages = [
     pkgs.amdvlk
   ];
 
