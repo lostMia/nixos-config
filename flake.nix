@@ -7,7 +7,7 @@
     nur.url = "github:nix-community/NUR";                         # NUR Repo
     hardware.url = "github:nixos/nixos-hardware";                 # NixOS Hardware
     home-manager = {                                              # Home-Manager
-      url = "github:nix-community/home-manager";
+      url = "github:nix-community/home-manager/release-24.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -44,7 +44,7 @@
 
     homeConfigurations = {
       mia = home-manager.lib.homeManagerConfiguration {
-        inherit specialArgs;
+        pkgs = stable;
         modules = [
           ./home.nix  # Home-Manager top-level config file
         ];
