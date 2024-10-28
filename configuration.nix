@@ -9,14 +9,6 @@
   ...
 }: let
   # nixos-hardware/framework/13-inch/7040-amd> for framework specific stuff (todo)
-  /*
-  xdg_old = import (pkgs.fetchFromGitHub {
-    owner = "flatpak";
-    repo = "xdg-desktop-portal";
-    rev = "bd1eab9";
-    sha256 = "MD1zjKDWwvVTui0nYPgvVjX48DaHWcP7Q10vDrNKYz0="; # Replace with the correct hash
-  }) {};
-  */
 in {
   imports = [
     ./hardware-configuration.nix
@@ -82,7 +74,6 @@ in {
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
-
   i18n.extraLocaleSettings = {
     LC_ADDRESS = "de_AT.UTF-8";
     LC_IDENTIFICATION = "de_AT.UTF-8";
@@ -323,12 +314,9 @@ in {
       enable = true;
       wrapperFeatures.gtk = true;
     };
-    waybar = {
-      enable = true;
-    };
-    fish = {
-      enable = true;
-    };
+    waybar.enable = true;
+    fish.enable = true;
+    dconf.enable = true;
   };
 
   services.openssh = {
@@ -376,5 +364,5 @@ in {
     randomizedDelaySec = "45min";
   };
 
-  system.stateVersion = "24.05"; # Did you read the comment?
+  system.stateVersion = "24.05"; # Did you read the comment? yes, I just don't care ~ mia
 }

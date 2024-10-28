@@ -44,6 +44,7 @@
     #   org.gradle.daemon.idletimeout=3600000
     # '';
   };
+  
 
   # Home Manager can also manage your environment variables through
   # 'home.sessionVariables'. These will be explicitly sourced when using a

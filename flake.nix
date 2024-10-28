@@ -1,19 +1,31 @@
 {
   description = "Mia's (WIP) NixOS Flake :3";
 
+  # - - - - - - - - - - - - - - - - - - - - - - - - Inputs - - - - - - - - - - - - - - - - - - - - - - - - #
+
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/release-24.05";           # Stable
+    nixpkgs.url = "github:nixos/nixpkgs/release-24.05"; # Stable
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable"; # Unstable
-    nur.url = "github:nix-community/NUR";                         # NUR Repo
-    hardware.url = "github:nixos/nixos-hardware";                 # NixOS Hardware
-    home-manager = {                                              # Home-Manager
+    nur.url = "github:nix-community/NUR"; # NUR Repo
+    hardware.url = "github:nixos/nixos-hardware"; # NixOS Hardware
+    home-manager = {
+      # Home-Manager
       url = "github:nix-community/home-manager/release-24.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, nur, hardware, home-manager, ...} @ inputs: 
-  let
+  # - - - - - - - - - - - - - - - - - - - - - - - - Outputs - - - - - - - - - - - - - - - - - - - - - - - #
+
+  outputs = {
+    self,
+    nixpkgs,
+    nixpkgs-unstable,
+    nur,
+    hardware,
+    home-manager,
+    ...
+  } @ inputs: let
     hostname = "nix";
 
     stable = import nixpkgs {
@@ -30,7 +42,6 @@
       system = "x86_64-linux";
       pkgs = stable;
     };
-
   in {
     nixosConfigurations = {
       ${hostname} = nixpkgs.lib.nixosSystem {
@@ -38,6 +49,7 @@
         modules = [
           ./configuration.nix # NixOS top-level config file
           nur.nixosModules.nur
+          hardware.nixosModules.framework-13-7040-amd
         ];
       };
     };
@@ -46,7 +58,7 @@
       mia = home-manager.lib.homeManagerConfiguration {
         pkgs = stable;
         modules = [
-          ./home.nix  # Home-Manager top-level config file
+          ./home.nix # Home-Manager top-level config file
         ];
       };
     };
