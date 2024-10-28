@@ -199,6 +199,7 @@ in {
     dconf
     fishPlugins.foreign-env
     wl-mirror
+    lolcat
 
     # Don't forget to get the debian Package first:
     # nix-store --add-fixed sha256 Packet_Tracer822_amd64_signed.deb
