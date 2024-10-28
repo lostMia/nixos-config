@@ -175,6 +175,7 @@ in {
     gtk2
     gtk3
     gtk4
+    gnome.gnome-themes-extra
     gimp
     vscode
     python3
