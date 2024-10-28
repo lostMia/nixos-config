@@ -2,7 +2,8 @@
   config,
   pkgs,
   ...
-}: {
+}: let
+in {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "mia";
@@ -16,13 +17,12 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs; [
-    # # It is sometimes useful to fine-tune packages, for example, by applying
-    # # overrides. You can do that directly here, just don't forget the
-    # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
-    # # fonts?
-    # (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
-
-    # # You can also create simple shell scripts directly inside your
+    (graphite-gtk-theme.override {
+      tweaks = ["darker" "normal"];
+      themeVariants = ["red" "pink"];
+    })
+    tela-icon-theme
+    bibata-cursors
     # # configuration. For example, this adds a command 'my-hello' to your
     # # environment:
     # (pkgs.writeShellScriptBin "my-hello" ''
@@ -46,9 +46,30 @@
   };
 
   qt.enable = true;
-  qt.style.name = "Graphite-Dark";
-  gtk.enable = true;
-  gtk.theme.name = "Graphite-Dark";
+  qt.style.name = "Graphite-red-Dark";
+
+  gtk = {
+    enable = true;
+    theme = {
+      name = "Graphite-red-Dark";
+      package = pkgs.graphite-gtk-theme;
+    };
+    iconTheme = {
+      name = "Tela-red";
+      package = pkgs.tela-icon-theme;
+    };
+    cursorTheme = {
+      name = "Graphite dark Cursors";
+      package = pkgs.graphite-cursors;
+    };
+  };
+
+  home.pointerCursor = {
+    gtk.enable = true;
+    package = pkgs.bibata-cursors; # Specify the cursor theme package
+    name = "Bibata-Modern-Ice"; # Specify the cursor theme name
+    size = 64;
+  };
 
   dconf.settings = {
     "org/gnome/desktop/interface" = {

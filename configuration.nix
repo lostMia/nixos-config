@@ -8,7 +8,9 @@
   hardware,
   ...
 }: let
-  # nixos-hardware/framework/13-inch/7040-amd> for framework specific stuff (todo)
+  graphiteGtkTheme = unstable.graphite-gtk-theme.overrideAttrs (old: {
+    tweaks = ["black"];
+  });
 in {
   imports = [
     ./hardware-configuration.nix
@@ -147,6 +149,7 @@ in {
     fw-ectool
     fwupd
     xfce.thunar
+    gnome.nautilus
     killall
     libreoffice-qt6-still
     btop
@@ -171,7 +174,8 @@ in {
     syncthing
     auto-cpufreq
     tela-icon-theme
-    unstable.graphite-gtk-theme
+    #unstable.graphite-gtk-theme
+    graphiteGtkTheme
     gtk2
     gtk3
     gtk4
@@ -188,7 +192,7 @@ in {
     greetd.greetd
     greetd.tuigreet
     uwufetch
-    graphite-gtk-theme
+    graphite-cursors
     nwg-look
     nwg-displays
     lxappearance-gtk2
