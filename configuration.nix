@@ -171,7 +171,10 @@ in {
     syncthing
     auto-cpufreq
     tela-icon-theme
-    graphite-gtk-theme
+    unstable.graphite-gtk-theme
+    gtk2
+    gtk3
+    gtk4
     gimp
     vscode
     python3

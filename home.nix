@@ -44,7 +44,17 @@
     #   org.gradle.daemon.idletimeout=3600000
     # '';
   };
-  
+
+  qt.enable = true;
+  qt.style.name = "Graphite-Dark";
+  gtk.enable = true;
+  gtk.theme.name = "Graphite-Dark";
+
+  dconf.settings = {
+    "org/gnome/desktop/interface" = {
+      color-scheme = "prefer-dark";
+    };
+  };
 
   # Home Manager can also manage your environment variables through
   # 'home.sessionVariables'. These will be explicitly sourced when using a
