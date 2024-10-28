@@ -11,8 +11,17 @@
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       specialArgs = {inherit inputs;};
       modules = [
-        ./configuration.nix
+        ./configuration.nix # NixOS top-level config file
       ];
+    };
+
+    homeConfigurations = {
+      mia = home-manager.lib.homeManagerConfiguration {
+        pkgs = import nixpkgs { system = "x86_64-linux"; };
+        modules = [
+          ./home.nix  # Home-Manager top-level config file
+        ];
+      };
     };
   };
 }
