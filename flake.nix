@@ -4,10 +4,11 @@
   inputs = {
     stable.url = "github:nixos/nixpkgs/24.05"; # Stable
     unstable.url = "github:nixos/nixpkgs/nixos-unstable"; # Unstable
+    nur.url = "github:nix-community/NUR";              # NUR archive
     home-manager.url = "github:nix-community/home-manager"; # Home-Manager
   };
 
-  outputs = { self, stable, unstable, home-manager, ...} @ inputs: 
+  outputs = { self, stable, unstable, nur, home-manager, ...} @ inputs: 
   let
     stablePkgs = import stable {
       system = "x86_64-linux";
@@ -19,11 +20,14 @@
     };
   in {
     nixosConfigurations = {
-      nix = { config, pkgs, ... }: {
-        pkgs = stablePkgs;
-        specialArgs = {inherit inputs;};
+      nix = stablePkgs.lib.nixosSystem {
+        system = "x86_64-linux";
         modules = [
-          ./configuration.nix # NixOS top-level config file
+          ./configuration.nix             # Main system configuration
+          {
+            nixpkgs = stablePkgs;         # Use stablePkgs or unstablePkgs as needed
+            nur = nur.packages.x86_64-linux;  # Make NUR available in configuration.nix
+          }
         ];
       };
     };
