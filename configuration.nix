@@ -5,7 +5,7 @@
   config,
   pkgs,
   unstable,
-  nur,
+  hardware,
   ...
 }: let
   # nixos-hardware/framework/13-inch/7040-amd> for framework specific stuff (todo)
@@ -32,7 +32,7 @@ in {
   # Bootloader.
   boot.kernelPackages = pkgs.linuxPackages_zen;
   boot.initrd.luks.devices."luks-83b3ed89-8d91-4d72-a61b-ad00a1819542".device = "/dev/disk/by-uuid/83b3ed89-8d91-4d72-a61b-ad00a1819542";
-  boot.kernelParams = ["mem_sleep_default=deep console=tty1"];
+  boot.kernelParams = ["mem_sleep_default=deep" "console=tty1"];
 
   boot.loader = {
     systemd-boot.enable = false;
@@ -168,7 +168,7 @@ in {
     neofetch
     sublime3
     fprintd
-    nur.repos.kira-bruneau.swaylock-fprintd
+    config.nur.repos.kira-bruneau.swaylock-fprintd
     corrupter
     feh
     pwvucontrol

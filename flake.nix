@@ -1,52 +1,54 @@
 {
-  description = "Mia's NixOS Flake";
+  description = "Mia's (WIP) NixOS Flake :3";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/release-24.05"; # Stable
-    unstable.url = "github:nixos/nixpkgs/nixos-unstable"; # Unstable
-    nur.url = "github:nix-community/NUR";
-    home-manager = { # Home-Manager
+    nixpkgs.url = "github:nixos/nixpkgs/release-24.05";           # Stable
+    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable"; # Unstable
+    nur.url = "github:nix-community/NUR";                         # NUR Repo
+    hardware.url = "github:nixos/nixos-hardware";                 # NixOS Hardware
+    home-manager = {                                              # Home-Manager
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    hardware.url = "github:nixos/nixos-hardware";
   };
 
-  outputs = { self, nixpkgs, unstable, nur, home-manager, ...} @ inputs: 
+  outputs = { self, nixpkgs, nixpkgs-unstable, nur, hardware, home-manager, ...} @ inputs: 
   let
     hostname = "nix";
-    stablePkgs = import nixpkgs {
+
+    stable = import nixpkgs {
       system = "x86_64-linux";
       config.allowUnfree = true;
     };
-    unstablePkgs = import unstable {
+    unstable = import nixpkgs-unstable {
       system = "x86_64-linux";
       config.allowUnfree = true;
     };
 
     specialArgs = {
-      inherit inputs self;
+      inherit inputs self unstable;
       system = "x86_64-linux";
-      pkgs = stablePkgs;
+      pkgs = stable;
     };
 
   in {
     nixosConfigurations = {
       ${hostname} = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
+        inherit specialArgs;
         modules = [
-          ./configuration.nix             # Main system configuration
+          ./configuration.nix # NixOS top-level config file
+          nur.nixosModules.nur
         ];
       };
     };
 
-    # homeConfigurations = {
-    #   mia = home-manager.lib.homeManagerConfiguration {
-    #     pkgs = stablePkgs;
-    #     modules = [
-    #       ./home.nix  # Home-Manager top-level config file
-    #     ];
-    #   };
-    # };
+    homeConfigurations = {
+      mia = home-manager.lib.homeManagerConfiguration {
+        inherit specialArgs;
+        modules = [
+          ./home.nix  # Home-Manager top-level config file
+        ];
+      };
+    };
   };
 }
