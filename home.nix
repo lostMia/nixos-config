@@ -19,7 +19,7 @@ in {
   home.packages = with pkgs; [
     (graphite-gtk-theme.override {
       tweaks = ["darker" "normal"];
-      themeVariants = ["red" "pink"];
+      themeVariants = ["pink"];
     })
     tela-icon-theme
     bibata-cursors
@@ -46,16 +46,16 @@ in {
   };
 
   qt.enable = true;
-  qt.style.name = "Graphite-red-Dark";
+  qt.style.name = "Graphite-pink-Dark";
 
   gtk = {
     enable = true;
     theme = {
-      name = "Graphite-red-Dark";
+      name = "Graphite-pink-Dark";
       package = pkgs.graphite-gtk-theme;
     };
     iconTheme = {
-      name = "Tela-red";
+      name = "Tela-black";
       package = pkgs.tela-icon-theme;
     };
     cursorTheme = {

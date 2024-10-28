@@ -7,14 +7,11 @@
   unstable,
   hardware,
   ...
-}: let
-  graphiteGtkTheme = unstable.graphite-gtk-theme.overrideAttrs (old: {
-    tweaks = ["black"];
-  });
-in {
+}: {
   imports = [
     ./hardware-configuration.nix
     ./misc/udev-rules.nix
+    ./scripts/change_charging_state.nix
   ];
 
   nix.nixPath = [
@@ -174,8 +171,6 @@ in {
     syncthing
     auto-cpufreq
     tela-icon-theme
-    #unstable.graphite-gtk-theme
-    graphiteGtkTheme
     gtk2
     gtk3
     gtk4
