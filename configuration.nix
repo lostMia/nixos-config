@@ -9,14 +9,6 @@
   ...
 }: let
   # nixos-hardware/framework/13-inch/7040-amd> for framework specific stuff (todo)
-  unstable = import <unstable> {config = {allowUnfree = true;};};
-  nur =
-    import (builtins.fetchTarball {
-      url = "https://github.com/nix-community/NUR/archive/master.tar.gz";
-    }) 
-    {
-      inherit pkgs;
-    };
   /*
   xdg_old = import (pkgs.fetchFromGitHub {
     owner = "flatpak";
@@ -40,7 +32,7 @@ in {
   # Bootloader.
   boot.kernelPackages = pkgs.linuxPackages_zen;
   boot.initrd.luks.devices."luks-83b3ed89-8d91-4d72-a61b-ad00a1819542".device = "/dev/disk/by-uuid/83b3ed89-8d91-4d72-a61b-ad00a1819542";
-  boot.kernelParams = ["mem_sleep_default=deep"];
+  boot.kernelParams = ["mem_sleep_default=deep console=tty1"];
 
   boot.loader = {
     systemd-boot.enable = false;
@@ -207,6 +199,7 @@ in {
     lxappearance-gtk2
     dconf
     fishPlugins.foreign-env
+    wl-mirror
 
     # Don't forget to get the debian Package first:
     # nix-store --add-fixed sha256 Packet_Tracer822_amd64_signed.deb
@@ -291,7 +284,7 @@ in {
     };
   };
 
-  hardware.graphics.extraPackages = [
+  hardware.opengl.extraPackages = [
     pkgs.amdvlk
   ];
 

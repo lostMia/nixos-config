@@ -2,15 +2,20 @@
   description = "Mia's NixOS Flake";
 
   inputs = {
-    stable.url = "github:nixos/nixpkgs/24.05"; # Stable
+    nixpkgs.url = "github:nixos/nixpkgs/release-24.05"; # Stable
     unstable.url = "github:nixos/nixpkgs/nixos-unstable"; # Unstable
-    nur.url = "github:nix-community/NUR";              # NUR archive
-    home-manager.url = "github:nix-community/home-manager"; # Home-Manager
+    nur.url = "github:nix-community/NUR";
+    home-manager = { # Home-Manager
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    hardware.url = "github:nixos/nixos-hardware";
   };
 
-  outputs = { self, stable, unstable, nur, home-manager, ...} @ inputs: 
+  outputs = { self, nixpkgs, unstable, nur, home-manager, ...} @ inputs: 
   let
-    stablePkgs = import stable {
+    hostname = "nix";
+    stablePkgs = import nixpkgs {
       system = "x86_64-linux";
       config.allowUnfree = true;
     };
@@ -18,27 +23,30 @@
       system = "x86_64-linux";
       config.allowUnfree = true;
     };
+
+    specialArgs = {
+      inherit inputs self;
+      system = "x86_64-linux";
+      pkgs = stablePkgs;
+    };
+
   in {
     nixosConfigurations = {
-      nix = stablePkgs.lib.nixosSystem {
+      ${hostname} = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
           ./configuration.nix             # Main system configuration
-          {
-            nixpkgs = stablePkgs;         # Use stablePkgs or unstablePkgs as needed
-            nur = nur.packages.x86_64-linux;  # Make NUR available in configuration.nix
-          }
         ];
       };
     };
 
-    homeConfigurations = {
-      mia = home-manager.lib.homeManagerConfiguration {
-        pkgs = stablePkgs;
-        modules = [
-          ./home.nix  # Home-Manager top-level config file
-        ];
-      };
-    };
+    # homeConfigurations = {
+    #   mia = home-manager.lib.homeManagerConfiguration {
+    #     pkgs = stablePkgs;
+    #     modules = [
+    #       ./home.nix  # Home-Manager top-level config file
+    #     ];
+    #   };
+    # };
   };
 }

@@ -1,8 +1,25 @@
 {
   "nodes": {
+    "hardware": {
+      "locked": {
+        "lastModified": 1730068391,
+        "narHash": "sha256-jlAGtfMuI8pUUoUmNkm2P/38pOtHZdcAf3Az8XQLAf4=",
+        "owner": "nixos",
+        "repo": "nixos-hardware",
+        "rev": "6906ac67a1078cf950b8527341e229eeecb5bc30",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "repo": "nixos-hardware",
+        "type": "github"
+      }
+    },
     "home-manager": {
       "inputs": {
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": [
+          "nixpkgs"
+        ]
       },
       "locked": {
         "lastModified": 1730016908,
@@ -20,16 +37,16 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1729880355,
-        "narHash": "sha256-RP+OQ6koQQLX5nw0NmcDrzvGL8HDLnyXt/jHhL1jwjM=",
-        "owner": "NixOS",
+        "lastModified": 1730120390,
+        "narHash": "sha256-gGal/6jwTQidqtv7TydoPAD5gYEYYgNKCOBShstBV1s=",
+        "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "18536bf04cd71abd345f9579158841376fdd0c5a",
+        "rev": "d30a86d3f00ae9c1e13bb5ca356c468b46466eff",
         "type": "github"
       },
       "original": {
-        "owner": "NixOS",
-        "ref": "nixos-unstable",
+        "owner": "nixos",
+        "ref": "release-24.05",
         "repo": "nixpkgs",
         "type": "github"
       }
@@ -51,26 +68,11 @@
     },
     "root": {
       "inputs": {
+        "hardware": "hardware",
         "home-manager": "home-manager",
+        "nixpkgs": "nixpkgs",
         "nur": "nur",
-        "stable": "stable",
         "unstable": "unstable"
-      }
-    },
-    "stable": {
-      "locked": {
-        "lastModified": 1717179513,
-        "narHash": "sha256-vboIEwIQojofItm2xGCdZCzW96U85l9nDW3ifMuAIdM=",
-        "owner": "nixos",
-        "repo": "nixpkgs",
-        "rev": "63dacb46bf939521bdc93981b4cbb7ecb58427a0",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nixos",
-        "ref": "24.05",
-        "repo": "nixpkgs",
-        "type": "github"
       }
     },
     "unstable": {
