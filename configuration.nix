@@ -11,7 +11,7 @@
   imports = [
     ./hardware-configuration.nix
     ./misc/udev-rules.nix
-    ./scripts/change_charging_state.nix
+    # ./scripts/change_charging_state.nix
   ];
 
   nix.nixPath = [
@@ -197,11 +197,10 @@
     fortune
     cowsay
     dotacat
-
+    superTuxKart
     # Don't forget to get the debian Package first:
     # nix-store --add-fixed sha256 Packet_Tracer822_amd64_signed.deb
     ciscoPacketTracer8
-
     platformio
     platformio-core
   ];
