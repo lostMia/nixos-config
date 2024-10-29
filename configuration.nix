@@ -203,6 +203,7 @@
     ciscoPacketTracer8
     platformio
     platformio-core
+    ffmpeg
   ];
 
   virtualisation.libvirtd = {
