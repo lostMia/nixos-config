@@ -204,8 +204,8 @@
     platformio
     platformio-core
     ffmpeg
-    wob
     inotify-tools
+    swayosd
   ];
 
   virtualisation.libvirtd = {
