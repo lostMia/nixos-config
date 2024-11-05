@@ -204,6 +204,7 @@
     platformio
     platformio-core
     ffmpeg
+    wob
   ];
 
   virtualisation.libvirtd = {
