@@ -207,6 +207,7 @@
     ffmpeg
     inotify-tools
     swayosd
+    stress
   ];
 
   virtualisation.libvirtd = {
