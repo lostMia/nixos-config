@@ -59,8 +59,9 @@
     HandleLidSwitch=suspend-then-hibernate
     HandleLidSwitchExternalPower=suspend-then-hibernate
     HandleLidSwitchDocked=suspend-then-hibernate
-    HandlePowerKey=hibernate
   '';
+
+  services.logind.powerKey = "hibernate";
 
   networking.hostName = "nix";
   networking.networkmanager.enable = true;
