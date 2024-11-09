@@ -59,6 +59,7 @@
     HandleLidSwitch=suspend-then-hibernate
     HandleLidSwitchExternalPower=suspend-then-hibernate
     HandleLidSwitchDocked=suspend-then-hibernate
+    HandlePowerKey=hibernate
   '';
 
   networking.hostName = "nix";
