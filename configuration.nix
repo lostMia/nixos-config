@@ -11,7 +11,6 @@
   imports = [
     ./hardware-configuration.nix
     ./misc/udev-rules.nix
-    # ./scripts/change_charging_state.nix
   ];
 
   nix.nixPath = [
