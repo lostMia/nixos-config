@@ -179,6 +179,7 @@
     gimp
     vscode
     python3
+    python312Packages.requests
     fd
     tldr
     pamixer
