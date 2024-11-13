@@ -209,6 +209,7 @@
     inotify-tools
     swayosd
     stress
+    zip
   ];
 
   virtualisation.libvirtd = {
