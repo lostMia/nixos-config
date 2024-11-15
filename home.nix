@@ -4,6 +4,13 @@
   ...
 }: let
 in {
+  imports = [
+    ./programs/git.nix
+    ./programs/alacritty.nix
+    ./programs/rofi.nix
+    ./programs/auto-cpu.nix
+  ];
+
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "mia";

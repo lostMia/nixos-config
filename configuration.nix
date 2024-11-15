@@ -9,8 +9,21 @@
   ...
 }: {
   imports = [
-    ./hardware-configuration.nix
+    ./hardware/framework-13.nix
+    ./hardware/framework-hw-optimization.nix
+    ./modules/audio.nix
+    ./modules/network.nix
+    ./modules/bluetooth.nix
+    ./modules/graphical.nix
+    ./modules/virtualisation.nix
+    ./services/systemd.nix
+    ./services/syncthing.nix
+    ./services/ssh.nix
+    ./services/sway.nix # todo
+    ./users/root.nix # todo
+    ./users/mia.nix
     ./misc/udev-rules.nix
+    ./misc/packages.nix
   ];
 
   nix.nixPath = [
@@ -19,58 +32,15 @@
     "/nix/var/nix/profiles/per-user/root/channels"
   ];
 
-  # Bootloader.
-  boot.kernelPackages = pkgs.linuxPackages_zen;
-  boot.initrd.luks.devices."luks-83b3ed89-8d91-4d72-a61b-ad00a1819542".device = "/dev/disk/by-uuid/83b3ed89-8d91-4d72-a61b-ad00a1819542";
-  boot.kernelParams = ["mem_sleep_default=deep" "console=tty1"];
-
-  boot.loader = {
-    systemd-boot.enable = false;
-    efi.canTouchEfiVariables = true;
-    grub = {
-      enable = true;
-      devices = ["nodev"];
-      efiSupport = true;
-      splashImage = /boot/nix-bg.png;
-      extraEntries = ''
-        menuentry "Windows" {
-          insmod part_gpt
-          insmod fat
-          insmod search_fs_uuid
-          insmod chain
-          search --fs-uuid --set=root 14EC-1168
-          chainloader /EFI/Microsoft/Boot/bootmgfw.efi
-        }
-      '';
-    };
-  };
-
-  systemd.sleep.extraConfig = ''
-    AllowSuspendThenHibernate=yes
-    AllowSuspend=yes
-    SuspendEstimationSec=1min
-    HibernateDelaySec=60min
-    SuspendState=freeze
-    HibernateMode=shutdown
-  '';
-
-  services.logind.extraConfig = ''
-    HandleLidSwitch=suspend-then-hibernate
-    HandleLidSwitchExternalPower=suspend-then-hibernate
-    HandleLidSwitchDocked=suspend-then-hibernate
-  '';
-
-  services.logind.powerKey = "hibernate";
-
-  networking.hostName = "nix";
-  networking.networkmanager.enable = true;
-
   time.timeZone = "Europe/Vienna";
 
   nix.settings.experimental-features = [
     "nix-command"
     "flakes"
   ];
+
+  # Configure console keymap
+  console.keyMap = "bone";
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
@@ -86,297 +56,30 @@
     LC_TIME = "de_AT.UTF-8";
   };
 
-  # Configure keymap in X11
-  services.xserver.xkb = {
-    layout = "de";
-    variant = "bone";
-  };
-
-  # Configure console keymap
-  console.keyMap = "bone";
-
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.mia = {
-    isNormalUser = true;
-    description = "mia";
-    extraGroups = ["networkmanager" "wheel" "mia" "libvirtd" "kvm" "syncthing" "docker"];
-    packages = with pkgs; [];
-  };
-
+  # fish ><> :>
   users.defaultUserShell = pkgs.fish;
 
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
-
-  environment.systemPackages = with pkgs; [
-    unstable.neovim
-    unstable.neovide
-    vim
-    wget
-    fish
-    unstable.firefox
-    swayfx
-    wl-clipboard
-    zoxide
-    alacritty
-    keepassxc
-    bash
-    waybar
-    autotiling
-    signal-desktop
-    electron
-    vesktop
-    thunderbird
-    power-profiles-daemon
-    pavucontrol
-    brightnessctl
-    alejandra
-    git
-    gcc
-    rofi
-    teams-for-linux
-    wayland
-    xdg-utils
-    glib
-    grim
-    slurp
-    unstable.shikane
-    networkmanagerapplet
-    blueman
-    sway-audio-idle-inhibit
-    fw-ectool
-    fwupd
-    xfce.thunar
-    gnome.nautilus
-    killall
-    libreoffice-qt6-still
-    btop
-    dunst
-    libnotify
-    file
-    jq
-    protonvpn-cli_2
-    satty
-    neofetch
-    sublime3
-    fprintd
-    config.nur.repos.kira-bruneau.swaylock-fprintd
-    corrupter
-    feh
-    pwvucontrol
-    cmatrix
-    flameshot
-    xdg-desktop-portal
-    xdg-desktop-portal-wlr
-    obsidian
-    syncthing
-    auto-cpufreq
-    tela-icon-theme
-    gtk2
-    gtk3
-    gtk4
-    gnome.gnome-themes-extra
-    gimp
-    vscode
-    python3
-    python312Packages.requests
-    fd
-    tldr
-    pamixer
-    pipewire
-    wireplumber
-    pavucontrol
-    greetd.greetd
-    greetd.tuigreet
-    uwufetch
-    graphite-cursors
-    nwg-look
-    nwg-displays
-    lxappearance-gtk2
-    dconf
-    fishPlugins.foreign-env
-    wl-mirror
-    fortune
-    cowsay
-    dotacat
-    superTuxKart
-    # Don't forget to get the debian Package first:
-    # nix-store --add-fixed sha256 Packet_Tracer822_amd64_signed.deb
-    ciscoPacketTracer8
-    platformio
-    platformio-core
-    ffmpeg
-    inotify-tools
-    swayosd
-    stress
-    zip
-  ];
-
-  virtualisation.libvirtd = {
-    allowedBridges = [
-      "virbr0"
-      "br0"
-    ];
-  };
-
-  services.avahi = {
-    enable = true;
-    nssmdns4 = true;
-    publish = {
-      enable = true;
-      addresses = true;
-      domain = true;
-      hinfo = true;
-      userServices = true;
-      workstation = true;
-    };
-  };
-
-  programs.nix-ld.enable = true;
-  programs.nix-ld.libraries = with pkgs; [
-  ];
-
-  services = {
-    syncthing = {
-      enable = true;
-      user = "mia";
-      dataDir = "/home/mia/Documents";
-      configDir = "/home/mia/Documents/.config/syncthing";
-      overrideDevices = true;
-      overrideFolders = true;
-      settings = {
-        devices = {
-          "android-phone" = {id = "GN7CLEC-K73TLQF-H6KR46Z-7FXJ75F-N4PS4GG-BLLGE3M-SYZWLME-P2ZIIAN";};
-        };
-        folders = {
-          "zepr3-bryuh" = {
-            path = "/home/mia/Password/";
-            devices = ["android-phone"];
-          };
-          "j9zfq-wexpg" = {
-            path = "/home/mia/Notes/";
-            devices = ["android-phone"];
-            ignorePerms = false;
-          };
-        };
-      };
-    };
-  };
-
-  services.udev.packages = [
-    pkgs.platformio-core
-    pkgs.openocd
-  ];
-
-  hardware.bluetooth.enable = true;
-  hardware.bluetooth.settings = {
-    General = {
-      Enable = "Source,Sink,Media,Socket";
-    };
-  };
-
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-  };
-
-  hardware.pulseaudio.enable = false;
-
-  qt = {
-    enable = true;
-    platformTheme = "gtk2";
-    style = "gtk2";
-  };
-
-  services.greetd = {
-    enable = true;
-    settings = {
-      default_session = {
-        command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd sway";
-        user = "mia";
-      };
-    };
-  };
-
-  hardware.opengl.extraPackages = [
-    pkgs.amdvlk
-  ];
-
-  services.xserver.enable = false;
-
-  services.fwupd.enable = true;
-
-  # services.auto-cpufreq.enable = true;
-  # services.auto-cpufreq.settings = {
-  #   battery = {
-  #     governor = "powersave";
-  #     turbo = "never";
-  #   };
-  #   charger = {
-  #     governor = "performance";
-  #     turbo = "auto";
-  #   };
+  # programs.nix-ld.libraries = with pkgs; [
+  # ];
+  #
   # };
 
   fonts.packages = with pkgs; [
     (nerdfonts.override {fonts = ["Hack"];})
   ];
 
-  xdg.portal = {
-    enable = true;
-    wlr.enable = true;
-    extraPortals = [pkgs.xdg-desktop-portal-gtk];
-  };
-
-  virtualisation.docker.enable = true;
-  virtualisation.libvirtd.enable = true;
-  programs.virt-manager.enable = true;
-
   programs = {
-    sway = {
-      enable = true;
-      wrapperFeatures.gtk = true;
-    };
     waybar.enable = true;
     fish.enable = true;
     dconf.enable = true;
-  };
-
-  services.openssh = {
-    enable = true;
-    ports = [21888];
-    settings = {
-      PasswordAuthentication = true;
-      AllowUsers = ["mia"];
-      UseDns = true;
-      X11Forwarding = false;
-      PermitRootLogin = "no";
-    };
+    nix-ld.enable = true;
   };
 
   services = {
     udisks2.enable = true;
     power-profiles-daemon.enable = true;
-    fprintd.enable = true;
     dbus.enable = true;
-    blueman.enable = true;
   };
-
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
-
-  # networking.interfaces.eth0.useDHCP = true;
-  # networking.interfaces.br0.useDHCP = true;
-  # networking.bridges = {
-  #   "br0" = {
-  #     interfaces = ["eth0"];
-  #   };
-  # };
 
   system.autoUpgrade = {
     enable = true;

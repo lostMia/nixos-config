@@ -17,6 +17,32 @@
   boot.kernelModules = ["kvm-amd" "amdgpu"];
   boot.extraModulePackages = [];
 
+  # Bootloader.
+  boot.kernelPackages = pkgs.linuxPackages_zen;
+  boot.initrd.luks.devices."luks-83b3ed89-8d91-4d72-a61b-ad00a1819542".device = "/dev/disk/by-uuid/83b3ed89-8d91-4d72-a61b-ad00a1819542";
+  boot.kernelParams = ["mem_sleep_default=deep" "console=tty1"];
+
+  boot.loader = {
+    systemd-boot.enable = false;
+    efi.canTouchEfiVariables = true;
+    grub = {
+      enable = true;
+      devices = ["nodev"];
+      efiSupport = true;
+      splashImage = /boot/nix-bg.png;
+      extraEntries = ''
+        menuentry "Windows" {
+          insmod part_gpt
+          insmod fat
+          insmod search_fs_uuid
+          insmod chain
+          search --fs-uuid --set=root 14EC-1168
+          chainloader /EFI/Microsoft/Boot/bootmgfw.efi
+        }
+      '';
+    };
+  };
+
   fileSystems."/" = {
     device = "/dev/disk/by-uuid/65af7577-3f46-4561-814d-96ed897920f4";
     fsType = "btrfs";
@@ -42,6 +68,8 @@
   networking.useDHCP = lib.mkDefault true;
   # networking.interfaces.enp195s0f4u1.useDHCP = lib.mkDefault true;
   # networking.interfaces.wlp1s0.useDHCP = lib.mkDefault true;
+
+  services.fprintd.enable = true;
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
