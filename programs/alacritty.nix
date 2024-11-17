@@ -6,155 +6,61 @@
 }: {
   programs.alacritty = {
     enable = true;
-
-    # overwrite alacritty package.... to the one with smooth scrolling....
-    # for it you also need to add cursor.smooth_factor to the alacritty settings
-    /*
-    package = pkgs.alacritty.overrideAttrs ( final: prev: rec {
-       src = pkgs.fetchFromGitHub {
-    	   owner = "gregthemadmonk";
-              repo = "alacritty";
-              rev = "master";
-              sha256 = "2XFHVqXR5RyXpdNd+oimrwGHl4k0qaMzLO+WVGWnQ/M=";
-       };
-           #cargoSha256 = "0000000000000000000000000000000000000000000000000000";
-           #cargoSha256 = "";
-
-           cargoDeps = prev.cargoDeps.overrideAttrs (_: {
-              inherit src;
-              outputHash = "sha256-6Gt9ikXrcBXtxHRSvKPEoLoVituxc3rTVDoWlGR4V7A=";
-              # ...
-           });
-        });
-        #
-    */
     settings = {
-      #cursor.smooth_factor = 0.5;
+      window.opacity = 0.0;
       font = {
+        size = 16.0;
+
         normal = {
-          family = "Hack";
+          family = "HackNerdFont";
           style = "Regular";
         };
 
         bold = {
-          family = "Hack";
+          family = "HackNerdFont";
           style = "Bold";
         };
 
         italic = {
-          family = "Hack";
+          family = "HackNerdFont";
           style = "Italic";
         };
 
         bold_italic = {
-          family = "Hack";
+          family = "HackNerdFont";
           style = "Bold Italic";
         };
-
-        size = 8;
       };
 
       # Dracula theme for alacritty
       colors = {
         primary = {
-          background = "#282a36";
-          foreground = "#f8f8f2";
-          bright_foreground = "#ffffff";
+          background = "#151515";
+          foreground = "#cbe3e7";
         };
-        cursor = {
-          text = "CellBackground";
-          cursor = "CellForeground";
-        };
-        vi_mode_cursor = {
-          text = "CellBackground";
-          cursor = "CellForeground";
-        };
-        search = {
-          matches = {
-            foreground = "#44475a";
-            background = "#50fa7b";
-          };
-          focused_match = {
-            foreground = "#44475a";
-            background = "#ffb86c";
-          };
-        };
-        footer_bar = {
-          background = "#282a36";
-          foreground = "#f8f8f2";
-        };
-        hints = {
-          start = {
-            foreground = "#282a36";
-            background = "#f1fa8c";
-          };
-          end = {
-            foreground = "#f1fa8c";
-            background = "#282a36";
-          };
-        };
-        line_indicator = {
-          foreground = "None";
-          background = "None";
-        };
-        selection = {
-          text = "CellForeground";
-          background = "#44475a";
-        };
+
         normal = {
-          black = "#21222c";
-          red = "#ff5555";
-          green = "#50fa7b";
-          yellow = "#f1fa8c";
-          blue = "#bd93f9";
-          magenta = "#ff79c6";
-          cyan = "#8be9fd";
-          white = "#f8f8f2";
+          black = "#100e23";
+          blue = "#91ddff";
+          cyan = "#aaffe4";
+          green = "#95ffa4";
+          magenta = "#c991e1";
+          red = "#ff8080";
+          white = "#cbe3e7";
+          yellow = "#ffe9aa";
         };
+
         bright = {
-          black = "#6272a4";
-          red = "#ff6e6e";
-          green = "#69ff94";
-          yellow = "#ffffa5";
-          blue = "#d6acff";
-          magenta = "#ff92df";
-          cyan = "#a4ffff";
-          white = "#ffffff";
+          black = "#565575";
+          blue = "#65b2ff";
+          cyan = "#63f2f1";
+          green = "#62d196";
+          magenta = "#906cff";
+          red = "#ff5458";
+          white = "#a6b3cc";
+          yellow = "#ffb378";
         };
       };
-
-      keyboard.bindings = [
-        {
-          key = "V";
-          mods = "Control|Shift";
-          action = "Paste";
-        }
-        {
-          key = "C";
-          mods = "Control|Shift";
-          action = "Copy";
-        }
-        {
-          key = "N";
-          mods = "Control";
-          chars = ''\u001b\u005b\u0042'';
-        }
-        {
-          key = "R";
-          mods = "Control";
-          chars = ''\u001b\u005b\u0041'';
-        }
-        {
-          key = "B";
-          mods = "Control";
-          chars = ''\u001b\u005b\u0044'';
-        }
-        {
-          key = "S";
-          mods = "Control";
-          chars = ''\u001b\u005b\u0043'';
-        }
-      ];
     };
   };
 }

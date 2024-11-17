@@ -9,15 +9,9 @@
     # Yes, really.
     userEmail = "testemail429455@gmail.com";
 
-    extraConfig = {
-      core.editor = "nvim";
-      core.color.ui = true;
-      core.pager = "delta";
-    };
-
-    config = ''
+    extraConfig = ''
       [credential]
-      	helper = store
+      	helper = nuh uh
       [init]
       	defaultBranch = main
     '';
