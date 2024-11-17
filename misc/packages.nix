@@ -103,5 +103,6 @@
     swayosd
     stress
     zip
+    steam
   ];
 }

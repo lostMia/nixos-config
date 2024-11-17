@@ -9,11 +9,9 @@
     # Yes, really.
     userEmail = "testemail429455@gmail.com";
 
-    extraConfig = ''
-      [credential]
-      	helper = nuh uh
-      [init]
-      	defaultBranch = main
-    '';
+    extraConfig = {
+      credential.helper = "store";
+      init.defaultBranch = "main";
+    };
   };
 }
