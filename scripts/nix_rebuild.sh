@@ -33,7 +33,7 @@ git push
 echo -e "\n\e[1m - - - - - Generation Cleanup - - - - -\e[0m\n"
 
 # clean up old nixos generations
-sudo bash /home/mia/Scripts/trim_generations.sh 10 15 system
+sudo bash /home/mia/.config/nixos/scripts/trim_generations.sh 10 15 system
 # clean up old home-manager generations
 home-manager expire-generations "-15 days"
 

@@ -240,5 +240,6 @@ else
         printf "generation $K \t ${gens[$K]}\n"
     done
     printf "\n"
+    choose "y" "Do you want to delete these? [Y/n]: "
 fi
 

@@ -15,7 +15,7 @@
     style = "gtk2";
   };
 
-  hardware.opengl.extraPackages = [
+  hardware.graphics.extraPackages = [
     pkgs.amdvlk
   ];
 

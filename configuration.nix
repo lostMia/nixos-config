@@ -5,6 +5,7 @@
   config,
   pkgs,
   unstable,
+  very-unstable,
   hardware,
   ...
 }: {
@@ -25,6 +26,8 @@
     ./misc/udev-rules.nix
     ./misc/packages.nix
   ];
+
+  nixpkgs.config.allowUnsupportedSystem = true;
 
   nix.nixPath = [
     "nixos-config=/home/mia/.config/nixos/configuration.nix"
@@ -59,11 +62,6 @@
   # fish ><> :>
   users.defaultUserShell = pkgs.fish;
 
-  # programs.nix-ld.libraries = with pkgs; [
-  # ];
-  #
-  # };
-
   fonts.packages = with pkgs; [
     (nerdfonts.override {fonts = ["Hack"];})
   ];
@@ -92,5 +90,5 @@
     randomizedDelaySec = "45min";
   };
 
-  system.stateVersion = "24.05"; # Did you read the comment? yes, I just don't care ~ mia
+  system.stateVersion = "24.05"; # Did you read the comment? Yes, I just don't care ~ mia
 }

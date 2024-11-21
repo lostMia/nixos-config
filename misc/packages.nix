@@ -9,7 +9,7 @@
 
   environment.systemPackages = with pkgs; [
     unstable.neovim
-    unstable.neovide
+    neovide
     vim
     wget
     fish
@@ -94,7 +94,8 @@
     dotacat
     superTuxKart
     # Don't forget to get the debian Package first:
-    # nix-store --add-fixed sha256 Packet_Tracer822_amd64_signed.deb
+    # (nix-store --add-fixed sha256 Packet_Tracer822_amd64_signed.deb) // old
+    # nix-store --add-fixed sha256 CiscoPacketTracer822_amd64_signed.deb
     ciscoPacketTracer8
     platformio
     platformio-core

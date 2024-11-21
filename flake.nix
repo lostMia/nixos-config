@@ -4,13 +4,15 @@
   # - - - - - - - - - - - - - - - - - - - - - - - - Inputs - - - - - - - - - - - - - - - - - - - - - - - - #
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/release-24.05"; # Stable
+    # nixpkgs.url = "github:nixos/nixpkgs/release-24.11"; # Stable
+    nixpkgs.url = "github:nixos/nixpkgs/release-24.05"; # Stable // Stick to the old channel for now..
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable"; # Unstable
+    nixpkgs-very-unstable.url = "github:nixos/nixpkgs/nixos-unstable-small"; # Unstable - Small (Living on the edqe....)
     nur.url = "github:nix-community/NUR"; # NUR Repo
     hardware.url = "github:nixos/nixos-hardware"; # NixOS Hardware
     home-manager = {
       # Home-Manager
-      url = "github:nix-community/home-manager/release-24.05";
+      url = "github:nix-community/home-manager/release-24.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -21,6 +23,7 @@
     self,
     nixpkgs,
     nixpkgs-unstable,
+    nixpkgs-very-unstable,
     nur,
     hardware,
     home-manager,
@@ -33,6 +36,10 @@
       config.allowUnfree = true;
     };
     unstable = import nixpkgs-unstable {
+      system = "x86_64-linux";
+      config.allowUnfree = true;
+    };
+    very-unstable = import nixpkgs-very-unstable {
       system = "x86_64-linux";
       config.allowUnfree = true;
     };
