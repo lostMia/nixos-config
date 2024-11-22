@@ -29,7 +29,7 @@
       enable = true;
       devices = ["nodev"];
       efiSupport = true;
-      splashImage = /boot/nix-bg.png;
+      # splashImage = /boot/nix-bg.png;
       extraEntries = ''
         menuentry "Windows" {
           insmod part_gpt

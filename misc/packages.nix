@@ -8,7 +8,7 @@
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
-    unstable.neovim
+    # unstable.neovim
     neovide
     vim
     wget
