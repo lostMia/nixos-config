@@ -63,7 +63,7 @@
     corrupter
     feh
     cmatrix
-    flameshot
+    unstable.flameshot
     xdg-desktop-portal
     xdg-desktop-portal-wlr
     obsidian
