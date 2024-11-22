@@ -1,6 +1,3 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
 {
   config,
   pkgs,
@@ -26,8 +23,6 @@
     ./misc/udev-rules.nix
     ./misc/packages.nix
   ];
-
-  nixpkgs.config.allowUnsupportedSystem = true;
 
   nix.nixPath = [
     "nixos-config=/home/mia/.config/nixos/configuration.nix"
@@ -59,25 +54,9 @@
     LC_TIME = "de_AT.UTF-8";
   };
 
-  # fish ><> :>
-  users.defaultUserShell = pkgs.fish;
-
   fonts.packages = with pkgs; [
     (nerdfonts.override {fonts = ["Hack"];})
   ];
-
-  programs = {
-    waybar.enable = true;
-    fish.enable = true;
-    dconf.enable = true;
-    nix-ld.enable = true;
-  };
-
-  services = {
-    udisks2.enable = true;
-    power-profiles-daemon.enable = true;
-    dbus.enable = true;
-  };
 
   system.autoUpgrade = {
     enable = true;

@@ -11,4 +11,7 @@
     extraGroups = ["networkmanager" "wheel" "mia" "libvirtd" "kvm" "syncthing" "docker"];
     packages = with pkgs; [];
   };
+
+  # fish ><> :>
+  users.defaultUserShell = pkgs.fish;
 }

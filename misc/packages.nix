@@ -8,7 +8,7 @@
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
-    # unstable.neovim
+    neovim
     neovide
     vim
     wget
@@ -47,7 +47,8 @@
     xfce.thunar
     gnome.nautilus
     killall
-    libreoffice-qt6-still
+    # libreoffice-qt6-still
+    # libreoffice
     btop
     dunst
     libnotify
@@ -106,4 +107,17 @@
     zip
     steam
   ];
+
+  programs = {
+    waybar.enable = true;
+    fish.enable = true;
+    dconf.enable = true;
+    nix-ld.enable = true;
+  };
+
+  services = {
+    udisks2.enable = true;
+    power-profiles-daemon.enable = true;
+    dbus.enable = true;
+  };
 }
