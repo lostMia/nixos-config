@@ -48,7 +48,7 @@
     gnome.nautilus
     killall
     # libreoffice-qt6-still
-    # libreoffice
+    libreoffice-fresh
     btop
     dunst
     libnotify

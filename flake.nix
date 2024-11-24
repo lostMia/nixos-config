@@ -1,15 +1,38 @@
 {
   description = "Mia's (WIP) NixOS Flake :3";
 
+  # - - - - - - - - - - - - - - - - - - - - - - - - Caches - - - - - - - - - - - - - - - - - - - - - - - #
+
+  # Shamelessly stolen from https://github.com/Lord-Valen/configuration.nix/blob/master/flake.nix
+  nixConfig = {
+    extra-substituters = [
+      # nix-community
+      "https://nix-community.cachix.org"
+      # aagl
+      "https://ezkea.cachix.org"
+      # colmena
+      "https://colmena.cachix.org"
+      # # cosmic
+      # "https://cosmic.cachix.org"
+    ];
+
+    extra-trusted-public-keys = [
+      "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+      "ezkea.cachix.org-1:ioBmUbJTZIKsHmWWXPe1FSFbeVe+afhfgqgTSNd34eI="
+      "colmena.cachix.org-1:7BzpDnjjH8ki2CT3f6GdOk7QAzPOl+1t3LvTLXqYcSg="
+      "cosmic.cachix.org-1:Dya9IyXD4xdBehWjrkPv6rtxpmMdRel02smYzA85dPE="
+    ];
+  };
+
   # - - - - - - - - - - - - - - - - - - - - - - - - Inputs - - - - - - - - - - - - - - - - - - - - - - - - #
 
   inputs = {
     # nixpkgs.url = "github:nixos/nixpkgs/release-24.11"; # Stable
-    nixpkgs.url = "github:nixos/nixpkgs/release-24.05"; # Stable // Stick to the old channel for now..
-    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable"; # Unstable
-    nixpkgs-very-unstable.url = "github:nixos/nixpkgs/nixos-unstable-small"; # Unstable - Small (Living on the edqe....)
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.05";
+    nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable"; # Unstable
+    nixpkgs-very-unstable.url = "github:NixOS/nixpkgs/nixos-unstable-small"; # Unstable - Small (Living on the edqe....)
     nur.url = "github:nix-community/NUR"; # NUR Repo
-    hardware.url = "github:nixos/nixos-hardware"; # NixOS Hardware
+    hardware.url = "github:NixOS/nixos-hardware"; # NixOS Hardware
     home-manager = {
       # Home-Manager
       url = "github:nix-community/home-manager/release-24.05";

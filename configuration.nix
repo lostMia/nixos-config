@@ -17,8 +17,8 @@
     ./services/systemd.nix
     ./services/syncthing.nix
     ./services/ssh.nix
-    ./services/sway.nix # todo
-    ./users/root.nix # todo
+    ./services/sway.nix
+    ./users/root.nix # do I even need this?
     ./users/mia.nix
     ./misc/udev-rules.nix
     ./misc/packages.nix
