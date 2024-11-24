@@ -12,7 +12,7 @@
     hardware.url = "github:nixos/nixos-hardware"; # NixOS Hardware
     home-manager = {
       # Home-Manager
-      url = "github:nix-community/home-manager/release-24.11";
+      url = "github:nix-community/home-manager/release-24.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };

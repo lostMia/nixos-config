@@ -110,8 +110,8 @@
   ];
 
   programs = {
-    waybar.enable = true;
     fish.enable = true;
+    waybar.enable = true;
     dconf.enable = true;
     nix-ld.enable = true;
   };

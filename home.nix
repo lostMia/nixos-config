@@ -7,6 +7,7 @@ in {
   imports = [
     ./programs/git.nix
     ./programs/alacritty.nix
+    ./programs/fish.nix
     ./programs/rofi.nix
     ./programs/auto-cpu.nix
   ];
