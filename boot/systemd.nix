@@ -13,12 +13,12 @@
   '';
 
   services.logind.extraConfig = ''
+    HandlePowerKey=ignore
+    HandlePowerKeyLongPress=ignore
     HandleLidSwitch=suspend-then-hibernate
     HandleLidSwitchExternalPower=suspend-then-hibernate
     HandleLidSwitchDocked=suspend-then-hibernate
   '';
-
-  services.logind.powerKey = "";
 
   services.greetd = {
     enable = true;
