@@ -106,6 +106,7 @@
     stress
     zip
     steam
+    thefuck
   ];
 
   programs = {
