@@ -4,7 +4,7 @@
   ...
 }: {
   programs.swaylock = {
-    enable = false;
+    enable = enable;
     settings = {
       daemonize = true;
       show-failed-attempts = true;
