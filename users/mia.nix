@@ -9,7 +9,7 @@
   users.users.mia = {
     isNormalUser = true;
     description = "mia";
-    extraGroups = ["networkmanager" "wheel" "mia" "libvirtd" "kvm" "syncthing" "docker" "plugdev"];
+    extraGroups = ["networkmanager" "wheel" "mia" "libvirtd" "kvm" "syncthing" "docker"];
     packages = with pkgs; [];
   };
 
