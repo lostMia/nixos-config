@@ -4,7 +4,7 @@
   ...
 }: {
   programs.waybar = {
-    # enable = true;
+    enable = true;
     settings = {
       mainbar = {
         layer = "top";
@@ -248,7 +248,7 @@
         };
 
         "custom/power-usage" = {
-          exec = "bash /home/mia/.config/nixos/scripts/get_power_usage.sh";
+          exec = "/run/current-system/sw/bin/bash /home/mia/.config/nixos/scripts/get_power_usage.sh";
           format = "{}W";
           interval = 1;
         };
