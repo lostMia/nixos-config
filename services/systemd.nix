@@ -18,7 +18,7 @@
     HandleLidSwitchDocked=suspend-then-hibernate
   '';
 
-  services.logind.powerKey = "hibernate";
+  services.logind.powerKey = "ignore";
 
   services.greetd = {
     enable = true;
