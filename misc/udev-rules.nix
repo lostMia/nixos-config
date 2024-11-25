@@ -10,9 +10,6 @@
     ];
 
     extraRules = ''
-      # espprog.rules
-      # SUBSYSTEM=="usb", ATTR{idVendor}=="0403", ATTRS{idProduct}=="6010", MODE="0664", GROUP="plugdev"
-
       # power.rules -> Keyboard light when plugging in and out.
       ACTION=="change", DEVPATH=="/devices/platform/USBC000:00/power_supply/ucsi-source-psy-USBC000:004", SUBSYSTEM=="power_supply", ENV{POWER_SUPPLY_NAME}=="ucsi-source-psy-USBC000:004", ENV{POWER_SUPPLY_TYPE}=="USB", ENV{POWER_SUPPLY_ONLINE}=="0", RUN+="${pkgs.sudo}/bin/sudo -u mia ~/.config/nixos/scripts/change_charging_state.sh 0"
       ACTION=="change", DEVPATH=="/devices/platform/USBC000:00/power_supply/ucsi-source-psy-USBC000:004", SUBSYSTEM=="power_supply", ENV{POWER_SUPPLY_NAME}=="ucsi-source-psy-USBC000:004", ENV{POWER_SUPPLY_TYPE}=="USB", ENV{POWER_SUPPLY_ONLINE}=="1", RUN+="${pkgs.sudo}/bin/sudo -u mia ~/.config/nixos/scripts/change_charging_state.sh 1"
