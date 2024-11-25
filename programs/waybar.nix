@@ -4,7 +4,7 @@
   ...
 }: {
   programs.waybar = {
-    enable = true;
+    # enable = true;
     settings = {
       mainbar = {
         layer = "top";

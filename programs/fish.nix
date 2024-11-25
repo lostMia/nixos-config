@@ -28,7 +28,7 @@
       "c" = "cd .."; # thanks sebi
       "bored" = "fortune | cowsay | dotacat -p 1.5";
       "wise" = "fortune | cowsay | wl-copy";
-      "ff" = "nvim ~/.config/fish/config.fish";
+      "ff" = "nvim ~/.config/nixos/programs/fish.nix";
       "yarr" = "~/.config/nixos/scripts/yarr.sh";
       "narr" = "~/.config/nixos/scripts/narr.sh";
       "hib" = "systemctl hibernate && exit";
@@ -70,7 +70,7 @@
       "hollywood" = "sudo systemctl start docker; sudo docker run --rm -it bcbcarl/hollywood";
       "bridge" = "sudo ip link add name br0 type bridge; sudo ip link set br0 up; sudo ip link set enp195s0f3u1 master br0; sudo ip address add dev br0 10.255.255.80/24";
       "nixc" = "~/.config/nixos/scripts/nix_rebuild.sh";
-      "nixr" = "sudo nixos-rebuild switch --flake /home/mia/.config/nixos";
+      "nixr" = "sudo nixos-rebuild switch --flake /home/mia/.config/nixos --impure";
       # generate on-the-fly automatic rebuild (for) nixOS
       "goarnix" = "sudo nixos-rebuild switch --flake /home/mia/.config/nixos";
       "homer" = "home-manager switch --flake /home/mia/.config/nixos";

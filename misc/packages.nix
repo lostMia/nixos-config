@@ -17,7 +17,7 @@
     swayfx
     wl-clipboard
     zoxide
-    alacritty
+    unstable.alacritty
     keepassxc
     bash
     waybar

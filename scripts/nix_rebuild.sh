@@ -19,7 +19,7 @@ echo "NixOS Rebuilding..."
 #sudo nixos-rebuild switch &>nixos-switch.log || (
 # cat nixos-switch.log | grep --color error && false)
 
-sudo nixos-rebuild switch --flake /home/mia/.config/nixos
+sudo nixos-rebuild switch --flake /home/mia/.config/nixos --impure
 notify-send "Build done!" -u low --icon=/home/mia/.config/dunst/images/nixos.png
 
 
