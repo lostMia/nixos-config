@@ -6,7 +6,7 @@
   systemd.sleep.extraConfig = ''
     AllowSuspendThenHibernate=yes
     AllowSuspend=yes
-    SuspendEstimationSec=1min
+    SuspendEstimationSec=2min
     HibernateDelaySec=60min
     SuspendState=freeze
     HibernateMode=shutdown
@@ -18,7 +18,7 @@
     HandleLidSwitchDocked=suspend-then-hibernate
   '';
 
-  services.logind.powerKey = "ignore";
+  services.logind.powerKey = "hibernate";
 
   services.greetd = {
     enable = true;
