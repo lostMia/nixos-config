@@ -20,6 +20,7 @@
   ];
 
   xdg.portal = {
+    config.common.default = "*";
     enable = true;
     wlr.enable = true;
     extraPortals = [pkgs.xdg-desktop-portal-gtk];
