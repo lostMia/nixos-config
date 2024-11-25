@@ -45,7 +45,7 @@
     fw-ectool
     fwupd
     xfce.thunar
-    gnome.nautilus
+    nautilus
     killall
     # libreoffice-qt6-still
     libreoffice-fresh
@@ -73,7 +73,7 @@
     gtk2
     gtk3
     gtk4
-    gnome.gnome-themes-extra
+    gnome-themes-extra
     gimp
     vscode
     python3
