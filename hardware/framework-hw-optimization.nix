@@ -6,9 +6,7 @@
   boot.kernelParams = [
     # For Power consumption
     # https://kvark.github.io/linux/framework/2021/10/17/framework-nixos.html
-    # "mem_sleep_default=deep"
-    "mem_sleep_default=s2idle"
-    "nvme_core.default_ps_max_latency_us=0"
+    "mem_sleep_default=deep"
     # For Power consumption
     # https://community.frame.work/t/linux-battery-life-tuning/6665/156
     "nvme.noacpi=1"
