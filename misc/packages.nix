@@ -60,7 +60,7 @@
     neofetch
     sublime3
     fprintd
-    config.nur.repos.kira-bruneau.swaylock-fprintd
+    # config.nur.repos.kira-bruneau.swaylock-fprintd
     # swaylock
     corrupter
     feh

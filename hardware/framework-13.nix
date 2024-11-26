@@ -17,11 +17,13 @@
   boot.kernelModules = ["kvm-amd" "amdgpu"];
   boot.extraModulePackages = [];
 
-  # Bootloader.
   boot.kernelPackages = pkgs.linuxPackages_zen;
   boot.initrd.luks.devices."luks-83b3ed89-8d91-4d72-a61b-ad00a1819542".device = "/dev/disk/by-uuid/83b3ed89-8d91-4d72-a61b-ad00a1819542";
   boot.initrd.luks.devices."luks-52dfdba5-d0dc-48c6-86c0-4a6c18db1d36".device = "/dev/disk/by-uuid/52dfdba5-d0dc-48c6-86c0-4a6c18db1d36";
   boot.kernelParams = ["mem_sleep_default=deep" "console=tty1"];
+  boot.kernel.sysctl = {
+    "kernel.sysrq" = 1;
+  };
 
   boot.loader = {
     systemd-boot.enable = false;

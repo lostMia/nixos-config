@@ -11,6 +11,6 @@
   #   '';
   # };
   # security.pam.services.swaylock.fprintAuth = true;
-  security.pam.swaylock = {};
-  security.pam.services.swaylock = {};
+  # security.pam.swaylock = {};
+  # security.pam.services.swaylock = {};
 }
