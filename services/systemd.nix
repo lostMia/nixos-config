@@ -8,7 +8,7 @@
     AllowSuspend=yes
     SuspendEstimationSec=1min
     HibernateDelaySec=60min
-    SuspendState=mem
+    SuspendState=freeze
     HibernateMode=shutdown
   '';
   services.logind.extraConfig = ''
