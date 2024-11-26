@@ -27,8 +27,8 @@
   # - - - - - - - - - - - - - - - - - - - - - - - - Inputs - - - - - - - - - - - - - - - - - - - - - - - - #
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/release-24.11"; # Stable
     # nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.05";
+    nixpkgs.url = "github:nixos/nixpkgs/release-24.11"; # Stable
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable"; # Unstable
     nixpkgs-very-unstable.url = "github:NixOS/nixpkgs/nixos-unstable-small"; # Unstable - Small (Living on the edqe....)
     nur.url = "github:nix-community/NUR"; # NUR Repo
@@ -68,7 +68,7 @@
     };
 
     specialArgs = {
-      inherit inputs self unstable;
+      inherit inputs self unstable very-unstable;
       system = "x86_64-linux";
       pkgs = stable;
     };

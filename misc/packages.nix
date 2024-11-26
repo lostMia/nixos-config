@@ -81,8 +81,8 @@
     python312Packages.requests
     fd
     tldr
-    greetd.greetd
-    greetd.tuigreet
+    unstable.greetd.greetd
+    unstable.greetd.tuigreet
     uwufetch
     graphite-cursors
     nwg-look
