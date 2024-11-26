@@ -6,7 +6,7 @@
   services.udev = {
     packages = [
       pkgs.platformio-core
-      # pkgs.openocd
+      pkgs.openocd
     ];
 
     extraRules = ''

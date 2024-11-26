@@ -7,13 +7,6 @@
   networking.hostName = "nix";
   networking.networkmanager.enable = true;
 
-  virtualisation.libvirtd = {
-    allowedBridges = [
-      "virbr0"
-      "br0"
-    ];
-  };
-
   services.avahi = {
     enable = true;
     nssmdns4 = true;

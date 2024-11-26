@@ -45,7 +45,8 @@
     fw-ectool
     fwupd
     xfce.thunar
-    nautilus
+    gnome.nautilus
+    # nautilus
     killall
     # libreoffice-qt6-still
     libreoffice-fresh
@@ -59,8 +60,8 @@
     neofetch
     sublime3
     fprintd
-    # config.nur.repos.kira-bruneau.swaylock-fprintd
-    swaylock
+    config.nur.repos.kira-bruneau.swaylock-fprintd
+    # swaylock
     corrupter
     feh
     cmatrix
@@ -74,7 +75,8 @@
     gtk2
     gtk3
     gtk4
-    gnome-themes-extra
+    # gnome-themes-extra
+    gnome.gnome-themes-extra
     gimp
     vscode
     python3
@@ -114,8 +116,11 @@
     fish.enable = true;
     waybar.enable = true;
     dconf.enable = true;
-    nix-ld.enable = false;
+    nix-ld.enable = true;
   };
+
+  programs.nix-ld.libraries = with pkgs; [
+  ];
 
   services = {
     udisks2.enable = true;
