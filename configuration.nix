@@ -14,6 +14,7 @@
     ./modules/bluetooth.nix
     ./modules/graphical.nix
     ./modules/virtualisation.nix
+    ./modules/pam.nix
     ./services/systemd.nix
     ./services/syncthing.nix
     ./services/ssh.nix
