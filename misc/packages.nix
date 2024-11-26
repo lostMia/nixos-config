@@ -81,8 +81,8 @@
     python312Packages.requests
     fd
     tldr
-    unstable.greetd.greetd
-    unstable.greetd.tuigreet
+    greetd.greetd
+    greetd.tuigreet
     uwufetch
     graphite-cursors
     nwg-look
@@ -114,7 +114,7 @@
     fish.enable = true;
     waybar.enable = true;
     dconf.enable = true;
-    nix-ld.enable = true;
+    nix-ld.enable = false;
   };
 
   services = {
