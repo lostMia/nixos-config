@@ -9,7 +9,8 @@
     "mem_sleep_default=deep"
     # For Power consumption
     # https://community.frame.work/t/linux-battery-life-tuning/6665/156
-    "nvme.noacpi=1"
+    # "nvme.noacpi=1"
+    # ctsrgiencsrgtiersgctienrgsctienogrscsitne i hate this ~ mia, after spending 7 hours debugging this stupid shit
   ];
 
   # Requires at least 5.16 for working wi-fi and bluetooth.
