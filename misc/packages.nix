@@ -11,6 +11,7 @@
     neovim
     neovide
     vim
+    vimPlugins.nvim-treesitter-parsers.markdown
     wget
     fish
     unstable.firefox

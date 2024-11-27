@@ -5,7 +5,6 @@
   ...
 }: {
   networking.hostName = "nix";
-  networking.networkmanager.enable = true;
 
   services.avahi = {
     enable = true;
@@ -20,6 +19,39 @@
     };
   };
 
+  # networking.networkmanager = {
+  #   enable = true;
+  #   config = {
+  #     connections = [
+  #       {
+  #         connection.id = "wlan0";
+  #         connection.interface-name = "wlan0";
+  #         wifi.mac-address = "14:ac:60:d8:2c:07";
+  #         type = "wifi";
+  #       }
+  #       {
+  #         connection.id = "eth0";
+  #         connection.interface-name = "eth0";
+  #         ethernet.mac-address = "9c:bf:0d:00:49:7d";
+  #         type = "ethernet";
+  #       }
+  #     ];
+  #   };
+  # };
+
+  # networking.interfaces.eth0.useDHCP = true;
+
+  networking.networkmanager.enable = true;
+
+  # systemd.network.links."10-fwwlan0" = {
+  #   matchConfig.PermanentMACAddress = "14:ac:60:d8:2c:07";
+  #   linkConfig.Name = "fwwlan0";
+  # };
+  # systemd.network.links."10-eth0" = {
+  #   matchConfig.PermanentMACAddress = "9c:bf:0d:00:49:7d";
+  #   linkConfig.Name = "fweth0";
+  # };
+
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
@@ -31,17 +63,5 @@
   #   "br0" = {
   #     interfaces = ["eth0"];
   #   };
-  # };
-
-  # networking.interfaces.eth0.useDHCP = true;
-
-  # stuff from matteo
-  # systemd.network.links."10-f13wlan0" = {
-  #   matchConfig.PermanentMACAddress = "dc:97:ba:bf:85:a6";
-  #   linkConfig.Name = "f13wlan0";
-  # };
-  # systemd.network.links."10-f13eth0" = {
-  #   matchConfig.PermanentMACAddress = "9c:bf:0d:00:90:6c";
-  #   linkConfig.Name = "f13eth0";
   # };
 }
