@@ -62,10 +62,11 @@
     fprintd
     config.nur.repos.kira-bruneau.swaylock-fprintd
     # swaylock
+    swayidle
     corrupter
     feh
     cmatrix
-    unstable.flameshot
+    flameshot
     xdg-desktop-portal
     xdg-desktop-portal-wlr
     obsidian

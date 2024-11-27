@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 swayidle -w -d \
-  timeout 30 'bash -c "~/.config/nixos/scripts/keyboard_fade_brightness.sh 20 0 0.05"' \
+  timeout 10 'bash -c "~/.config/nixos/scripts/keyboard_fade_brightness.sh 20 0 0.05"' \
   resume 'bash -c "brightnessctl -d framework_laptop::kbd_backlight set 20"' \
   timeout 170 'bash -c "brightnessctl g > /tmp/current_brightness && brightnessctl -e s 30%-"' \
   resume 'bash -c "if [ -f /tmp/current_brightness ]; then brightnessctl set $(cat /tmp/current_brightness); fi"' \

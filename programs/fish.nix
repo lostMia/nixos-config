@@ -26,6 +26,7 @@
     shellAliases = {
       "flex" = "neofetch | dotacat";
       "c" = "cd .."; # thanks sebi
+      "n" = "neovide";
       "bored" = "fortune | cowsay | dotacat -p 1.5";
       "wise" = "fortune | cowsay | wl-copy";
       "ff" = "nvim ~/.config/nixos/programs/fish.nix";
