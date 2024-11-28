@@ -109,7 +109,6 @@
     swayosd
     stress
     zip
-    steam
     thefuck
   ];
 
@@ -118,6 +117,7 @@
     waybar.enable = true;
     dconf.enable = true;
     nix-ld.enable = true;
+    steam.enable = true;
   };
 
   programs.nix-ld.libraries = with pkgs; [
