@@ -43,7 +43,6 @@
     blueman
     sway-audio-idle-inhibit
     fw-ectool
-    fwupd
     xfce.thunar
     gnome.nautilus
     # nautilus
@@ -59,7 +58,6 @@
     satty
     neofetch
     sublime3
-    fprintd
     config.nur.repos.kira-bruneau.swaylock-fprintd
     # swaylock
     swayidle
@@ -109,6 +107,7 @@
     swayosd
     stress
     zip
+    unzip
     thefuck
   ];
 
