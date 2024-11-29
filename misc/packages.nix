@@ -55,7 +55,7 @@
     file
     jq
     satty
-    protonvpn-gui
+    unstable.protonvpn-gui
     neofetch
     sublime3
     config.nur.repos.kira-bruneau.swaylock-fprintd
