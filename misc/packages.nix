@@ -54,8 +54,8 @@
     libnotify
     file
     jq
-    protonvpn-cli_2
     satty
+    protonvpn-gui
     neofetch
     sublime3
     config.nur.repos.kira-bruneau.swaylock-fprintd
@@ -66,7 +66,6 @@
     cmatrix
     flameshot
     xdg-desktop-portal
-    xdg-desktop-portal-wlr
     obsidian
     syncthing
     auto-cpufreq
