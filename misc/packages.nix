@@ -108,7 +108,7 @@
     zip
     unzip
     thefuck
-    nodePackages.npm
+    unstable.nodePackages.npm
   ];
 
   programs = {

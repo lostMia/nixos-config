@@ -42,6 +42,7 @@
   # networking.interfaces.eth0.useDHCP = true;
 
   networking.networkmanager.enable = true;
+  systemd.services."NetworkManager-wait-online".enable = false;
 
   # systemd.network.links."10-fwwlan0" = {
   #   matchConfig.PermanentMACAddress = "14:ac:60:d8:2c:07";

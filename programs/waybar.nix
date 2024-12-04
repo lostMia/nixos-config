@@ -63,12 +63,12 @@
         "custom/reboot" = {
           format = "  ";
           tooltip = false;
-          on-click = "/sbin/reboot";
+          on-click = "/run/current-system/sw/bin/reboot";
         };
         "custom/power" = {
           format = "  ";
           tooltip = false;
-          on-click = "/sbin/shutdown now";
+          on-click = "/run/current-system/sw/bin/shutdown now";
         };
 
         "sway/workspaces" = {

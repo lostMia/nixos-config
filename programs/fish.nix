@@ -58,6 +58,7 @@
       "nv" = "neovide";
       "py" = "/run/current-system/sw/bin/python";
       "r" = "/home/mia/.config/nixos/scripts/repeat.fish";
+      "eoc" = "/home/mia/.config/nixos/scripts/execute_on_change.fish";
       "mon" = "sudo airmon-ng check kill; sudo airmon-ng start wlan0; sleep 1; sudo airodump-ng -w /home/mia/Work/Network/Capture.cap wlan0mon";
       "monstop" = "sudo airmon-ng stop wlan0mon; sudo systemctl start NetworkManager";
       "snake" = "putty -serial /dev/ttyACM0 -sercfg 921600,8,n,1,N -fn 'client:Hack Nerd Font 14' & disown & exit";
@@ -81,6 +82,7 @@
       "tty" = "ls /dev/tty*";
       "touka" = "cowsay -f bunny";
       "f" = "fuck";
+      "getinput" = "bash /home/mia/.config/nixos/scripts/get_aoc_input.sh";
     };
 
     functions = {
