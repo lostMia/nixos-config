@@ -97,5 +97,9 @@
         ];
       };
     };
+
+    packages = {
+      flameshot = stable.callPackage ./src/flameshot.nix {};
+    };
   };
 }
