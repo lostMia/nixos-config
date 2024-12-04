@@ -18,6 +18,10 @@
   '';
   services.logind.powerKey = "ignore";
 
+  systemd.services."NetworkManager-wait-online".enable = false;
+  systemd.services."docker".enable = false;
+  systemd.services."syncthing-init".enable = false;
+
   services.greetd = {
     enable = true;
     settings = {
