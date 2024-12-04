@@ -1,6 +1,7 @@
 {
   config,
   pkgs,
+  old,
   unstable,
   very-unstable,
   hardware,

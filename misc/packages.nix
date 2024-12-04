@@ -44,11 +44,12 @@
     sway-audio-idle-inhibit
     fw-ectool
     xfce.thunar
-    gnome.nautilus
-    # nautilus
+    nautilus
     killall
     # libreoffice-qt6-still
     libreoffice-fresh
+    onlyoffice-desktopeditors
+    rustup
     btop
     dunst
     libnotify
@@ -64,7 +65,7 @@
     corrupter
     feh
     cmatrix
-    flameshot
+    # flameshot
     xdg-desktop-portal
     obsidian
     syncthing
@@ -73,8 +74,7 @@
     gtk2
     gtk3
     gtk4
-    # gnome-themes-extra
-    gnome.gnome-themes-extra
+    gnome-themes-extra
     gimp
     vscode
     python3
