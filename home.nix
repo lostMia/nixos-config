@@ -28,12 +28,14 @@ in {
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs; [
-    (graphite-gtk-theme.override {
-      tweaks = ["darker" "normal"];
-      themeVariants = ["pink"];
-    })
+    # (graphite-gtk-theme.override {
+    #   tweaks = ["darker" "normal"];
+    #   themeVariants = ["pink"];
+    # })
     tela-icon-theme
     bibata-cursors
+    dracula-qt5-theme
+    dracula-theme
     # # configuration. For example, this adds a command 'my-hello' to your
     # # environment:
     # (pkgs.writeShellScriptBin "my-hello" ''
@@ -57,21 +59,21 @@ in {
   };
 
   qt.enable = true;
-  qt.style.name = "Graphite-pink-Dark";
+  qt.style.name = "Dracula";
 
   gtk = {
     enable = true;
     theme = {
-      name = "Graphite-pink-Dark";
-      package = pkgs.graphite-gtk-theme;
+      name = "Dracula";
+      package = pkgs.dracula-theme;
     };
     iconTheme = {
       name = "Tela-black";
       package = pkgs.tela-icon-theme;
     };
     cursorTheme = {
-      name = "Graphite dark Cursors";
-      package = pkgs.graphite-cursors;
+      name = "Bibata-Modern-Ice";
+      package = pkgs.bibata-cursors;
     };
   };
 
