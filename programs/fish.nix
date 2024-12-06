@@ -30,8 +30,6 @@
       "bored" = "fortune | cowsay | dotacat -p 1.5";
       "wise" = "fortune | cowsay | wl-copy";
       "ff" = "nvim ~/.config/nixos/programs/fish.nix";
-      "yarr" = "~/.config/nixos/scripts/yarr.sh";
-      "narr" = "~/.config/nixos/scripts/narr.sh";
       "hib" = "systemctl hibernate && exit";
       "grub-update" = "sudo grub-mkconfig -o /boot/grub/grub.cfg";
       "virt" = "sudo systemctl start libvirtd.socket libvirtd libvirtd.service";

@@ -118,8 +118,8 @@
     steam.enable = true;
   };
 
-  programs.nix-ld.libraries = with pkgs; [
-  ];
+  # programs.nix-ld.libraries = with pkgs; [
+  # ];
 
   services = {
     udisks2.enable = true;
