@@ -65,7 +65,6 @@
     corrupter
     feh
     cmatrix
-    flameshot
     xdg-desktop-portal
     obsidian
     syncthing

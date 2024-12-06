@@ -99,9 +99,9 @@
     };
 
     packages = {
-      x86_64-linux.flameshot = stable.callPackage ./src/flameshot.nix {
-        enableWlrSupport = true;
-      };
+      x86_64-linux.flameshot =
+        stable.callPackage ./src/flameshot.nix {
+        };
     };
   };
 }
