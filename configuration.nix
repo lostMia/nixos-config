@@ -62,7 +62,7 @@
   # Automatic upgrades and stuff.
   system.autoUpgrade = {
     enable = true;
-    flake = "/home/mia/.config/nixos/flake.nix";
+    flake = "flake.nix";
     flags = [
       "--update-input"
       "nixpkgs"
