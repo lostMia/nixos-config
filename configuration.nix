@@ -1,6 +1,7 @@
 {
   config,
   pkgs,
+  nur,
   old,
   unstable,
   very-unstable,

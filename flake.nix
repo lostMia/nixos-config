@@ -31,7 +31,7 @@
     nixpkgs.url = "github:nixos/nixpkgs/release-24.11"; # Stable
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable"; # Unstable
     nixpkgs-very-unstable.url = "github:NixOS/nixpkgs/nixos-unstable-small"; # Unstable - Small (Living on the edqe....)
-    nur.url = "github:nix-community/NUR"; # NUR Repo
+    nurpkgs.url = "github:nix-community/NUR"; # NUR Repo
     hardware.url = "github:NixOS/nixos-hardware"; # NixOS Hardware
     home-manager = {
       # Home-Manager
@@ -48,7 +48,7 @@
     nixpkgs-old,
     nixpkgs-unstable,
     nixpkgs-very-unstable,
-    nur,
+    nurpkgs,
     hardware,
     home-manager,
     ...
@@ -71,9 +71,12 @@
       system = "x86_64-linux";
       config.allowUnfree = true;
     };
+    nur =
+      import nurpkgs {
+      };
 
     specialArgs = {
-      inherit inputs self unstable very-unstable;
+      inherit inputs self old unstable very-unstable nur;
       system = "x86_64-linux";
       pkgs = stable;
     };
@@ -83,7 +86,7 @@
         inherit specialArgs;
         modules = [
           ./configuration.nix # NixOS top-level config file
-          nur.nixosModules.nur
+          nurpkgs.modules.nixos.default
           hardware.nixosModules.framework-13-7040-amd
         ];
       };

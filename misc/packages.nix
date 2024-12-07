@@ -1,6 +1,6 @@
 {
-  config,
   pkgs,
+  nur,
   unstable,
   ...
 }: {
@@ -59,7 +59,7 @@
     unstable.protonvpn-gui
     neofetch
     sublime3
-    config.nur.repos.kira-bruneau.swaylock-fprintd
+    nur.repos.kira-bruneau.swaylock-fprintd
     # swaylock
     swayidle
     corrupter
