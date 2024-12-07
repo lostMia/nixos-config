@@ -29,6 +29,7 @@
     systemd-boot.enable = false;
     efi.canTouchEfiVariables = true;
     grub = {
+      configurationLimit = 5;
       enable = true;
       devices = ["nodev"];
       efiSupport = true;

@@ -59,15 +59,26 @@
     (nerdfonts.override {fonts = ["Hack"];})
   ];
 
+  # Automatic upgrades and stuff.
   system.autoUpgrade = {
     enable = true;
+    flake = "/home/mia/.config/nixos/flake.nix";
     flags = [
       "--update-input"
       "nixpkgs"
+      "--commit-lock-file"
       "-L"
     ];
-    dates = "09:00";
+    dates = "weekly";
     randomizedDelaySec = "45min";
+  };
+
+  # Garbage collection stuffs.
+  nix.gc = {
+    randomizedDelaySec = "60min";
+    persistent = true;
+    dates = "weekly";
+    automatic = true;
   };
 
   system.stateVersion = "24.05"; # Did you read the comment? Yes, I just don't care ~ mia
