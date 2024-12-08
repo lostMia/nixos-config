@@ -13,7 +13,7 @@
     vim
     wget
     fish
-    unstable.firefox
+    firefox
     swayfx
     wl-clipboard
     zoxide
