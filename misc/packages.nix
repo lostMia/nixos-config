@@ -13,7 +13,7 @@
     vim
     wget
     fish
-    firefox
+    firefox-beta-bin
     swayfx
     wl-clipboard
     zoxide
