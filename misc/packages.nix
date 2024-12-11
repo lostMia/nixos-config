@@ -14,6 +14,7 @@
     wget
     fish
     firefox
+    flameshot
     swayfx
     wl-clipboard
     zoxide
