@@ -108,6 +108,7 @@
     unzip
     thefuck
     unstable.nodePackages.npm
+    python312Packages.pyperclip
   ];
 
   programs = {
