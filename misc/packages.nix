@@ -35,6 +35,7 @@
     rofi
     teams-for-linux
     wayland
+    woomer
     xdg-utils
     glib
     grim

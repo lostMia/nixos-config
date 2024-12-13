@@ -71,6 +71,7 @@
       system = "x86_64-linux";
       config.allowUnfree = true;
     };
+
     nur =
       import nurpkgs {
       };
@@ -105,6 +106,9 @@
       x86_64-linux.flameshot = stable.callPackage ./src/flameshot.nix {
         enableWlrSupport = true;
       };
+      x86_64-linux.rmatrix =
+        stable.callPackage ./src/rmatrix.nix {
+        };
     };
   };
 }
