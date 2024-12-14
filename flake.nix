@@ -53,8 +53,6 @@
     home-manager,
     ...
   } @ inputs: let
-    hostname = "nix";
-
     stable = import nixpkgs {
       system = "x86_64-linux";
       config.allowUnfree = true;
@@ -81,7 +79,15 @@
     };
   in {
     nixosConfigurations = {
-      ${hostname} = nixpkgs.lib.nixosSystem {
+      "nixos" = nixpkgs.lib.nixosSystem {
+        inherit specialArgs;
+        modules = [
+          ./configuration.nix # NixOS top-level config file
+          nurpkgs.modules.nixos.default
+          hardware.nixosModules.framework-13-7040-amd
+        ];
+      };
+      "nix" = nixpkgs.lib.nixosSystem {
         inherit specialArgs;
         modules = [
           ./configuration.nix # NixOS top-level config file

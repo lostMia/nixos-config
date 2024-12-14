@@ -4,7 +4,7 @@
   unstable,
   ...
 }: {
-  networking.hostName = "nix";
+  networking.hostName = "nixos";
 
   services.avahi = {
     enable = true;
