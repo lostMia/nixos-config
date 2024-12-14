@@ -30,6 +30,43 @@
     options = ["fmask=0077" "dmask=0077"];
   };
 
+  # Enable Vulkan support for NVIDIA
+  hardware.opengl.driSupport = true;
+  hardware.opengl.driSupport32Bit = true; # 32-bit support for some games or apps
+  hardware.opengl.extraPackages = with pkgs; [
+    vulkan-tools  # Vulkan utilities
+    vulkan-validation-layers
+  ];
+
+  hardware.graphics = {
+    extraPackages = with pkgs; [
+      vulkan-tools
+      vulkan-validation-layers
+      libva-utils
+      mesa-utils
+      nvidia-settings
+    ];
+  };
+
+  # Enable NVIDIA proprietary drivers
+  services.xserver.videoDrivers = [ "nvidia" ];
+
+  # Enable Wayland support for NVIDIA
+  hardware.nvidia.modesetting.enable = true;
+
+  # Enable experimental GBM backend (required for NVIDIA on Wayland)
+  hardware.opengl.enableExperimental = true;
+
+  # Use the Vulkan driver for better performance
+  hardware.nvidia.package = pkgs.linuxPackages.nvidiaPackages.stable;
+
+  # Add specific options for NVIDIA Wayland
+  environment.variables = {
+    __GLX_VENDOR_LIBRARY_NAME = "nvidia"; # Ensure NVIDIA is used for OpenGL
+    __EGL_VENDOR_LIBRARY_FILENAMES = "${pkgs.nvidia_x11}/share/glvnd/egl_vendor.d/10_nvidia.json";
+    GBM_BACKEND = "nvidia-drm";
+  };
+
   swapDevices = [];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
