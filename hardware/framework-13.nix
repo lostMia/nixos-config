@@ -10,6 +10,7 @@
 }: {
   imports = [
     (modulesPath + "/installer/scan/not-detected.nix")
+    ./framework-hw-optimization.nix
   ];
 
   boot.initrd.availableKernelModules = ["nvme" "xhci_pci" "thunderbolt" "usb_storage" "sd_mod"];
@@ -25,26 +26,17 @@
     "kernel.sysrq" = 1;
   };
 
-  boot.loader = {
-    systemd-boot.enable = false;
-    efi.canTouchEfiVariables = true;
-    grub = {
-      configurationLimit = 5;
-      enable = true;
-      devices = ["nodev"];
-      efiSupport = true;
-      splashImage = ../resources/nix.png;
-      extraEntries = ''
-        menuentry "Windows" {
-          insmod part_gpt
-          insmod fat
-          insmod search_fs_uuid
-          insmod chain
-          search --fs-uuid --set=root 14EC-1168
-          chainloader /EFI/Microsoft/Boot/bootmgfw.efi
-        }
-      '';
-    };
+  boot.loader.grub = {
+    extraEntries = ''
+      menuentry "Windows" {
+        insmod part_gpt
+        insmod fat
+        insmod search_fs_uuid
+        insmod chain
+        search --fs-uuid --set=root 14EC-1168
+        chainloader /EFI/Microsoft/Boot/bootmgfw.efi
+      }
+    '';
   };
 
   fileSystems."/" = {

@@ -10,7 +10,6 @@
 }: {
   imports = [
     ./hardware/framework-13.nix
-    ./hardware/framework-hw-optimization.nix
     ./modules/audio.nix
     ./modules/network.nix
     ./modules/bluetooth.nix
