@@ -10,6 +10,7 @@ in {
     ./programs/fish.nix
     ./programs/waybar.nix
     ./programs/shikane.nix
+    ./programs/sway.nix
     ./programs/swaylock.nix
     ./programs/rofi.nix
     ./programs/auto-cpu.nix
