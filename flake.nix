@@ -72,9 +72,7 @@
       config.allowUnfree = true;
     };
 
-    nur =
-      import nurpkgs {
-      };
+    nur = import nurpkgs {};
 
     specialArgs = {
       inherit inputs self old unstable very-unstable nur;

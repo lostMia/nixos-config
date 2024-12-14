@@ -26,6 +26,10 @@
     "kernel.sysrq" = 1;
   };
 
+  hardware.graphics.extraPackages = [
+    pkgs.amdvlk
+  ];
+
   boot.loader.grub = {
     extraEntries = ''
       menuentry "Windows" {

@@ -35,7 +35,7 @@
       "virt" = "sudo systemctl start libvirtd.socket libvirtd libvirtd.service";
       "m" = "math";
       "noran" = "setarch x86_64 -R /run/current-system/sw/bin/fish";
-      "conf" = "nvim /home/mia/.config/sway/config";
+      "conf" = "nvim /home/mia/.config/nixos/programs/sway.nix";
       "mpm" = "/home/mia/.config/nixos/scripts/mpm.sh";
       "rank-mirrors" = "curl -s 'https://archlinux.org/mirrorlist/?country=DE&country=GB&country=AT&protocol=https&use_mirror_status=on' | sed -e 's/^#Server/Server/' -e '/^#/d' | rankmirrors -n 5 -";
       "bat" = "cat /sys/class/power_supply/BAT1/capacity";

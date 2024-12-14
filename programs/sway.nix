@@ -60,10 +60,10 @@
           font HackNerdFont-Regular 16
 
       ### Output configuration
-          output * scale 1 mode 2256x1504 bg ~/Pictures/Wallpapers/kampto-nix.png fill
+          output * scale 1 mode 2256x1504 bg $HOME/.config/nixos/resources/nix.png fill
 
       ### Input configuration
-          input 1:1:AT_Translated_Set_2_keyboard {
+          input type:keyboard {
               xkb_layout de,de
               xkb_variant bone,
               repeat_delay 160,160
