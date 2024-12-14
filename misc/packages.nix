@@ -31,6 +31,7 @@
     brightnessctl
     alejandra
     git
+    git-lfs
     gcc
     rofi
     teams-for-linux

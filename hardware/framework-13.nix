@@ -33,7 +33,7 @@
       enable = true;
       devices = ["nodev"];
       efiSupport = true;
-      splashImage = /home/mia/Pictures/Wallpapers/kampto-nix.png;
+      splashImage = ../resources/nix.png;
       extraEntries = ''
         menuentry "Windows" {
           insmod part_gpt
