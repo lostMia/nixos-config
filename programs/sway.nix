@@ -135,7 +135,7 @@
           bindsym $mod+Shift+q reload
           bindsym $mod+Shift+c exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
           bindsym $mod+Shift+Control+c exec "swaymsg exit"
-          bindsym $mod+Escape exec 'swaymsg input "1:1:AT_Translated_Set_2_keyboard" xkb_switch_layout next'
+          bindsym $mod+Escape exec 'swaymsg input type:keyboard xkb_switch_layout next'
           # bindsym $mod+odiaeresis exec woomer
           bindsym $mod+a exec woomer
 

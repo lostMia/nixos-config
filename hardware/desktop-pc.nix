@@ -27,14 +27,14 @@
   fileSystems."/boot" = {
     device = "/dev/disk/by-uuid/4151-8F42";
     fsType = "vfat";
-    options = ["fmask=0077" "dmask=0077"];
+    options = ["fmask=0022" "dmask=0022"];
   };
 
   # Enable Vulkan support for NVIDIA
   hardware.opengl.driSupport = true;
   hardware.opengl.driSupport32Bit = true; # 32-bit support for some games or apps
   hardware.opengl.extraPackages = with pkgs; [
-    vulkan-tools  # Vulkan utilities
+    vulkan-tools # Vulkan utilities
     vulkan-validation-layers
   ];
 
@@ -49,7 +49,7 @@
   };
 
   # Enable NVIDIA proprietary drivers
-  services.xserver.videoDrivers = [ "nvidia" ];
+  services.xserver.videoDrivers = ["nvidia"];
 
   # Enable Wayland support for NVIDIA
   hardware.nvidia.modesetting.enable = true;
