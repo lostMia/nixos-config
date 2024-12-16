@@ -29,10 +29,10 @@ in {
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs; [
-    # (graphite-gtk-theme.override {
-    #   tweaks = ["darker" "normal"];
-    #   themeVariants = ["pink"];
-    # })
+    (graphite-gtk-theme.override {
+      tweaks = ["darker" "normal"];
+      themeVariants = ["pink"];
+    })
     tela-icon-theme
     bibata-cursors
     dracula-qt5-theme
@@ -65,16 +65,16 @@ in {
   gtk = {
     enable = true;
     theme = {
-      name = "Dracula";
-      package = pkgs.dracula-theme;
+      name = "Graphite-pink-Dark";
+      package = pkgs.graphite-gtk-theme;
     };
     iconTheme = {
       name = "Tela-black";
       package = pkgs.tela-icon-theme;
     };
     cursorTheme = {
-      name = "Bibata-Modern-Ice";
-      package = pkgs.bibata-cursors;
+      name = "Graphite dark Cursors";
+      package = pkgs.graphite-cursors;
     };
   };
 
