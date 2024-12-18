@@ -113,6 +113,8 @@
     unstable.nodePackages.npm
     python312Packages.pyperclip
     rpi-imager
+    cups
+    google-chrome
   ];
 
   programs = {

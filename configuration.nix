@@ -16,6 +16,7 @@
     ./modules/graphical.nix
     ./modules/virtualisation.nix
     ./modules/pam.nix
+    ./modules/cups.nix
     ./services/systemd.nix
     ./services/syncthing.nix
     ./services/ssh.nix
