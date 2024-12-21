@@ -81,6 +81,7 @@
     vscode
     python3
     python312Packages.requests
+    python312Packages.tqdm
     fd
     tldr
     greetd.greetd

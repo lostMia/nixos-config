@@ -1,32 +1,22 @@
 {
-  stdenv,
+  rustPlatform,
   pkgs,
   lib,
   fetchFromGitHub,
 }:
-pkgs.stdenv.mkDerivation {
+pkgs.rustPlatform.buildRustPackage {
   pname = "rmatrix";
   version = "3.0.0";
+  cargoHash = "sha256-IDQB+PN5g/yX7XROSOFVi1R0eq7nWuC0WTc7ZEb/qbY=";
 
   src = fetchFromGitHub {
     owner = "Fierthraix";
     repo = "rmatrix";
     rev = "175b5a0f636ca2a2bf92f28e12472b4b156ebb99";
-    hash = lib.fakeSha256;
+    hash = "sha256-R9YKUOGKgLnwIJVWwabDuEzB3AnEiyYH9KqYanA9O3Q=";
   };
 
-  buildInputs = [
-    pkgs.cargo
-  ];
-
-  buildPhase = ''
-    cargo install r-matrix
-  '';
-
-  installPhase = ''
-    mkdir -p $out/bin
-    mv chord $out/bin
-  '';
+  nativeBuildInputs = with pkgs; [nix coreutils rsync ncurses.dev];
 
   meta = with lib; {
     description = "rust port of cmatrix";
