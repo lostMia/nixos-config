@@ -68,6 +68,7 @@
     corrupter
     feh
     cmatrix
+    asciiquarium-transparent
     xdg-desktop-portal
     obsidian
     syncthing
