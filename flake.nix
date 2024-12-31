@@ -38,6 +38,9 @@
       url = "github:nix-community/home-manager/release-24.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # matteos newyear thingy
+    melnew.url = "github:melektron/newyear.nix";
   };
 
   # - - - - - - - - - - - - - - - - - - - - - - - - Outputs - - - - - - - - - - - - - - - - - - - - - - - #
@@ -49,6 +52,7 @@
     nixpkgs-unstable,
     nixpkgs-very-unstable,
     nurpkgs,
+    melnew,
     hardware,
     home-manager,
     ...
@@ -73,7 +77,7 @@
     nur = import nurpkgs {};
 
     specialArgs = {
-      inherit inputs self old unstable very-unstable nur;
+      inherit inputs self old unstable very-unstable nur melnew;
       system = "x86_64-linux";
       pkgs = stable;
     };
