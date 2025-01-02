@@ -145,9 +145,9 @@
           bindsym $mod+Shift+m exec sleep 0.1 && swaymsg output eDP-1 dpms toggle
           bindsym $mod+Shift+l exec swayosd-client --brightness -2
           bindsym $mod+Shift+h exec swayosd-client --brightness +2
-          bindsym $mod+m exec swayosd-client --output-volume mute-toggle
-          bindsym $mod+l exec swayosd-client --output-volume -2
-          bindsym $mod+h exec swayosd-client --output-volume +2
+          bindsym $mod+m exec swayosd-client --output-volume mute-toggle --max-volume 200
+          bindsym $mod+l exec swayosd-client --output-volume -2 --max-volume 200
+          bindsym $mod+h exec swayosd-client --output-volume +2 --max-volume 200
       # Moving around:
           bindsym $mod+$left focus left
           bindsym $mod+$down focus down

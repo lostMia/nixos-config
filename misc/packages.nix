@@ -2,7 +2,6 @@
   pkgs,
   nur,
   unstable,
-  melnew,
   ...
 }: {
   # Allow unfree packages
@@ -118,8 +117,6 @@
     rpi-imager
     cups
     google-chrome
-
-    melnew.packages.x86_64-linux.newyear
   ];
 
   programs = {
