@@ -73,7 +73,7 @@
     nur = import nurpkgs {};
 
     specialArgs = {
-      inherit inputs self old unstable very-unstable nur;
+      inherit inputs self stable old unstable very-unstable nur;
       system = "x86_64-linux";
       pkgs = stable;
     };
@@ -112,6 +112,9 @@
       };
       x86_64-linux.rmatrix =
         stable.callPackage ./src/rmatrix.nix {
+        };
+      x86_64-linux.shell-script =
+        stable.callPackage ./src/shell-test.nix {
         };
     };
   };

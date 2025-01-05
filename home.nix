@@ -1,9 +1,4 @@
-{
-  config,
-  pkgs,
-  ...
-}: let
-in {
+{pkgs, ...}: {
   imports = [
     ./programs/git.nix
     ./programs/alacritty.nix

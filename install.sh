@@ -1,7 +1,7 @@
 #!/run/current-system/sw/bin/bash
 
 # Don't forget to pull the LFS file...
-# git lfs pull
+git lfs pull
 
 # Store Packet Tracer in /nix/store
 nix-store --add-fixed sha256 ./resources/CiscoPacketTracer822_amd64_signed.deb

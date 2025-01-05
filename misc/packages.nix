@@ -117,6 +117,7 @@
     rpi-imager
     cups
     google-chrome
+    ollama-rocm
   ];
 
   programs = {
