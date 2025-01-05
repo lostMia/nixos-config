@@ -117,7 +117,6 @@
     rpi-imager
     cups
     google-chrome
-    ollama
   ];
 
   programs = {
@@ -128,12 +127,16 @@
     steam.enable = true;
   };
 
-  # programs.nix-ld.libraries = with pkgs; [
-  # ];
-
   services = {
     udisks2.enable = true;
     power-profiles-daemon.enable = true;
     dbus.enable = true;
+    ollama = {
+      enable = true;
+      acceleration = "rocm";
+    };
   };
+
+  # programs.nix-ld.libraries = with pkgs; [
+  # ];
 }
