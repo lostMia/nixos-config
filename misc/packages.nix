@@ -133,8 +133,8 @@
     dbus.enable = true;
     ollama = {
       enable = true;
-      acceleration = "rocm";
-      rocmOverrideGfx = "11.0.3";
+      acceleration = "cuda";
+      # rocmOverrideGfx = "11.0.3";
     };
   };
 
