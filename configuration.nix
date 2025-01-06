@@ -1,13 +1,4 @@
-{
-  config,
-  pkgs,
-  nur,
-  old,
-  unstable,
-  very-unstable,
-  hardware,
-  ...
-}: {
+{pkgs, ...}: {
   imports = [
     ./hardware/framework-13.nix
     ./modules/audio.nix
@@ -15,7 +6,7 @@
     ./modules/bluetooth.nix
     ./modules/graphical.nix
     ./modules/virtualisation.nix
-    ./modules/pam.nix
+    # ./modules/pam.nix # read the note in the file
     ./modules/cups.nix
     ./services/systemd.nix
     ./services/syncthing.nix
@@ -59,7 +50,7 @@
     (nerdfonts.override {fonts = ["Hack"];})
   ];
 
-  # Automatic upgrades and stuff.
+  # Automatic upgrades and stuffs.
   system.autoUpgrade = {
     enable = true;
     flake = "flake.nix";
@@ -73,7 +64,7 @@
     randomizedDelaySec = "45min";
   };
 
-  # Garbage collection stuffs.
+  # Garbage collection and stuffs.
   nix.gc = {
     randomizedDelaySec = "60min";
     persistent = true;

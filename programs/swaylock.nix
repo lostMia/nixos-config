@@ -1,8 +1,4 @@
-{
-  config,
-  pkgs,
-  ...
-}: {
+{...}: {
   # Don't let home manager install swaylock!
   # We want to use the NUR variant with fprint support........
 

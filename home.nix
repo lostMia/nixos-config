@@ -8,7 +8,7 @@
     ./programs/sway.nix
     ./programs/swaylock.nix
     ./programs/rofi.nix
-    ./programs/auto-cpu.nix
+    # ./programs/auto-cpu.nix # Read the comment in the file.
   ];
 
   # Home Manager needs a bit of information about you and the paths it should

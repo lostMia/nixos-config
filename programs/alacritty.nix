@@ -1,9 +1,5 @@
 # This file was shamelessly stolen from sebi/c2vi @ https://github.com/c2vi/nixos/blob/master/programs/alacritty.nix
-{
-  config,
-  pkgs,
-  ...
-}: {
+{...}: {
   programs.alacritty = {
     enable = true;
     settings = {

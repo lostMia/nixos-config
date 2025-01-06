@@ -1,9 +1,6 @@
-{
-  config,
-  pkgs,
-  ...
-}: {
-  security.pam.services.swaylock = {};
+{...}: {
+  # This is currently not in use, because we use a community created fork from swaylock (swaylock-fprint) where we don't have to mess with PAM :)
+  # security.pam.services.swaylock = {};
   # security.pam.services.swaylock = {
   #   text = ''
   #     auth sufficient pam_unix.so try_first_pass likeauth nullok

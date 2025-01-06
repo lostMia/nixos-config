@@ -1,8 +1,4 @@
-{
-  config,
-  pkgs,
-  ...
-}: {
+{...}: {
   home.file = {
     ".config/shikane/config.toml".text = ''
       [[profile]]

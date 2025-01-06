@@ -1,9 +1,4 @@
-{
-  config,
-  pkgs,
-  unstable,
-  ...
-}: {
+{...}: {
   networking.hostName = "nixos";
 
   services.avahi = {

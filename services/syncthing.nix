@@ -1,9 +1,4 @@
-{
-  config,
-  pkgs,
-  unstable,
-  ...
-}: {
+{...}: {
   services.syncthing = {
     enable = true;
     user = "mia";

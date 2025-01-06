@@ -1,8 +1,4 @@
-{
-  config,
-  pkgs,
-  ...
-}: {
+{...}: {
   home.file = {
     ".config/sway/config".text = ''
 
@@ -47,7 +43,7 @@
           exec_always hash dbus-update-activation-environment 2>/dev/null && \
               dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
 
-      ### Sway Keys
+      ### Variables
           set $mod Mod4
           set $left b
           set $down n
@@ -88,7 +84,7 @@
               pointer_accel -0.5
           }
 
-      ### Colors and Looks
+      ### Border colors and looks
           client.focused           #ff4060   #222222 #ff4060 #ff4060  #ff4060
           client.focused_inactive  #222222   #222222 #ff4060 #222222 #222222
           client.unfocused         #222222 #222222 #222222 #222222 #222222
@@ -97,22 +93,20 @@
           client.background        $base
 
       ## Autostart
-          exec autotiling
-          exec "/usr/bin/env bash ~/.config/nixos/scripts/idlescript"
-          exec "/usr/bin/env bash ~/.config/nixos/scripts/batteryscript.sh"
-          exec nm-applet
-          exec blueman-applet
-          exec blueman-tray
-          exec signal-desktop
+          exec autotiling                                                           # Automatically tiles in whatever direction is the longest
+          exec "/usr/bin/env bash ~/.config/nixos/scripts/idlescript"               # Manages suspending and locking
+          exec "/usr/bin/env bash ~/.config/nixos/scripts/batteryscript.sh"         # Sends battery notifications when necessary
+          exec nm-applet                                                            # Networkmanager applet
+          exec blueman-applet                                                       # Bluetoothmanager applet
+          exec blueman-tray                                                         # Bluetoothmanager tray icon
+          exec signal-desktop                                                       # Signal (Even though sebi refuses to use it pwp)
           exec vesktop
-          exec shikane
+          exec shikane                                                              # Manages displays and known display setups
           exec firefox
-          exec sway-audio-idle-inhibit
-          exec swayosd-server
-          exec waybar
-          exec thunderbird
-
-          exec "rfkill block bluetooth"
+          exec sway-audio-idle-inhibit                                              # Prevents sleep when audio is playing
+          exec swayosd-server                                                       # OSD server for audio and screen brightness popups
+          exec waybar                                                               # Status bar for sway
+          exec "rfkill block bluetooth"                                             # Disable bluetooth by default
 
           assign [class="vesktop"] workspace 1
           assign [class="Signal"] workspace 1
@@ -123,7 +117,7 @@
       ### Key bindings
           bindsym $mod+e exec $term
           bindsym $mod+d kill
-          bindsym $mod+i exec $menu -show combi -combi-modes "drun,run" -modi combi -monitor "eDP-1"
+          bindsym $mod+i exec $menu -show combi -combi-modes "drun,run" -modi combi -monitor "eDP-1" # rofi
           bindsym $mod+Shift+i exec $menu -show ssh -monitor "eDP-1"
           bindsym $mod+t exec nautilus -w
           bindsym $mod+f exec firefox
@@ -131,14 +125,13 @@
           bindsym $mod+x exec ~/.config/nixos/scripts/lockscript
           bindsym $mod+Shift+t exec "~/.config/nixos/scripts/screenshot.sh"
           #bindsym $mod+Shift+t exec "grimshot copy area"
-          #bindsym $mod+Shift+t exec "flameshot gui?"
+          #bindsym $mod+Shift+t exec "flameshot gui"
           bindsym $mod+Shift+q reload
           bindsym $mod+Shift+c exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
           bindsym $mod+Shift+Control+c exec "swaymsg exit"
           bindsym $mod+Escape exec 'swaymsg input type:keyboard xkb_switch_layout next'
           # bindsym $mod+odiaeresis exec woomer
           bindsym $mod+a exec woomer
-
           bindsym $mod+p exec ~/.config/nixos/scripts/toggle_freeze_process.sh
 
       # Function Keys
@@ -148,6 +141,7 @@
           bindsym $mod+m exec swayosd-client --output-volume mute-toggle --max-volume 200
           bindsym $mod+l exec swayosd-client --output-volume -2 --max-volume 200
           bindsym $mod+h exec swayosd-client --output-volume +2 --max-volume 200
+
       # Moving around:
           bindsym $mod+$left focus left
           bindsym $mod+$down focus down

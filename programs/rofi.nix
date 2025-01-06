@@ -1,9 +1,4 @@
-{
-  config,
-  pkgs,
-  unstable,
-  ...
-}: {
+{...}: {
   # programs.rofi.enable = true;
 
   home.file.".config/rofi/config.rasi".text = ''

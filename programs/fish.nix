@@ -1,8 +1,4 @@
-{
-  config,
-  pkgs,
-  ...
-}: {
+{...}: {
   programs.fish = {
     enable = true;
     interactiveShellInit = ''
@@ -81,6 +77,7 @@
       "touka" = "cowsay -f bunny";
       "f" = "fuck";
       "getinput" = "bash /home/mia/.config/nixos/scripts/get_aoc_input.sh";
+      "ai" = "ollama run llama3.2";
     };
 
     functions = {
