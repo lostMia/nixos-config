@@ -116,6 +116,9 @@
       x86_64-linux.shell-script =
         stable.callPackage ./src/shell-test.nix {
         };
+      x86_64-linux.idle-master =
+        stable.callPackage ./src/idle-master.nix {
+        };
     };
   };
 }

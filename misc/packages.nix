@@ -114,6 +114,7 @@
     rpi-imager
     cups
     google-chrome
+    geogebra
   ];
 
   programs = {
