@@ -101,6 +101,7 @@
           exec blueman-tray                                                         # Bluetoothmanager tray icon
           exec signal-desktop                                                       # Signal (Even though sebi refuses to use it pwp)
           exec vesktop
+          exec thunderbird
           exec shikane                                                              # Manages displays and known display setups
           exec firefox
           exec sway-audio-idle-inhibit                                              # Prevents sleep when audio is playing
