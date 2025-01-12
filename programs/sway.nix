@@ -133,7 +133,8 @@
           bindsym $mod+Escape exec 'swaymsg input type:keyboard xkb_switch_layout next'
           # bindsym $mod+odiaeresis exec woomer
           bindsym $mod+a exec woomer
-          bindsym $mod+p exec ~/.config/nixos/scripts/toggle_freeze_process.sh
+          # bindsym $mod+p exec ~/.config/nixos/scripts/toggle_freeze_process.sh
+          bindsym $mod+p exec "hyprpicker -a"
 
       # Function Keys
           bindsym $mod+Shift+m exec sleep 0.1 && swaymsg output eDP-1 dpms toggle
