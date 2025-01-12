@@ -134,7 +134,7 @@
           # bindsym $mod+odiaeresis exec woomer
           bindsym $mod+a exec woomer
           # bindsym $mod+p exec ~/.config/nixos/scripts/toggle_freeze_process.sh
-          bindsym $mod+p exec "hyprpicker -a"
+          bindsym $mod+p exec "message=$(hyprpicker -a) && notify-send -u low $message"
 
       # Function Keys
           bindsym $mod+Shift+m exec sleep 0.1 && swaymsg output eDP-1 dpms toggle

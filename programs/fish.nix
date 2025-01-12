@@ -79,7 +79,8 @@
       "getinput" = "bash /home/mia/.config/nixos/scripts/get_aoc_input.sh";
       "ai" = "ollama run llama3.2";
       "where" = "grep -ri";
-      "picker" = "hyprpicker -a";
+      "picker" = "set -x message (hyprpicker -a) && notify-send -u low $message";
+      "!!" = "history | head -n 1 | wl-copy";
     };
 
     functions = {
