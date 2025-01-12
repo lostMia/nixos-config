@@ -94,8 +94,8 @@
 
       ## Autostart
           exec autotiling                                                           # Automatically tiles in whatever direction is the longest
-          exec "/usr/bin/env bash ~/.config/nixos/scripts/idlescript"               # Manages suspending and locking
-          exec "/usr/bin/env bash ~/.config/nixos/scripts/batteryscript.sh"         # Sends battery notifications when necessary
+          exec "/usr/bin/env bash $HOME/.config/nixos/scripts/idlescript"               # Manages suspending and locking
+          exec "/usr/bin/env bash $HOME/.config/nixos/scripts/batteryscript.sh"         # Sends battery notifications when necessary
           exec nm-applet                                                            # Networkmanager applet
           exec blueman-applet                                                       # Bluetoothmanager applet
           exec blueman-tray                                                         # Bluetoothmanager tray icon
@@ -123,8 +123,8 @@
           bindsym $mod+t exec nautilus -w
           bindsym $mod+f exec firefox
           #bindsym $mod+l exec alacritty -e lf
-          bindsym $mod+x exec ~/.config/nixos/scripts/lockscript
-          bindsym $mod+Shift+t exec "~/.config/nixos/scripts/screenshot.sh"
+          bindsym $mod+x exec $HOME/.config/nixos/scripts/lockscript
+          bindsym $mod+Shift+t exec "$HOME/.config/nixos/scripts/screenshot.sh"
           #bindsym $mod+Shift+t exec "grimshot copy area"
           #bindsym $mod+Shift+t exec "flameshot gui"
           bindsym $mod+Shift+q reload
@@ -133,7 +133,7 @@
           bindsym $mod+Escape exec 'swaymsg input type:keyboard xkb_switch_layout next'
           # bindsym $mod+odiaeresis exec woomer
           bindsym $mod+a exec woomer
-          # bindsym $mod+p exec ~/.config/nixos/scripts/toggle_freeze_process.sh
+          # bindsym $mod+p exec $HOME/.config/nixos/scripts/toggle_freeze_process.sh
           bindsym $mod+p exec "message=$(hyprpicker -a) && notify-send -u low $message"
 
       # Function Keys

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-notify-send "Backup in progress..." -w -t 5 --icon=/home/mia/.config/dunst/images/backup.png
+notify-send "Backup in progress..." -w -t 5000 --icon=$HOME/.config/dunst/images/backup.png
 
 # Directories to backup
 BACKUP_DIRS=(
@@ -28,4 +28,4 @@ done
 
 udisksctl unmount -b /dev/disk/by-uuid/e3934e46-fb1f-48d8-ba60-5684e99186d8
 
-notify-send "Backup Done!" -w -t 0 --icon=/home/mia/.config/dunst/images/backup.png
+notify-send "Backup Done!" -w -t 0 --icon=$HOME/.config/dunst/images/backup.png

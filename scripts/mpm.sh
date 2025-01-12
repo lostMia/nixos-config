@@ -152,7 +152,7 @@ function regenerate_hw_keys() {
   echo -e "$ Regenerating hardware keys"
   echo -e "\e[0;33m"
   mv .keyx .keyx.old
-  keepassxc-cli db-edit --key-file .keyx.old ~/Password/.kdbx --set-key-file .keyx
+  keepassxc-cli db-edit --key-file .keyx.old $HOME/Password/.kdbx --set-key-file .keyx
  
   if [[ $? != 0 ]];
   then

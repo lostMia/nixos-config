@@ -2,7 +2,8 @@
 
 CURRENT_LIGHT=$(sudo ectool pwmgetkblight | cut -d' ' -f 5)
 
-echo $CURRENT_LIGHT >> /home/mia/Scripts/output.txt
+# Debugging information on the current keyboard light state.
+# echo $CURRENT_LIGHT >> ~/.config/nixos/resources/output.txt
 
 if [[ $CURRENT_LIGHT -eq "" ]]
 then

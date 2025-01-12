@@ -3,7 +3,7 @@
 # Settings
 battery_percent_MODULUS=5 # How many percent difference are required for another update
 INTERVAL=5 # The interval at which to check the battery percentage
-ALERT_SCRIPT="sudo /home/mia/Scripts/keyboard_alert.sh"
+ALERT_SCRIPT="sudo $HOME/.config/nixos/scripts/keyboard_alert.sh"
 
 # Battery Levels
 BAT_RECOMMENDED_UPPER_LIMIT=80
