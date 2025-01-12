@@ -78,6 +78,7 @@
       "f" = "fuck";
       "getinput" = "bash /home/mia/.config/nixos/scripts/get_aoc_input.sh";
       "ai" = "ollama run llama3.2";
+      "where" = "grep -ri";
     };
 
     functions = {

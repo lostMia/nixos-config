@@ -115,6 +115,7 @@
     cups
     google-chrome
     geogebra6
+    hyprpicker
   ];
 
   programs = {

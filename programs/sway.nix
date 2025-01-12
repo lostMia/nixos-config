@@ -211,7 +211,6 @@
           #smart_gaps on
 
           default_border pixel 2
-          #disable_titlebar yes
           floating_modifier $mod normal
 
           #bindsym $mod+h splith
