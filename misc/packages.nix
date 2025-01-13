@@ -117,6 +117,9 @@
     geogebra6
     hyprpicker
     vlc
+    busybox
+    mtpfs
+    gvfs
   ];
 
   programs = {
