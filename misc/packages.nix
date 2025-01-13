@@ -118,8 +118,7 @@
     hyprpicker
     vlc
     busybox
-    mtpfs
-    gvfs
+    jmtpfs
   ];
 
   programs = {
