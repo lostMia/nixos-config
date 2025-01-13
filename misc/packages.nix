@@ -116,6 +116,7 @@
     google-chrome
     geogebra6
     hyprpicker
+    vlc
   ];
 
   programs = {
