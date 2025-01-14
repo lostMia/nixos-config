@@ -94,8 +94,8 @@
 
       ## Autostart
           exec autotiling                                                           # Automatically tiles in whatever direction is the longest
-          exec "/usr/bin/env bash $HOME/.config/nixos/scripts/idlescript"               # Manages suspending and locking
-          exec "/usr/bin/env bash $HOME/.config/nixos/scripts/batteryscript.sh"         # Sends battery notifications when necessary
+          exec $HOME/.config/nixos/scripts/idlescript                               # Manages suspending and locking
+          exec $HOME/.config/nixos/scripts/batteryscript.sh                         # Sends battery notifications when necessary
           exec nm-applet                                                            # Networkmanager applet
           exec blueman-applet                                                       # Bluetoothmanager applet
           exec blueman-tray                                                         # Bluetoothmanager tray icon

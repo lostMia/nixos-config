@@ -2,7 +2,7 @@
   systemd.sleep.extraConfig = ''
     AllowSuspendThenHibernate=yes
     AllowSuspend=yes
-    SuspendEstimationSec=1min
+    SuspendEstimationSec=2min
     HibernateDelaySec=60min
     SuspendState=freeze
     HibernateMode=shutdown
