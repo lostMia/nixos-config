@@ -21,6 +21,27 @@
       scale = 1.0
       transform = "normal"
       adaptive_sync = false
+
+      [[profile]]
+      name = "htlec"
+
+      [[profile.output]]
+      enable = true
+      search = ["m=0x0BCA", "s=", "v=BOE"]
+      mode = "2256x1504@59.999Hz"
+      position = "1766,1430"
+      scale = 1.0
+      transform = "normal"
+      adaptive_sync = false
+
+      [[profile.output]]
+      enable = true
+      search = ["m=S22C450", "s=H4FG601321", "v=Samsung Electric Company"]
+      mode = "1920x1080@60Hz"
+      position = "1954,350"
+      scale = 1.0
+      transform = "normal"
+      adaptive_sync = false
     '';
   };
 }
