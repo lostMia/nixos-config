@@ -86,6 +86,10 @@
     };
   };
 
+  home.file.".mozilla/firefox/mia/chrome/".source = let
+    cascade = pkgs.callPackage ./src/cascade/cascade.nix {};
+  in "${cascade}";
+
   # Home Manager can also manage your environment variables through
   # 'home.sessionVariables'. These will be explicitly sourced when using a
   # shell provided by Home Manager. If you don't want to manage your shell
@@ -105,6 +109,8 @@
   home.sessionVariables = {
     # EDITOR = "emacs";
   };
+
+  # home.file
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;

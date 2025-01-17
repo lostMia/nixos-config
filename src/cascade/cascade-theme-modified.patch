@@ -1,0 +1,79 @@
+diff --git a/chrome/includes/cascade-colours.css b/chrome/includes/cascade-colours.css
+index bd25205..ee6eeaa 100644
+--- a/chrome/includes/cascade-colours.css
++++ b/chrome/includes/cascade-colours.css
+@@ -17,8 +17,8 @@
+   --uc-identity-colour-purple:    #786FA6;
+   
+   /*  Cascades main Colour Scheme */
+-  --uc-base-colour:               #1E2021;
+-  --uc-highlight-colour:          #191B1C;
++  --uc-base-colour:               #1E1E1E;
++  --uc-highlight-colour:          #404040;
+   --uc-inverted-colour:           #FAFAFC;
+   --uc-muted-colour:              #AAAAAC;
+   --uc-accent-colour:             var(--uc-identity-colour-purple);
+@@ -49,8 +49,11 @@
+ }}
+ 
+ 
+-
+-
++/* Fix according to https://fedidat.com/640-dark-newtab-firefox/ */
++#browser vbox#appcontent tabbrowser, #content, #tabbrowser-tabpanels, 
++browser[type=content-primary],browser[type=content] > html {
++    background: #1E1E1E !important
++}
+ 
+ 
+ /* Down here I'm just reassigning variables based on the colours set above.
+diff --git a/chrome/includes/cascade-config.css b/chrome/includes/cascade-config.css
+index a22fa4a..b036ba2 100644
+--- a/chrome/includes/cascade-config.css
++++ b/chrome/includes/cascade-config.css
+@@ -69,7 +69,7 @@
+   /*  Width of the URL Bar for the Oneline layout
+    *  If enabled the max-width is applied on focus
+    *  otherwise the URL Bar will always be it's min-width
+-   */ --uc-urlbar-min-width: 35vw;
++   */ --uc-urlbar-min-width: 30vw;
+       --uc-urlbar-max-width: 35vw;
+ 
+   /*  Position of the URL Bar
+@@ -106,7 +106,7 @@
+ #urlbar-go-button { display: none !important; }
+ 
+ /* Hides the Extensions Menu Icon */
+-#unified-extensions-button { display: none !important; }
++/* #unified-extensions-button { display: none !important; } */
+ 
+ 
+ 
+diff --git a/chrome/includes/cascade-responsive.css b/chrome/includes/cascade-responsive.css
+index 94e4b41..6f53d4a 100644
+--- a/chrome/includes/cascade-responsive.css
++++ b/chrome/includes/cascade-responsive.css
+@@ -14,7 +14,8 @@
+   #nav-bar #urlbar-container { min-width: 0px !important; width: auto !important; }
+ 
+ 
+-  #titlebar {
++  /* Fix according to https://github.com/cascadefox/cascade/issues/133#issuecomment-2538656176 */
++  #TabsToolbar{
+ 
+     order: 2;
+     width: calc(100vw - var(--uc-urlbar-min-width) - 1px);
+@@ -22,6 +23,13 @@
+   }
+ 
+ 
++  #toolbar-menubar {
++
++    order: -100;
++    flex: 1 1 999999px;
++  }
++
++
+   #PersonalToolbar {
+ 
+     order: var(--uc-toolbar-position);

@@ -1,0 +1,40 @@
+diff '--color=auto' -r chrome/includes/cascade-colours.css ../cascade-modified/includes/cascade-colours.css
+20,21c20,21
+<   --uc-base-colour:               #1E2021;
+<   --uc-highlight-colour:          #191B1C;
+---
+>   --uc-base-colour:               #1E1E1E;
+>   --uc-highlight-colour:          #404040;
+52,53c52,56
+< 
+< 
+---
+> /* Fix according to https://fedidat.com/640-dark-newtab-firefox/ */
+> #browser vbox#appcontent tabbrowser, #content, #tabbrowser-tabpanels, 
+> browser[type=content-primary],browser[type=content] > html {
+>     background: #1E1E1E !important
+> }
+diff '--color=auto' -r chrome/includes/cascade-config.css ../cascade-modified/includes/cascade-config.css
+72c72
+<    */ --uc-urlbar-min-width: 35vw;
+---
+>    */ --uc-urlbar-min-width: 30vw;
+109c109
+< #unified-extensions-button { display: none !important; }
+---
+> /* #unified-extensions-button { display: none !important; } */
+diff '--color=auto' -r chrome/includes/cascade-responsive.css ../cascade-modified/includes/cascade-responsive.css
+17c17,18
+<   #titlebar {
+---
+>   /* Fix according to https://github.com/cascadefox/cascade/issues/133#issuecomment-2538656176 */
+>   #TabsToolbar{
+21a23,29
+>   }
+> 
+> 
+>   #toolbar-menubar {
+> 
+>     order: -100;
+>     flex: 1 1 999999px;
+Only in ../cascade-modified/: README.md

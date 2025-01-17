@@ -76,6 +76,7 @@
               tap enabled
               accel_profile flat
               scroll_method two_finger
+              scroll_factor 0.3
               middle_emulation enabled
           }
 
