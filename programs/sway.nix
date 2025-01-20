@@ -119,7 +119,7 @@
       ### Key bindings
           bindsym $mod+e exec $term
           bindsym $mod+d kill
-          bindsym $mod+i exec $menu -show combi -combi-modes "drun,run" -modi combi -monitor "eDP-1" # rofi
+          bindsym $mod+i exec $menu -show combi -combi-modes "drun,run,ssh" -modi combi -monitor "eDP-1" # rofi
           bindsym $mod+Shift+i exec $menu -show ssh -monitor "eDP-1"
           bindsym $mod+t exec nautilus -w
           bindsym $mod+f exec firefox

@@ -68,6 +68,7 @@
     corrupter
     feh
     cmatrix
+    cbonsai
     asciiquarium-transparent
     xdg-desktop-portal
     obsidian
