@@ -84,6 +84,7 @@
     python3
     python312Packages.requests
     python312Packages.tqdm
+    python312Packages.cmake
     fd
     tldr
     greetd.greetd
