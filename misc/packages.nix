@@ -123,6 +123,13 @@
     busybox
     jmtpfs
     nix-ld
+
+    # Audio
+    pavucontrol
+    pwvucontrol
+    pamixer
+    pipewire
+    wireplumber
   ];
 
   programs = {

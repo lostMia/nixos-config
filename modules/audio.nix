@@ -1,12 +1,4 @@
 {pkgs, ...}: {
-  environment.systemPackages = with pkgs; [
-    pavucontrol
-    pwvucontrol
-    pamixer
-    pipewire
-    wireplumber
-  ];
-
   # Disable pulseaudio.
   hardware.pulseaudio.enable = false;
 
