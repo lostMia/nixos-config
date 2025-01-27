@@ -87,7 +87,7 @@
     # python312Packages.cmake
     cmake
     fd
-    tldr
+    tealdeer
     greetd.greetd
     greetd.tuigreet
     uwufetch
