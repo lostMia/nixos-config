@@ -6,7 +6,7 @@
     ./modules/bluetooth.nix
     ./modules/graphical.nix
     ./modules/virtualisation.nix
-    # ./modules/pam.nix # read the note in the file
+    ./modules/pam.nix # read the note in the file
     ./modules/cups.nix
     ./services/systemd.nix
     ./services/syncthing.nix

@@ -100,6 +100,7 @@
     homeConfigurations = {
       mia = home-manager.lib.homeManagerConfiguration {
         pkgs = stable;
+        extraSpecialArgs = specialArgs;
         modules = [
           ./home.nix # Home-Manager top-level config file
         ];

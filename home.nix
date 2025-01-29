@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  nur,
+  ...
+}: {
   imports = [
     ./programs/git.nix
     ./programs/alacritty.nix

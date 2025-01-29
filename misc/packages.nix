@@ -62,8 +62,6 @@
     unstable.protonvpn-gui
     neofetch
     sublime3
-    nur.repos.kira-bruneau.swaylock-fprintd
-    # swaylock
     swayidle
     corrupter
     feh

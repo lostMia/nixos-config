@@ -69,7 +69,7 @@
       "nixr" = "sudo nixos-rebuild switch --flake /home/mia/.config/nixos --impure";
       # generate on-the-fly automatic rebuild (for) nixOS
       "goarnix" = "sudo nixos-rebuild switch --flake /home/mia/.config/nixos";
-      "homer" = "home-manager switch --flake /home/mia/.config/nixos";
+      "homer" = "home-manager switch --flake /home/mia/.config/nixos --impure";
       "backup" = "~/.config/nixos/scripts/backup.sh & disown";
       "poweroff" = "sudo ectool led power off";
       "powernormal" = "sudo ectool led power auto";
