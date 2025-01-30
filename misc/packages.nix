@@ -121,6 +121,7 @@
     busybox
     jmtpfs
     nix-ld
+    blender
 
     # Audio
     pavucontrol
