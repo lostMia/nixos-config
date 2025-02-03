@@ -123,6 +123,7 @@
     jmtpfs
     nix-ld
     blender
+    direnv
 
     # Audio
     pavucontrol
