@@ -112,6 +112,7 @@
     thefuck
     unstable.nodePackages.npm
     python312Packages.pyperclip
+    python312Packages.numpy
     rpi-imager
     cups
     google-chrome
