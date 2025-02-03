@@ -150,6 +150,9 @@
     };
   };
 
-  # programs.nix-ld.libraries = with pkgs; [
-  # ];
+  programs.nix-ld.libraries = with pkgs; [
+    zlib
+    libglvnd
+    stdenv.cc.cc.lib
+  ];
 }
