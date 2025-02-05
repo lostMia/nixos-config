@@ -125,7 +125,6 @@
     nix-ld
     blender
     direnv
-    nix-direnv
     any-nix-shell
 
     # Audio
