@@ -15,6 +15,7 @@
       thefuck --alias | source
       zoxide init fish | source
       any-nix-shell fish --info-right | source
+      direnv hook fish | source
 
       #echo -e "\e[1m/ᐠ - ˕ -マ"
       echo -e "\e[1m ᨐ "
