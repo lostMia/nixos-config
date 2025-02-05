@@ -82,6 +82,7 @@
     python3
     python312Packages.requests
     python312Packages.tqdm
+    python312Packages.matplotlib
     # python312Packages.cmake
     cmake
     fd
