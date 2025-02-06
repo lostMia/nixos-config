@@ -14,7 +14,7 @@
 
       thefuck --alias | source
       zoxide init fish | source
-      any-nix-shell fish --info-right | source
+      # any-nix-shell fish --info-right | source
 
       #echo -e "\e[1m/ᐠ - ˕ -マ"
       echo -e "\e[1m ᨐ "
@@ -32,8 +32,8 @@
       "virt" = "sudo systemctl start libvirtd.socket libvirtd libvirtd.service";
       "m" = "math";
       "noran" = "setarch x86_64 -R /run/current-system/sw/bin/fish";
-      "conf" = "nvim /home/mia/.config/nixos/programs/sway.nix";
-      "mpm" = "/home/mia/.config/nixos/scripts/mpm.sh";
+      "conf" = "nvim ~/.config/nixos/programs/sway.nix";
+      "mpm" = "~/.config/nixos/scripts/mpm.sh";
       "rank-mirrors" = "curl -s 'https://archlinux.org/mirrorlist/?country=DE&country=GB&country=AT&protocol=https&use_mirror_status=on' | sed -e 's/^#Server/Server/' -e '/^#/d' | rankmirrors -n 5 -";
       "bat" = "cat /sys/class/power_supply/BAT1/capacity";
       "bs" = "cat /sys/class/power_supply/BAT1/status";
@@ -48,13 +48,13 @@
       "rb" = "reboot";
       "fixwifi" = "sudo modprobe -r mt7921e && sudo modprobe mt7921e";
       "lorem" = "tr -dc a-z1-4 </dev/urandom | tr 1-2 ' \n' | awk 'length==0 || length>50' | tr 3-4 ' ' | sed 's/^ *//' | cat -s | sed 's/ / /g' |fmt";
-      "utf" = "python /home/mia/Documents/PyProjects/UTF-Message-Encoder-Decoder/UTF16.py";
+      "utf" = "python ~/Documents/PyProjects/UTF-Message-Encoder-Decoder/UTF16.py";
       "drain" = "stress --cpu 16 --io 4 --vm 5";
       "nv" = "neovide";
       "py" = "/run/current-system/sw/bin/python";
-      "r" = "/home/mia/.config/nixos/scripts/repeat.fish";
-      "eoc" = "/home/mia/.config/nixos/scripts/execute_on_change.fish";
-      "mon" = "sudo airmon-ng check kill; sudo airmon-ng start wlan0; sleep 1; sudo airodump-ng -w /home/mia/Work/Network/Capture.cap wlan0mon";
+      "r" = "~/.config/nixos/scripts/repeat.fish";
+      "eoc" = "~/.config/nixos/scripts/execute_on_change.fish";
+      "mon" = "sudo airmon-ng check kill; sudo airmon-ng start wlan0; sleep 1; sudo airodump-ng -w ~/Work/Network/Capture.cap wlan0mon";
       "monstop" = "sudo airmon-ng stop wlan0mon; sudo systemctl start NetworkManager";
       "snake" = "putty -serial /dev/ttyACM0 -sercfg 921600,8,n,1,N -fn 'client:Hack Nerd Font 14' & disown & exit";
       "ser" = "putty -serial /dev/ttyUSB0 -sercfg 115200,8,n,1,N -fn 'client:Hack Nerd Font 14' & disown & exit";
@@ -67,21 +67,22 @@
       "hollywood" = "sudo systemctl start docker; sudo docker run --rm -it bcbcarl/hollywood";
       "bridge" = "sudo ip link add name br0 type bridge; sudo ip link set br0 up; sudo ip link set enp195s0f3u1 master br0; sudo ip address add dev br0 10.255.255.80/24";
       "nixc" = "~/.config/nixos/scripts/nix_rebuild.sh";
-      "nixr" = "sudo nixos-rebuild switch --flake /home/mia/.config/nixos --impure";
+      "nixr" = "sudo nixos-rebuild switch --flake ~/.config/nixos --impure";
       # generate on-the-fly automatic rebuild (for) nixOS
-      "goarnix" = "sudo nixos-rebuild switch --flake /home/mia/.config/nixos";
-      "homer" = "home-manager switch --flake /home/mia/.config/nixos --impure";
+      "goarnix" = "sudo nixos-rebuild switch --flake ~/.config/nixos";
+      "homer" = "home-manager switch --flake ~/.config/nixos --impure";
       "backup" = "~/.config/nixos/scripts/backup.sh & disown";
       "poweroff" = "sudo ectool led power off";
       "powernormal" = "sudo ectool led power auto";
       "tty" = "ls /dev/tty*";
       "touka" = "cowsay -f bunny";
       "f" = "fuck";
-      "getinput" = "bash /home/mia/.config/nixos/scripts/get_aoc_input.sh";
+      "getinput" = "bash ~/.config/nixos/scripts/get_aoc_input.sh";
       "ai" = "ollama run llama3.2";
       "where" = "grep -ri";
       "picker" = "set -x message (hyprpicker -a) && notify-send -u low $message";
       "!!" = "history | head -n 1 | wl-copy";
+      "projinit" = "~/.config/nixos/scripts/project_init.sh";
     };
 
     functions = {

@@ -144,6 +144,7 @@
   };
 
   services = {
+    gvfs.enable = true;
     udisks2.enable = true;
     power-profiles-daemon.enable = true;
     dbus.enable = true;
