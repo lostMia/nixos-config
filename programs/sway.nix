@@ -72,7 +72,7 @@
         #xkb_options grp:rctrl_toggle,altwin:swap_lalt_lwin
 
         input 2362:628:PIXA3854:00_093A:0274_Touchpad {
-            pointer_accel 0
+            pointer_accel 0.3
             tap enabled
             accel_profile flat
             scroll_method two_finger
@@ -88,7 +88,7 @@
       ### Border colors and looks
         client.focused           #ff4060   #222222 #ff4060 #ff4060  #ff4060
         client.focused_inactive  #222222   #222222 #ff4060 #222222 #222222
-        client.unfocused         #222222 #222222 #bbbbbb #222222 #222222
+        client.unfocused         #222222 #222222 #dddddd #222222 #222222
         client.urgent            $peach    $base $peach $overlay0  $peach
         client.placeholder       $overlay0 $base $text  $overlay0  $overlay0
         client.background        $base
