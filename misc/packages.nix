@@ -126,6 +126,7 @@
     blender
     direnv
     any-nix-shell
+    wev
 
     # Audio
     pavucontrol
