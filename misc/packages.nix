@@ -127,6 +127,7 @@
     direnv
     any-nix-shell
     wev
+    galculator
 
     # Audio
     pavucontrol
