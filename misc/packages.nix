@@ -128,6 +128,7 @@
     any-nix-shell
     wev
     galculator
+    sshpass
 
     # Audio
     pavucontrol
