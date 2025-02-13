@@ -58,7 +58,7 @@
       "monstop" = "sudo airmon-ng stop wlan0mon; sudo systemctl start NetworkManager";
       "snake" = "putty -serial /dev/ttyACM0 -sercfg 921600,8,n,1,N -fn 'client:Hack Nerd Font 14' & disown & exit";
       "ser" = "putty -serial /dev/ttyUSB0 -sercfg 115200,8,n,1,N -fn 'client:Hack Nerd Font 14' & disown & exit";
-      "server" = "ssh lostmia@192.168.1.66 -p 22122";
+      "server" = "ssh lostmia@192.168.1.66 -p 22122 -i ~/.ssh/raspi";
       "int" = "ping 1.1.1.1";
       "todo" = "nvim ~/Documents/todo.md";
       "sa" = "libreoffice ~/Documents/Diplomarbeit/Stundenanzahl.ods & disown & exit";
