@@ -130,6 +130,7 @@
     galculator
     sshpass
     jre8
+    adoptopenjdk-icedtea-web
 
     # Audio
     pavucontrol
