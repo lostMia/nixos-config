@@ -129,6 +129,7 @@
     wev
     galculator
     sshpass
+    jre8
 
     # Audio
     pavucontrol
