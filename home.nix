@@ -61,21 +61,21 @@
   qt.enable = true;
   qt.style.name = "Dracula";
 
-  # gtk = {
-  #   enable = true;
-  #   theme = {
-  #     name = "Graphite-pink-Dark";
-  #     package = pkgs.graphite-gtk-theme;
-  #   };
-  #   iconTheme = {
-  #     name = "Tela-black";
-  #     package = pkgs.tela-icon-theme;
-  #   };
-  #   cursorTheme = {
-  #     name = "Graphite dark Cursors";
-  #     package = pkgs.graphite-cursors;
-  #   };
-  # };
+  gtk = {
+    enable = true;
+    theme = {
+      name = "Graphite-pink-Dark";
+      package = pkgs.graphite-gtk-theme;
+    };
+    iconTheme = {
+      name = "Tela-black";
+      package = pkgs.tela-icon-theme;
+    };
+    cursorTheme = {
+      name = "Graphite dark Cursors";
+      package = pkgs.graphite-cursors;
+    };
+  };
 
   home.pointerCursor = {
     gtk.enable = true;
@@ -84,11 +84,11 @@
     size = 64;
   };
 
-  # dconf.settings = {
-  #   "org/gnome/desktop/interface" = {
-  #     color-scheme = "prefer-dark";
-  #   };
-  # };
+  dconf.settings = {
+    "org/gnome/desktop/interface" = {
+      color-scheme = "prefer-dark";
+    };
+  };
 
   home.file.".mozilla/firefox/mia/chrome/".source = let
     cascade = pkgs.callPackage ./src/cascade/cascade.nix {};

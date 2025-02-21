@@ -201,7 +201,7 @@
         blur_brightness 1
 
         corner_radius 12
-        default_dim_inactive 0.15
+        default_dim_inactive 0.10
 
       # Layout stuff:
         gaps inner 2

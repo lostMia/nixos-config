@@ -131,6 +131,7 @@
     sshpass
     jre8
     adoptopenjdk-icedtea-web
+    wireshark
 
     # Audio
     pavucontrol
