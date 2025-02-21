@@ -131,7 +131,6 @@
     sshpass
     jre8
     adoptopenjdk-icedtea-web
-    wireshark
 
     # Audio
     pavucontrol
@@ -147,6 +146,7 @@
     dconf.enable = true;
     nix-ld.enable = true;
     steam.enable = true;
+    wireshark.enable = true;
   };
 
   services = {
