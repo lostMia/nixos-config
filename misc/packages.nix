@@ -131,6 +131,8 @@
     sshpass
     jre8
     adoptopenjdk-icedtea-web
+    nss.tools
+    nss
 
     # Audio
     pavucontrol
