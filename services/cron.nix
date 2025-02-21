@@ -2,7 +2,7 @@
   services.cron = {
     enable = true;
     systemCronJobs = [
-      "*/5 * * * *      root    date >> /tmp/cron.log"
+      "* * * * *  mia  echo Hello World > /home/mia/cronout"
     ];
   };
 }
