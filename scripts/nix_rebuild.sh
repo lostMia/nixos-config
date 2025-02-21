@@ -9,6 +9,8 @@ alejandra . &>/dev/null
 
 echo -e "\n\e[1m - - - - - - - - Changes - - - - - - - -\e[0m\n"
 
+git add .
+
 # show changes
 git diff -U0 "**.*"
 
