@@ -133,6 +133,7 @@
     adoptopenjdk-icedtea-web
     nss.tools
     nss
+    wireshark
 
     # Audio
     pavucontrol
