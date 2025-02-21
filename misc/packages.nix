@@ -134,6 +134,7 @@
     nss.tools
     nss
     wireshark
+    cron
 
     # Audio
     pavucontrol

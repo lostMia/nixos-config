@@ -1,6 +1,6 @@
 {...}: {
   services.openssh = {
-    enable = true;
+    enable = false;
     ports = [21888];
     settings = {
       PasswordAuthentication = true;
