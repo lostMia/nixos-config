@@ -138,6 +138,7 @@
 
       # Function Keys
         bindsym $mod+Shift+m exec sleep 0.1 && swaymsg output eDP-1 dpms toggle
+        bindsym $mod+w exec swaymsg output eDP-1 transform 180 clockwise
         bindsym $mod+Shift+l exec swayosd-client --brightness -2
         bindsym $mod+Shift+h exec swayosd-client --brightness +2
         bindsym $mod+m exec swayosd-client --output-volume mute-toggle --max-volume 200
