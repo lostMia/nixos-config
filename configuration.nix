@@ -69,7 +69,7 @@
   nix.gc = {
     randomizedDelaySec = "60min";
     persistent = true;
-    dates = "weekly";
+    dates = "monthly";
     automatic = true;
   };
 

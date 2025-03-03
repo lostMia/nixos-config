@@ -134,11 +134,12 @@
         # bindsym $mod+odiaeresis exec woomer
         bindsym $mod+a exec woomer
         # bindsym $mod+p exec $HOME/.config/nixos/scripts/toggle_freeze_process.sh
+        bindsym $mod+w exec $HOME/.config/nixos/scripts/flashbang.sh
         bindsym $mod+p exec "message=$(hyprpicker -a) && notify-send -u low $message"
 
       # Function Keys
         bindsym $mod+Shift+m exec sleep 0.1 && swaymsg output eDP-1 dpms toggle
-        bindsym $mod+w exec swaymsg output eDP-1 transform 180 clockwise
+        bindsym $mod+j exec swaymsg output eDP-1 transform 180 clockwise
         bindsym $mod+Shift+l exec swayosd-client --brightness -2
         bindsym $mod+Shift+h exec swayosd-client --brightness +2
         bindsym $mod+m exec swayosd-client --output-volume mute-toggle --max-volume 200
