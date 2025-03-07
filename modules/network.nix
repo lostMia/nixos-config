@@ -59,4 +59,6 @@
   #     interfaces = ["eth0"];
   #   };
   # };
+
+  services.httpd.enable = true;
 }
