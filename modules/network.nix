@@ -61,4 +61,9 @@
   # };
 
   services.httpd.enable = true;
+  services.httpd.enablePHP = true;
+
+  services.httpd.virtualHosts."ksn-aa07.org" = {
+    documentRoot = "/home/mia/Documents/Apache/KSN-AA07b/password.html";
+  };
 }
