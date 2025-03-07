@@ -135,6 +135,7 @@
     nss
     wireshark
     cron
+    apacheHttpd
 
     # Audio
     pavucontrol
