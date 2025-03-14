@@ -1,4 +1,4 @@
-{...}: {
+{config, ...}: {
   networking.hostName = "nixos";
 
   services.avahi = {
@@ -60,10 +60,28 @@
   #   };
   # };
 
-  services.httpd.enable = true;
-  services.httpd.enablePHP = true;
+  services.httpd = {
+    enable = true;
+    enablePHP = true;
 
-  services.httpd.virtualHosts."ksn-aa07.org" = {
-    documentRoot = "/home/mia/Documents/Apache/KSN-AA07b/password.html";
+    virtualHosts = {
+      localhost = {
+        hostName = "localhost";
+        documentRoot = "/srv";
+        forceSSL = true;
+        sslServerCert = "/etc/ssl/certs/server.crt";
+        sslServerKey = "/etc/ssl/private/server.key";
+      };
+    };
   };
+
+  systemd.tmpfiles.rules = [
+    "d /srv 0775 ${config.services.httpd.user} ${config.services.httpd.group}"
+    "d /etc/ssl/certs 0775 ${config.services.httpd.user} ${config.services.httpd.group}"
+    "d /etc/ssl/private 0775 ${config.services.httpd.user} ${config.services.httpd.group}"
+  ];
+
+  users.users.mia.extraGroups = [
+    config.services.httpd.group
+  ];
 }

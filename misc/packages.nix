@@ -14,7 +14,7 @@
     wget
     fish
     firefox
-    flameshot
+    unstable.flameshot
     swayfx
     wl-clipboard
     zoxide
@@ -136,6 +136,7 @@
     wireshark
     cron
     apacheHttpd
+    openssl
 
     # Audio
     pavucontrol
