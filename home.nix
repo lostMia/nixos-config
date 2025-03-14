@@ -58,9 +58,9 @@
     # '';
   };
 
-  qt.enable = true;
-  qt.style.name = "Dracula";
-
+  # qt.enable = true;
+  # qt.style.name = "Dracula";
+  #
   gtk = {
     enable = true;
     theme = {
