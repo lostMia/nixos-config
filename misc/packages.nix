@@ -137,6 +137,7 @@
     cron
     apacheHttpd
     openssl
+    baobab
 
     # Audio
     pavucontrol
