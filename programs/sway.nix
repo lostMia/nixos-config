@@ -105,10 +105,10 @@
         exec thunderbird
         exec shikane                                                              # Manages displays and known display setups
         exec firefox
-        exec sway-audio-idle-inhibit                                              # Prevents sleep when audio is playing
         exec swayosd-server                                                       # OSD server for audio and screen brightness popups
         exec waybar                                                               # Status bar for sway
         exec "rfkill block bluetooth"                                             # Disable bluetooth by default
+        exec sway-audio-idle-inhibit & disown                                     # Prevents sleep when audio is playing
 
         assign [class="vesktop"] workspace 1
         assign [class="Signal"] workspace 1

@@ -138,6 +138,7 @@
     apacheHttpd
     openssl
     baobab
+    doomretro
 
     # Audio
     pavucontrol

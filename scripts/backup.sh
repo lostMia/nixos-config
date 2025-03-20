@@ -4,7 +4,8 @@ notify-send "Backup in progress..." -w -t 5000 --icon=$HOME/.config/dunst/images
 
 # Directories to backup
 BACKUP_DIRS=(
-    "/home/mia")
+    "/home/mia"
+)
 
 udisksctl mount -b /dev/disk/by-uuid/e3934e46-fb1f-48d8-ba60-5684e99186d8 
 
@@ -23,7 +24,7 @@ for DIR in "${BACKUP_DIRS[@]}"; do
     DIR_NAME=$(basename "$DIR")
     TAR_FILE="${BACKUP_DEST}/${DIR_NAME}_backup_${DATE}.tar.gz"
     
-    sudo tar -czf "$TAR_FILE" "$DIR"
+    sudo tar --exclude=/home/mia/.local/share/libvirt --exclude=/home/mia/.local/share/Trash --exclude=/home/mia/.local/share/Steam --exclude=/home/mia/.cache -czf "$TAR_FILE" "$DIR";
 done
 
 udisksctl unmount -b /dev/disk/by-uuid/e3934e46-fb1f-48d8-ba60-5684e99186d8
