@@ -138,7 +138,7 @@
     apacheHttpd
     openssl
     baobab
-    doomretro
+    losslesscut-bin
 
     # Audio
     pavucontrol
