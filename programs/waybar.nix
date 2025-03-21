@@ -134,11 +134,11 @@
             weeks-pos = "right";
             on-scroll = 1;
             format = {
-              months = "<span color='#f9e2af'><b>{}</b></span>";
-              days = "<span color='#ffffff'>{}</span>";
-              weeks = "<span color='#e78284'>{}</span>";
-              weekdays = "<span color='#eba0ac'>{}</span>";
-              today = "<span color='#ff0000'><b><u>{}</u></b></span>";
+              months = "<span color='#ffead3'><b>{}</b></span>";
+              days = "<span color='#ecc6d9'>{}</span>";
+              weeks = "<span color='#99ffdd'>{}</span>";
+              weekdays = "<span color='#ffcc66'>{}</span>";
+              today = "<span color='#ff3355'><b><u>{}</u></b></span>";
             };
           };
           actions = {
@@ -551,12 +551,11 @@
       }
 
       tooltip {
-      	background-color: #171717;
+      	background-color: rgba(0, 0, 0, 0.85);
       	padding: 20px;
       	margin: 20px;
-      	border-width: 2px;
-      	border-color: #aaaaaa;
-      	border-radius: 20px;
+      	border-radius: 10px;
+      	border: none;
       }
 
       #clock:hover {

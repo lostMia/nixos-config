@@ -69,8 +69,8 @@
         hostName = "localhost";
         documentRoot = "/srv";
         forceSSL = true;
-        sslServerCert = "/etc/ssl/certs/server.crt";
-        sslServerKey = "/etc/ssl/private/server.key";
+        sslServerCert = "/etc/ssl/certs/www-miau.csr";
+        sslServerKey = "/etc/ssl/private/www-miau.key";
       };
     };
   };
