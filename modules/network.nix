@@ -51,7 +51,7 @@
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
+  networking.firewall.enable = false;
 
   # networking.interfaces.br0.useDHCP = true;
   # networking.bridges = {
@@ -59,22 +59,21 @@
   #     interfaces = ["eth0"];
   #   };
   # };
-  #
+
   # services.httpd = {
   #   enable = true;
-  #   # enablePHP = true;
+  #   enablePHP = true;
   #
   #   virtualHosts = {
   #     localhost = {
   #       hostName = "localhost";
   #       documentRoot = "/srv";
   #       forceSSL = true;
-  #       sslServerCert = "/etc/ssl/certs/AA07b-MuellerCA.crt";
+  #       sslServerCert = "/etc/ssl/certs/www-miau.crt";
   #       sslServerKey = "/etc/ssl/private/www-miau.key";
   #     };
   #   };
   # };
-  # users.users.wwwrun.useDefaultShell = true;
   #
   # systemd.tmpfiles.rules = [
   #   "d /srv 0775 ${config.services.httpd.user} ${config.services.httpd.group}"
