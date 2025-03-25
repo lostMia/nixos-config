@@ -30,17 +30,21 @@
     pkgs.amdvlk
   ];
 
-  boot.loader.grub = {
-    extraEntries = ''
-      menuentry "Windows" {
-        insmod part_gpt
-        insmod fat
-        insmod search_fs_uuid
-        insmod chain
-        search --fs-uuid --set=root 14EC-1168
-        chainloader /EFI/Microsoft/Boot/bootmgfw.efi
-      }
-    '';
+  boot.loader = {
+    # timeout = 0;
+    grub = {
+      extraEntries = ''
+        menuentry "Windows" {
+          insmod part_gpt
+          insmod fat
+          insmod search_fs_uuid
+          insmod chain
+          search --fs-uuid --set=root 14EC-1168
+          chainloader /EFI/Microsoft/Boot/bootmgfw.efi
+        }
+      '';
+      timeoutStyle = "hidden";
+    };
   };
 
   fileSystems."/" = {
