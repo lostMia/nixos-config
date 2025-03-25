@@ -31,7 +31,7 @@
   ];
 
   boot.loader = {
-    # timeout = 0;
+    timeout = 0;
     grub = {
       extraEntries = ''
         menuentry "Windows" {
