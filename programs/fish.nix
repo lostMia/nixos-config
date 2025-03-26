@@ -84,6 +84,7 @@
       "picker" = "set -x message (hyprpicker -a) && notify-send -u low $message";
       "!!" = "history | head -n 1 | wl-copy";
       "projinit" = "~/.config/nixos/scripts/project_init.sh";
+      "w" = "python ~/.config/nixos/scripts/w.py";
     };
 
     functions = {

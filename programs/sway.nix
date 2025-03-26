@@ -34,7 +34,8 @@
       ### Flameshot fix
         exec_always "export SDL_VIDEODRIVER=wayland"
         exec_always "export _JAVA_AWT_WM_NONREPARENTING=1"
-        exec_always "export QT_QPA_PLATFORM=wayland"
+        # exec_always "export QT_QPA_PLATFORM=wayland"
+        exec_always "export QT_QPA_PLATFORM=xcb"
         exec_always "export XDG_CURRENT_DESKTOP=sway"
         exec_always "export XDG_SESSION_DESKTOP=sway"
         exec_always "export QT_AUTO_SCREEN_SCALE_FACTOR=0"
