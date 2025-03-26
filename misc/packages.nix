@@ -70,7 +70,6 @@
     asciiquarium-transparent
     xdg-desktop-portal
     xdg-desktop-portal-wlr
-    xdg-desktop-portal-gtk
     obsidian
     syncthing
     auto-cpufreq

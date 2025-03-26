@@ -34,15 +34,18 @@
       ### Flameshot fix
         exec_always "export SDL_VIDEODRIVER=wayland"
         exec_always "export _JAVA_AWT_WM_NONREPARENTING=1"
-        # exec_always "export QT_QPA_PLATFORM=wayland"
-        exec_always "export QT_QPA_PLATFORM=xcb"
+        exec_always "export QT_QPA_PLATFORM=wayland"
         exec_always "export XDG_CURRENT_DESKTOP=sway"
         exec_always "export XDG_SESSION_DESKTOP=sway"
+        exec_always "export GTK_BACKEND='wayland,x11'
+        exec_always "export MOZ_ENABLE_WAYLAND=1"
         exec_always "export QT_AUTO_SCREEN_SCALE_FACTOR=0"
 
         exec_always systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK
         exec_always hash dbus-update-activation-environment 2>/dev/null && \
             dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
+
+      for_window [app_id="flameshot"] floating enable, fullscreen disable, move absolute position 0 0, border pixel 0
 
       ### Variables
         set $mod Mod4
