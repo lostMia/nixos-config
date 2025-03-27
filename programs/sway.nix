@@ -37,6 +37,7 @@
             dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
 
       for_window [app_id="flameshot"] border pixel 0, floating enable, fullscreen disable, move absolute position 0 0
+      for_window [app_id="com.gabm.satty"] floating enable
 
       ### Variables
         set $mod Mod4
@@ -135,11 +136,11 @@
       # Function Keys
         bindsym $mod+Shift+m exec sleep 0.1 && swaymsg output eDP-1 dpms toggle
         bindsym $mod+j exec swaymsg output eDP-1 transform 180 clockwise
-        bindsym $mod+Shift+l exec swayosd-client --brightness -2
-        bindsym $mod+Shift+h exec swayosd-client --brightness +2
+        bindsym $mod+Shift+l exec swayosd-client --brightness -5
+        bindsym $mod+Shift+h exec swayosd-client --brightness +5
         bindsym $mod+m exec swayosd-client --output-volume mute-toggle --max-volume 200
-        bindsym $mod+l exec swayosd-client --output-volume -2 --max-volume 200
-        bindsym $mod+h exec swayosd-client --output-volume +2 --max-volume 200
+        bindsym $mod+l exec swayosd-client --output-volume -5 --max-volume 200
+        bindsym $mod+h exec swayosd-client --output-volume +5 --max-volume 200
 
       # Moving around:
         bindsym $mod+$left focus left

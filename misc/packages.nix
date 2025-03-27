@@ -66,7 +66,7 @@
     jq
     satty
     unstable.protonvpn-gui
-    neofetch
+    fastfetch
     sublime3
     swayidle
     corrupter

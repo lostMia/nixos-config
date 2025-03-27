@@ -21,7 +21,8 @@
     '';
 
     shellAliases = {
-      "flex" = "neofetch | dotacat";
+      "flex" = "fastfetch | dotacat";
+      "neofetch" = "fastfetch";
       "c" = "cd .."; # thanks sebi
       "n" = "neovide";
       "bored" = "fortune | cowsay | dotacat -p 1.5";
