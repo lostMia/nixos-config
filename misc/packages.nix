@@ -14,7 +14,7 @@
     wget
     fish
     firefox
-    flameshot
+    unstable.flameshot
     libsForQt5.full
     libsForQt5.qt5.full
     libsForQt5.qt5.qttools
