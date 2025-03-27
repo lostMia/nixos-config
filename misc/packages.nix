@@ -15,7 +15,12 @@
     fish
     firefox
     flameshot
-    # unstable.libsForQt5.full
+    libsForQt5.full
+    libsForQt5.qt5.full
+    libsForQt5.qt5.qttools
+    libsForQt5.qt5.qtsvg
+    libsForQt5.qt5.qtbase
+    libsForQt5.kguiaddons
     swayfx
     wl-clipboard
     zoxide
@@ -85,7 +90,6 @@
     python312Packages.requests
     python312Packages.tqdm
     python312Packages.matplotlib
-    # python312Packages.cmake
     cmake
     gnumake
     fd
