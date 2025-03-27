@@ -36,7 +36,7 @@
         exec_always hash dbus-update-activation-environment 2>/dev/null && \
             dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
 
-      for_window [app_id="flameshot"] border pixel 0, floating enable, fullscreen disable, move absolute position 0 0
+      # for_window [app_id="flameshot"] border pixel 0, floating enable, fullscreen disable, move absolute position 0 0
 
       ### Variables
         set $mod Mod4
