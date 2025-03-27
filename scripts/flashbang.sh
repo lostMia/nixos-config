@@ -6,18 +6,19 @@ current_workspace=$(swaymsg -t get_workspaces | jq '.[] | select(.focused==true)
 
 swaymsg workspace 0
 pkill waybar
-brightnessctl set 255
+# brightnessctl set 255
 # swaymsg output eDP-1 background \#ffffff solid_color
-brightnessctl -d framework_laptop::kbd_backlight set 255
+# brightnessctl -d framework_laptop::kbd_backlight set 255
 
-feh -F '/home/mia/Pictures/Wallpapers/nix-logo.png' & disown
+swaymsg output eDP-1 scale 1 bg $HOME/.config/nixos/resources/nix-qm.png fill
 
 sleep 2.5
 
-pkill .feh-wrapped
+swaymsg output eDP-1 scale 1 bg $HOME/.config/nixos/resources/nix.png fill
 
+# pkill .feh-wrapped
 # swaymsg output eDP-1 bg $HOME/.config/nixos/resources/nix.png fill
-brightnessctl set $monitor_brightness
-brightnessctl -d framework_laptop::kbd_backlight set $keyboard_brightness
+# brightnessctl set $monitor_brightness
+# brightnessctl -d framework_laptop::kbd_backlight set $keyboard_brightness
 swaymsg workspace $current_workspace
 waybar & disown
