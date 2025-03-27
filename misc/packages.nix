@@ -14,8 +14,8 @@
     wget
     fish
     firefox
-    unstable.flameshot
-    unstable.libsForQt5.full
+    flameshot
+    # unstable.libsForQt5.full
     swayfx
     wl-clipboard
     zoxide
