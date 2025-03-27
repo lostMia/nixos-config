@@ -87,6 +87,7 @@
     python312Packages.matplotlib
     # python312Packages.cmake
     cmake
+    gnumake
     fd
     tealdeer
     greetd.greetd
