@@ -47,6 +47,17 @@
     LC_TIME = "de_AT.UTF-8";
   };
 
+  environment.variables = {
+    SDL_VIDEODRIVER = "wayland";
+    _JAVA_AWT_WM_NONREPARENTING = "1";
+    QT_QPA_PLATFORM = "wayland";
+    XDG_CURRENT_DESKTOP = "sway";
+    XDG_SESSION_DESKTOP = "sway";
+    GTK_BACKEND = "wayland,x11";
+    MOZ_ENABLE_WAYLAND = "1";
+    QT_AUTO_SCREEN_SCALE_FACTOR = 0;
+  };
+
   fonts.packages = with pkgs; [
     (nerdfonts.override {fonts = ["Hack"];})
   ];
