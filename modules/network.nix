@@ -71,7 +71,7 @@
           #allowedIPs = [ "10.100.0.1" "91.108.12.0/22" ];
 
           # Set this to the server IP and port.
-          endpoint = "77.75.24.122:21975";
+          endpoint = "77.75.24.122:51820";
           persistentKeepalive = 25;
         }
       ];
