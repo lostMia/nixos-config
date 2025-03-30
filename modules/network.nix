@@ -57,7 +57,7 @@
     wg0 = {
       # Determines the IP address and subnet of the client's end of the tunnel interface.
       ips = ["192.168.1.200/24"];
-      listenPort = 21975;
+      listenPort = 51820;
       privateKeyFile = "/home/mia/Documents/Wireguard/private";
 
       peers = [
