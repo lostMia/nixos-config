@@ -57,7 +57,7 @@
     wg0 = {
       # Determines the IP address and subnet of the client's end of the tunnel interface.
       ips = ["192.168.1.200/24"];
-      listenPort = 51820;
+      listenPort = 21975;
       privateKeyFile = "/home/mia/Documents/Wireguard/private";
 
       peers = [
@@ -65,13 +65,11 @@
           publicKey = "zbvvV6yFulneB5HeIuinjbOQrUn51Z72CUYKDH0l9WQ=";
           # Forward all the traffic via VPN.
           allowedIPs = ["0.0.0.0/0"];
-
-          # allowedIPs = ["192.168.1.0/24"];
           # Or forward only particular subnets
           #allowedIPs = [ "10.100.0.1" "91.108.12.0/22" ];
 
           # Set this to the server IP and port.
-          endpoint = "77.75.24.122:21975";
+          endpoint = "77.75.24.122:51820";
           persistentKeepalive = 25;
         }
       ];
