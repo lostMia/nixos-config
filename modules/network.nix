@@ -53,6 +53,29 @@
   # Or disable the firewall altogether.
   networking.firewall.enable = false;
 
+  networking.wireguard.interfaces = {
+    wg0 = {
+      # Determines the IP address and subnet of the client's end of the tunnel interface.
+      ips = ["10.0.0.2/24"];
+      listenPort = 51820;
+      privateKeyFile = "/home/mia/Documents/Wireguard/private";
+
+      peers = [
+        {
+          publicKey = "zbvvV6yFulneB5HeIuinjbOQrUn51Z72CUYKDH0l9WQ=";
+          # Forward all the traffic via VPN.
+          allowedIPs = ["0.0.0.0/0"];
+          # Or forward only particular subnets
+          #allowedIPs = [ "10.100.0.1" "91.108.12.0/22" ];
+
+          # Set this to the server IP and port.
+          endpoint = "77.75.24.122:51820";
+          persistentKeepalive = 25;
+        }
+      ];
+    };
+  };
+
   # networking.interfaces.br0.useDHCP = true;
   # networking.bridges = {
   #   "br0" = {
