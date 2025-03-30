@@ -54,7 +54,7 @@
   networking.firewall.enable = false;
 
   networking.wireguard.interfaces = {
-    wg0 = {
+    home = {
       # Determines the IP address and subnet of the client's end of the tunnel interface.
       ips = ["10.0.0.2/24"];
       listenPort = 51820;

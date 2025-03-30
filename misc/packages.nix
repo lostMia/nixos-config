@@ -151,7 +151,6 @@
     losslesscut-bin
     wireguard-tools
     wireguard-ui
-    wireguard
 
     # Audio
     pavucontrol
