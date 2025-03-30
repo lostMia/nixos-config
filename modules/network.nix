@@ -54,7 +54,7 @@
   networking.firewall.enable = false;
 
   networking.wireguard.interfaces = {
-    wg0 = {
+    home = {
       # Determines the IP address and subnet of the client's end of the tunnel interface.
       ips = ["192.168.1.200/24"];
       listenPort = 51820;
@@ -64,9 +64,9 @@
         {
           publicKey = "zbvvV6yFulneB5HeIuinjbOQrUn51Z72CUYKDH0l9WQ=";
           # Forward all the traffic via VPN.
-          # allowedIPs = ["0.0.0.0/0"];
+          allowedIPs = ["0.0.0.0/0"];
 
-          allowedIPs = ["192.168.1.0/24"];
+          # allowedIPs = ["192.168.1.0/24"];
           # Or forward only particular subnets
           #allowedIPs = [ "10.100.0.1" "91.108.12.0/22" ];
 
