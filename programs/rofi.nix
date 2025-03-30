@@ -49,6 +49,7 @@
         background-color: @background;
         border:           2;
         border-color:     @border-color;
+        border-radius: 12px;
         padding:          15;
         width:            500px;
     }

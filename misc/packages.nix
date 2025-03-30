@@ -86,10 +86,15 @@
     gnome-themes-extra
     gimp
     vscode
-    python3
-    python312Packages.requests
-    python312Packages.tqdm
-    python312Packages.matplotlib
+
+    # Python
+    (python312.withPackages (ps: [
+      ps.requests
+      ps.matplotlib
+      ps.numpy
+      ps.pyperclip
+    ]))
+
     cmake
     gnumake
     fd
@@ -119,8 +124,6 @@
     unzip
     thefuck
     unstable.nodePackages.npm
-    python312Packages.pyperclip
-    python312Packages.numpy
     rpi-imager
     cups
     google-chrome
@@ -146,6 +149,8 @@
     openssl
     baobab
     losslesscut-bin
+    wireguard-tools
+    wireguard-ui
 
     # Audio
     pavucontrol

@@ -120,7 +120,7 @@
         bindsym $mod+f exec firefox
         #bindsym $mod+l exec alacritty -e lf
         bindsym $mod+x exec $HOME/.config/nixos/scripts/lockscript
-        bindsym $mod+Shift+t exec "$HOME/.config/nixos/scripts/screenshot.sh"
+        bindsym $mod+Shift+t exec "/run/current-system/sw/bin/bash $HOME/.config/nixos/scripts/screenshot.sh"
         #bindsym $mod+Shift+t exec "grimshot copy area"
         #bindsym $mod+Shift+t exec "flameshot gui"
         bindsym $mod+Shift+q reload

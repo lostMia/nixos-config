@@ -69,7 +69,7 @@
 
         "sway/workspaces" = {
           disable-scroll = true;
-          format = "  {name}  ";
+          format = "{name}";
         };
 
         "sway/window#protocol" = {
@@ -237,6 +237,24 @@
           ];
         };
 
+        "group/options" = {
+          orientation = "horizontal";
+          drawer = {
+            transition-duration = 300;
+            children-class = "option";
+            transition-left-to-right = true;
+          };
+          modules = [
+            "custom/options"
+            "user"
+            "idle_inhibitor"
+            "custom/quit"
+            "custom/lock"
+            "custom/reboot"
+            "custom/power"
+          ];
+        };
+
         "disk" = {
           interval = 60;
           format = "󰋊 {percentage_used:2}%";
@@ -267,31 +285,13 @@
           height = 20;
           width = 20;
         };
-
-        "group/options" = {
-          orientation = "horizontal";
-          drawer = {
-            transition-duration = 300;
-            children-class = "option";
-            transition-left-to-right = true;
-          };
-          modules = [
-            "custom/options"
-            "user"
-            "idle_inhibitor"
-            "custom/quit"
-            "custom/lock"
-            "custom/reboot"
-            "custom/power"
-          ];
-        };
       };
     };
 
     style = ''
       * {
       	font-size: 22px;
-        font-family: "HackNerdFont-Regular", monospace;
+      	font-family: "HackNerdFont-Regular", monospace;
       }
 
       window#waybar {
@@ -299,6 +299,7 @@
       	color: #ffffff;
       }
 
+      #workspaces,
       #custom-options,
       #custom-quit,
       #custom-lock,
@@ -429,54 +430,37 @@
       	background: #e78284;
       }
 
-      #workspaces button {
-      	padding: 0px;
-      	color: #ffffff;
-      	background: #1c1c1c;
+      #workspaces {
+      	border: 1.5px solid #555555;
+      	border-radius: 20px;
       	margin-left: 4px;
       	margin-right: 4px;
+      	padding: 0px;
+      }
+
+      #workspaces button {
+      	padding: 0px;
+      	margin: 0px;
+      	border: none;
+      	color: #dddddd;
+      	background: #1c1c1c;
       	border-radius: 20px;
+        transition: padding 250ms cubic-bezier(.44,1.43,.56,1.37), padding 250ms cubic-bezier(.44,1.43,.56,1.37);
       }
 
       #workspaces button.focused {
       	color: #000000;
       	background: #ffffff;
+      	padding-left: 8px;
+      	padding-right: 8px;
       }
+
       #workspaces button:hover {
       	color: #000000;
-      	box-shadow: inherit;
-      	text-shadow: inherit;
+      	padding-left: 8px;
+      	padding-right: 8px;
       }
-      #workspaces button:nth-child(1) {
-      	border: 1.5px solid #b4befe;
-      }
-      #workspaces button:nth-child(2) {
-      	border: 1.5px solid #89dceb;
-      }
-      #workspaces button:nth-child(3) {
-      	border: 1.5px solid #a6e3a1;
-      }
-      #workspaces button:nth-child(4) {
-      	border: 1.5px solid #f9e2af;
-      }
-      #workspaces button:nth-child(5) {
-      	border: 1.5px solid #fab387;
-      }
-      #workspaces button:nth-child(6) {
-      	border: 1.5px solid #e78284;
-      }
-      #workspaces button:nth-child(7) {
-      	border: 1.5px solid #eba0ac;
-      }
-      #workspaces button:nth-child(8) {
-      	border: 1.5px solid #f5c2e7;
-      }
-      #workspaces button:nth-child(9) {
-      	border: 1.5px solid #cba6f7;
-      }
-      #workspaces button:nth-child(10) {
-      	border: 1.5px solid #ffffff;
-      }
+
       #workspaces button.focused:nth-child(1),
       #workspaces button:hover:nth-child(1) {
       	background: #b4befe;
@@ -524,7 +508,7 @@
 
       #window.protocol {
       	background: #1c1c1c;
-      	margin-left: 2px;
+      	margin-left: 4px;
       	border: 1.5px solid #ffffff;
       	border-right: none;
       	border-radius: 20px 0px 0px 20px;
