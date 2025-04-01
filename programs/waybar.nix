@@ -136,7 +136,7 @@
             format = {
               months = "<span color='#ffead3'><b>{}</b></span>";
               days = "<span color='#ecc6d9'>{}</span>";
-              weeks = "<span color='#99ffdd'>{}</span>";
+              weeks = "<span color='#99ffdd'>{:%V}</span>";
               weekdays = "<span color='#ffcc66'>{}</span>";
               today = "<span color='#ff3355'><b><u>{}</u></b></span>";
             };
@@ -431,7 +431,7 @@
       }
 
       #workspaces {
-      	border: 1.5px solid #555555;
+      	border: 1.5px solid #777777;
       	border-radius: 20px;
       	margin-left: 4px;
       	margin-right: 4px;

@@ -151,6 +151,7 @@
     losslesscut-bin
     wireguard-tools
     wireguard-ui
+    nixos-anywhere
 
     # Audio
     pavucontrol

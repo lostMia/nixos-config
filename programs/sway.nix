@@ -130,7 +130,7 @@
         # bindsym $mod+odiaeresis exec woomer
         bindsym $mod+a exec woomer
         # bindsym $mod+p exec $HOME/.config/nixos/scripts/toggle_freeze_process.sh
-        bindsym $mod+w exec $HOME/.config/nixos/scripts/flashbang.sh
+        bindsym $mod+w exec $HOME/.config/nixos/scripts/what_nix.sh
         bindsym $mod+p exec "message=$(hyprpicker -a) && notify-send -u low $message"
 
       # Function Keys
