@@ -13,7 +13,7 @@
       "NetworkManager-wait-online".enable = false;
       # "docker".enable = false;
       "syncthing-init".enable = false;
-      "CUPS".enable = false;
+      "CUPS-Scheduler".enable = false;
       # "wpa_supplicant".enable = false;
     };
   };
