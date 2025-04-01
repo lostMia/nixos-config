@@ -2,8 +2,13 @@
   config,
   lib,
   pkgs,
+  modulesPath,
   ...
 }: {
+  imports = [
+    (modulesPath + "/installer/scan/not-detected.nix")
+  ];
+
   boot = {
     initrd.availableKernelModules = ["nvme" "xhci_pci" "thunderbolt" "usb_storage" "sd_mod"];
     initrd.kernelModules = [];
@@ -22,6 +27,8 @@
     };
 
     loader = {
+      systemd-boot.enable = false;
+      efi.canTouchEfiVariables = true;
       timeout = 0;
       grub = {
         extraEntries = ''
@@ -35,6 +42,11 @@
           }
         '';
         timeoutStyle = "hidden";
+        configurationLimit = 5;
+        enable = true;
+        devices = ["nodev"];
+        efiSupport = true;
+        splashImage = ../resources/nix.png;
       };
     };
   };

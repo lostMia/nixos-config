@@ -78,25 +78,33 @@
       pkgs = stable;
     };
   in {
+    # Collection of NixOS System Configurations.
     nixosConfigurations = {
-      "nixos" = nixpkgs.lib.nixosSystem {
+      "ming" = nixpkgs.lib.nixosSystem {
         inherit specialArgs;
         modules = [
-          ./configuration.nix # NixOS top-level config file
+          ./hosts/framework-13.nix
           nurpkgs.modules.nixos.default
           hardware.nixosModules.framework-13-7040-amd
         ];
       };
-      "nix" = nixpkgs.lib.nixosSystem {
+      "minimal" = nixpkgs.lib.nixosSystem {
         inherit specialArgs;
         modules = [
-          ./configuration.nix # NixOS top-level config file
+          ./hosts/minimal.nix
           nurpkgs.modules.nixos.default
-          hardware.nixosModules.framework-13-7040-amd
+        ];
+      };
+      "desktop" = nixpkgs.lib.nixosSystem {
+        inherit specialArgs;
+        modules = [
+          ./hosts/desktop.nix
+          nurpkgs.modules.nixos.default
         ];
       };
     };
 
+    # Home Manager Configuration.
     homeConfigurations = {
       mia = home-manager.lib.homeManagerConfiguration {
         pkgs = stable;
@@ -107,6 +115,7 @@
       };
     };
 
+    # Collection of custom Nix Packages.
     packages = {
       x86_64-linux.flameshot = stable.callPackage ./src/flameshot.nix {
         enableWlrSupport = true;

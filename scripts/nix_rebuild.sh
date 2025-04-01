@@ -4,7 +4,7 @@ set -e
 pushd $HOME/.config/nixos/
 
 # make changes
-nvim configuration.nix
+nvim flake.nix
 alejandra . &>/dev/null
 
 echo -e "\n\e[1m - - - - - - - - Changes - - - - - - - -\e[0m\n"
@@ -21,7 +21,7 @@ echo "NixOS Rebuilding..."
 #sudo nixos-rebuild switch &>nixos-switch.log || (
 # cat nixos-switch.log | grep --color error && false)
 
-sudo nixos-rebuild switch --flake $HOME/.config/nixos --impure
+sudo nixos-rebuild switch --flake $HOME/.config/nixos/#ming --impure
 notify-send "Build done!" -u low --icon=$HOME/.config/dunst/images/nixos.png
 
 

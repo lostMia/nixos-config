@@ -1,24 +1,26 @@
 {pkgs, ...}: {
+  networking.hostName = "mingming";
+
   imports = [
-    ./hardware/framework-13.nix
-    ./modules/audio.nix
-    ./modules/network.nix
-    ./modules/bluetooth.nix
-    ./modules/graphical.nix
-    ./modules/virtualisation.nix
-    ./modules/pam.nix # read the note in the file
-    ./modules/cups.nix
-    ./services/systemd.nix
-    ./services/syncthing.nix
-    ./services/ssh.nix
-    # ./services/cron.nix
-    ./users/mia.nix
-    ./misc/udev-rules.nix
-    ./misc/packages.nix
+    ../hardware/framework-13.nix
+    ../modules/audio.nix
+    ../modules/network.nix
+    ../modules/bluetooth.nix
+    ../modules/sway.nix
+    # ../modules/gnome.nix
+    ../modules/virtualisation.nix
+    ../modules/cups.nix
+    ../services/systemd.nix
+    ../services/syncthing.nix
+    ../services/ssh.nix
+    # ../services/cron.nix
+    ../users/mia.nix
+    ../misc/udev-rules.nix
+    ../misc/packages.nix
   ];
 
   nix.nixPath = [
-    "nixos-config=/home/mia/.config/nixos/configuration.nix"
+    "nixos-config=/home/mia/.config/nixos/hosts/framework-13.nix"
     "nixpkgs=/nix/var/nix/profiles/per-user/root/channels/nixos"
     "/nix/var/nix/profiles/per-user/root/channels"
   ];

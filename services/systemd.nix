@@ -1,42 +1,39 @@
 {pkgs, ...}: {
-  systemd.sleep.extraConfig = ''
-    AllowSuspendThenHibernate=yes
-    AllowSuspend=yes
-    SuspendEstimationSec=2min
-    HibernateDelaySec=60min
-    SuspendState=freeze
-    HibernateMode=shutdown
-  '';
-  services.logind.extraConfig = ''
-    HandleLidSwitch=suspend-then-hibernate
-    HandleLidSwitchExternalPower=suspend-then-hibernate
-    HandleLidSwitchDocked=suspend-then-hibernate
-  '';
-  services.logind.powerKey = "ignore";
+  systemd = {
+    sleep.extraConfig = ''
+      AllowSuspendThenHibernate=yes
+      AllowSuspend=yes
+      SuspendEstimationSec=2min
+      HibernateDelaySec=60min
+      SuspendState=freeze
+      HibernateMode=shutdown
+    '';
 
-  systemd.services."NetworkManager-wait-online".enable = false;
-  # systemd.services."docker".enable = false;
-  systemd.services."syncthing-init".enable = false;
-
-  services.greetd = {
-    enable = true;
-    settings = {
-      default_session = {
-        command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd sway";
-        user = "mia";
-      };
+    services = {
+      # "NetworkManager-wait-online".enable = false;
+      # "docker".enable = false;
+      "syncthing-init".enable = false;
+      "CUPS".enable = false;
+      "wpa_supplicant".enable = false;
     };
   };
 
-  boot.loader = {
-    systemd-boot.enable = false;
-    efi.canTouchEfiVariables = true;
-    grub = {
-      configurationLimit = 5;
+  services = {
+    logind.extraConfig = ''
+      HandleLidSwitch=suspend-then-hibernate
+      HandleLidSwitchExternalPower=suspend-then-hibernate
+      HandleLidSwitchDocked=suspend-then-hibernate
+    '';
+    logind.powerKey = "ignore";
+
+    greetd = {
       enable = true;
-      devices = ["nodev"];
-      efiSupport = true;
-      splashImage = ../resources/nix.png;
+      settings = {
+        default_session = {
+          command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd sway";
+          user = "mia";
+        };
+      };
     };
   };
 }

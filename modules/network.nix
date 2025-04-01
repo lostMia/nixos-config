@@ -1,5 +1,5 @@
-{config, ...}: {
-  networking.hostName = "nixos";
+{lib, ...}: {
+  networking.hostName = lib.mkDefault "nixos";
 
   services.avahi = {
     enable = true;

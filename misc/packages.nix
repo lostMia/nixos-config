@@ -21,7 +21,6 @@
     libsForQt5.qt5.qtsvg
     libsForQt5.qt5.qtbase
     libsForQt5.kguiaddons
-    swayfx
     wl-clipboard
     zoxide
     unstable.alacritty
@@ -50,7 +49,6 @@
     unstable.shikane
     networkmanagerapplet
     blueman
-    sway-audio-idle-inhibit
     fw-ectool
     xfce.thunar
     nautilus
@@ -68,7 +66,6 @@
     unstable.protonvpn-gui
     fastfetch
     sublime3
-    swayidle
     corrupter
     feh
     cmatrix
@@ -118,7 +115,6 @@
     platformio-core
     ffmpeg
     inotify-tools
-    swayosd
     stress
     zip
     unzip
@@ -152,6 +148,8 @@
     wireguard-tools
     wireguard-ui
     nixos-anywhere
+    platformio-core
+    openocd
 
     # Audio
     pavucontrol
