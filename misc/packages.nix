@@ -150,6 +150,7 @@
     nixos-anywhere
     platformio-core
     openocd
+    gamemode
 
     # Audio
     pavucontrol
