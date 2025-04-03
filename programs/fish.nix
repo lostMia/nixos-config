@@ -86,6 +86,9 @@
       "!!" = "history | head -n 1 | wl-copy";
       "projinit" = "~/.config/nixos/scripts/project_init.sh";
       "w" = "python ~/.config/nixos/scripts/w.py";
+      "pi" = "curl https://ipseeker.io -s | cut -d'\"' -f 4 "; # Get the public ip
+      "vpne" = "sudo systemctl start wg-quick-home.service";
+      "vpnd" = "sudo systemctl stop wg-quick-home.service";
     };
 
     functions = {

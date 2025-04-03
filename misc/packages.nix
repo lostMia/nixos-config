@@ -151,6 +151,7 @@
     platformio-core
     openocd
     gamemode
+    tcpdump
 
     # Audio
     pavucontrol
@@ -164,7 +165,14 @@
     fish.enable = true;
     waybar.enable = true;
     dconf.enable = true;
-    nix-ld.enable = true;
+    nix-ld = {
+      enable = true;
+      libraries = with pkgs; [
+        zlib
+        libglvnd
+        stdenv.cc.cc.lib
+      ];
+    };
     steam.enable = true;
     wireshark.enable = true;
   };
@@ -181,10 +189,4 @@
       rocmOverrideGfx = "11.0.2";
     };
   };
-
-  programs.nix-ld.libraries = with pkgs; [
-    zlib
-    libglvnd
-    stdenv.cc.cc.lib
-  ];
 }

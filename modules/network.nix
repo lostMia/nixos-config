@@ -35,8 +35,6 @@
 
   # networking.interfaces.eth0.useDHCP = true;
 
-  networking.networkmanager.enable = true;
-
   # systemd.network.links."10-fwwlan0" = {
   #   matchConfig.PermanentMACAddress = "14:ac:60:d8:2c:07";
   #   linkConfig.Name = "fwwlan0";
@@ -50,51 +48,76 @@
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
-  networking.firewall.enable = false;
-  networking.firewall.allowedUDPPorts = [13231];
+  # networking.firewall.allowedUDPPorts = [ 51520 13231 ];
 
-  # networking.wireguard.interfaces = {
-  #   home = {
-  #     ips = ["192.168.1.200/24"];
-  #     listenPort = 13231;
-  #     # privateKeyFile = "/home/mia/Documents/Wireguard/privatekey";
-  #     privateKey = "QKQtTxwCpAUasUOBZobMl1R8J6SLTJ/OsCt/9E7Z2FU=";
+  networking = {
+    networkmanager.enable = true;
+    firewall.enable = false;
+    interfaces.home = {
+      useDHCP = false;
+      ipv4.routes = [
+        {
+          address = "192.168.1.0";
+          via = "192.168.100.1";
+          prefixLength = 24;
+        }
+      ];
+    };
+  };
+
+  # Wireguard Setup
+  #   wireguard.interfaces = {
+  #     home = {
+  #       ips = ["192.168.100.2/24"];
+  #       listenPort = 51820;
+  #       mtu = 1280;
+  #       privateKeyFile = "/home/mia/Documents/Wireguard/private_client";
+  #       allowedIPsAsRoutes = false;
+  #       metric = 1;
   #
-  #     peers = [
-  #       {
-  #         publicKey = "kIQeU5Wffq778OkZEUPKbl2tpVHeYesxsls5qvcDr2Q=";
-  #         # Forward all the traffic via VPN.
-  #         allowedIPs = [ "0.0.0.0/0" ];
-  #
-  #         # Or only forward anything destined for the home network.
-  #         # allowedIPs = ["10.0.0.1/24"];
-  #
-  #         # Set this to the server IP and port.
-  #         endpoint = "77.75.24.122:13231";
-  #         persistentKeepalive = 25;
-  #       }
-  #     ];
+  #       peers = [
+  #         {
+  #           presharedKeyFile = "/home/mia/Documents/Wireguard/preshared_key";
+  #           publicKey = "1AjgOEb0DD/bhzq+drR4U3LKojwel9xbMu+YVH/0/jU=";
+  #           allowedIPs = ["192.168.0.0/16"];
+  #           # allowedIPs = [ "0.0.0.0/0" ];
+  #           endpoint = "miauu.ddns.net:51820";
+  #           persistentKeepalive = 25;
+  #         }
+  #       ];
+  #     };
   #   };
   # };
 
-  # networking.wg-quick.interfaces = {
-  #   wg0 = {
-  #     address = [ "10.100.0.2/24" ];
-  #     listenPort = 51820;
-  #     # dns = [ "10.0.0.1" ];
-  #     # privateKey = "QKQtTxwCpAUasUOBZobMl1R8J6SLTJ/OsCt/9E7Z2FU=";
-  #     privateKey = "uNmaadC/y3feorkcQ4issLvNzQFxEGSraV+W12w+i0Y=";
-  #
-  #     peers = [
-  #       {
-  #         publicKey = "noRWD4CwdDzw9fmDBsMVZfNZ5fQerhMdGWkyiTULQiE=";
-  #         # presharedKeyFile = "/root/wireguard-keys/preshared_from_peer0_key";
-  #         allowedIPs = [ "0.0.0.0/0" ];
-  #         endpoint = "10.5.6.144:51820";
-  #         persistentKeepalive = 25;
-  #       }
-  #     ];
-  #   };
+  # Wireguard Setup with wg-quick
+  networking.wg-quick.interfaces = {
+    home = {
+      address = ["192.168.100.2/24"];
+      # dns = [ "10.0.0.1" ];
+      privateKeyFile = "/home/mia/Documents/Wireguard/private_client";
+      autostart = false;
+
+      peers = [
+        {
+          publicKey = "1AjgOEb0DD/bhzq+drR4U3LKojwel9xbMu+YVH/0/jU=";
+          presharedKeyFile = "/home/mia/Documents/Wireguard/preshared_key";
+          allowedIPs = ["192.168.0.0/16"];
+          endpoint = "miauu.ddns.net:51820";
+          persistentKeepalive = 25;
+        }
+      ];
+    };
+  };
+
+  # networking.interfaces.home.ipv4.routes = [{
+  #   address = "192.168.1";
+  #   via = "192.168.100.1";
+  #   prefixLength = 0;
+  # }];
+
+  # networking.defaultGateway = {
+  #   address = "192.168.100.1";
+  #   interface = "home";
   # };
 
   # networking.interfaces.br0.useDHCP = true;

@@ -7,7 +7,7 @@
     ../modules/network.nix
     ../modules/bluetooth.nix
     ../modules/sway.nix
-    ../modules/gnome.nix
+    # ../modules/gnome.nix
     ../modules/virtualisation.nix
     ../modules/cups.nix
     ../services/systemd.nix
