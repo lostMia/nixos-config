@@ -53,16 +53,19 @@
   networking = {
     networkmanager.enable = true;
     firewall.enable = false;
-    interfaces.home = {
-      useDHCP = false;
-      ipv4.routes = [
-        {
-          address = "192.168.1.0";
-          via = "192.168.100.1";
-          prefixLength = 24;
-        }
-      ];
-    };
+    # interfaces.home = {
+    #   useDHCP = false;
+    #   # virtualType = "tun";
+    #   # virtual = true;
+    #   ipv4.routes = [
+    #     {
+    #       address = "192.168.1.0";
+    #       via = "192.168.100.1";
+    #       prefixLength = 24;
+    #       type = "local";
+    #     }
+    #   ];
+    # };
   };
 
   # Wireguard Setup
@@ -93,15 +96,22 @@
   networking.wg-quick.interfaces = {
     home = {
       address = ["192.168.100.2/24"];
-      # dns = [ "10.0.0.1" ];
-      privateKeyFile = "/home/mia/Documents/Wireguard/private_client";
+      privateKeyFile = "/root/wireshark-keys/private_client";
       autostart = false;
+
+      postUp = ''
+        ip route add 192.168.1.0/24 via 192.168.100.1
+      '';
+      postDown = ''
+        ip route del 192.168.1.0/24 via 192.168.100.1
+      '';
 
       peers = [
         {
           publicKey = "1AjgOEb0DD/bhzq+drR4U3LKojwel9xbMu+YVH/0/jU=";
-          presharedKeyFile = "/home/mia/Documents/Wireguard/preshared_key";
+          presharedKeyFile = "/root/wireshark-keys/preshared_key";
           allowedIPs = ["192.168.0.0/16"];
+          # allowedIPs = ["0.0.0.0/0"];
           endpoint = "miauu.ddns.net:51820";
           persistentKeepalive = 25;
         }

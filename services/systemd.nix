@@ -13,7 +13,8 @@
       "NetworkManager-wait-online".enable = false;
       "docker".enable = false;
       "syncthing-init".enable = false;
-      "cups".enable = false;
+      "systemd-networkd-wait-online.service".enable = false;
+      # "cups".enable = false;
       # "wpa_supplicant".enable = false;
     };
   };
