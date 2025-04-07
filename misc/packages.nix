@@ -169,6 +169,11 @@
     fish.enable = true;
     waybar.enable = true;
     dconf.enable = true;
+    gnupg.agent = {
+      enable = true;
+      pinentryPackage = pkgs.pinentry-all;
+      # enableSSHSupport = true;
+    };
     nix-ld = {
       enable = true;
       libraries = with pkgs; [
