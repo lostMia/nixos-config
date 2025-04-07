@@ -154,7 +154,6 @@
     gamemode
     tcpdump
     iperf
-    gnupg1
     pinentry-all
 
     # Audio
