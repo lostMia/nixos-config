@@ -13,6 +13,7 @@
     ../services/systemd.nix
     ../services/syncthing.nix
     ../services/ssh.nix
+    ../services/mysql.nix
     # ../services/cron.nix
     ../users/mia.nix
     ../misc/udev-rules.nix
