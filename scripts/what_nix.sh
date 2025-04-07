@@ -12,7 +12,7 @@ brightnessctl set 255
 
 swaymsg output eDP-1 scale 1 bg $HOME/.config/nixos/resources/nix-qm.png fill
 
-sleep 2.5
+sleep 2
 
 swaymsg output eDP-1 scale 1 bg $HOME/.config/nixos/resources/nix.png fill
 

@@ -90,6 +90,7 @@
       ps.matplotlib
       ps.numpy
       ps.pyperclip
+      ps.mysql-connector
     ]))
 
     cmake
@@ -152,6 +153,9 @@
     openocd
     gamemode
     tcpdump
+    iperf
+    gnupg1
+    pinentry-all
 
     # Audio
     pavucontrol

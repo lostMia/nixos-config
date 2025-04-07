@@ -37,6 +37,7 @@
     bibata-cursors
     dracula-qt5-theme
     dracula-theme
+    mariadb
     # # configuration. For example, this adds a command 'my-hello' to your
     # # environment:
     # (pkgs.writeShellScriptBin "my-hello" ''
