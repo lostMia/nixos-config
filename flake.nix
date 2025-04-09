@@ -38,6 +38,7 @@
       url = "github:nix-community/home-manager/release-24.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    agenix.url = "github:ryantm/agenix";
   };
 
   # - - - - - - - - - - - - - - - - - - - - - - - - Outputs - - - - - - - - - - - - - - - - - - - - - - - #
@@ -51,6 +52,7 @@
     nurpkgs,
     hardware,
     home-manager,
+    agenix,
     ...
   } @ inputs: let
     stable = import nixpkgs {
@@ -86,6 +88,7 @@
           ./hosts/framework-13.nix
           nurpkgs.modules.nixos.default
           hardware.nixosModules.framework-13-7040-amd
+          agenix.nixosModules.default
         ];
       };
       "minimal" = nixpkgs.lib.nixosSystem {
