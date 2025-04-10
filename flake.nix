@@ -27,7 +27,6 @@
   # - - - - - - - - - - - - - - - - - - - - - - - - Inputs - - - - - - - - - - - - - - - - - - - - - - - - #
 
   inputs = {
-    nixpkgs-old.url = "github:NixOS/nixpkgs/nixos-24.05";
     nixpkgs.url = "github:nixos/nixpkgs/release-24.11"; # Stable
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable"; # Unstable
     nixpkgs-very-unstable.url = "github:NixOS/nixpkgs/nixos-unstable-small"; # Unstable - Small (Living on the edqe....)
@@ -38,7 +37,7 @@
       url = "github:nix-community/home-manager/release-24.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    agenix.url = "github:ryantm/agenix";
+    # agenix.url = "github:ryantm/agenix";
   };
 
   # - - - - - - - - - - - - - - - - - - - - - - - - Outputs - - - - - - - - - - - - - - - - - - - - - - - #
@@ -46,20 +45,15 @@
   outputs = {
     self,
     nixpkgs,
-    nixpkgs-old,
     nixpkgs-unstable,
     nixpkgs-very-unstable,
     nurpkgs,
     hardware,
     home-manager,
-    agenix,
+    # agenix,
     ...
   } @ inputs: let
     stable = import nixpkgs {
-      system = "x86_64-linux";
-      config.allowUnfree = true;
-    };
-    old = import nixpkgs-old {
       system = "x86_64-linux";
       config.allowUnfree = true;
     };
@@ -75,7 +69,7 @@
     nur = import nurpkgs {};
 
     specialArgs = {
-      inherit inputs self stable old unstable very-unstable nur;
+      inherit inputs self stable unstable very-unstable nur;
       system = "x86_64-linux";
       pkgs = stable;
     };
@@ -84,11 +78,12 @@
     nixosConfigurations = {
       "ming" = nixpkgs.lib.nixosSystem {
         inherit specialArgs;
+        system = "x86_64-linux";
         modules = [
           ./hosts/framework-13.nix
           nurpkgs.modules.nixos.default
           hardware.nixosModules.framework-13-7040-amd
-          agenix.nixosModules.default
+          # agenix.nixosModules.default
         ];
       };
       "minimal" = nixpkgs.lib.nixosSystem {

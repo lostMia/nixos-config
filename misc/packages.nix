@@ -9,12 +9,11 @@
 
   environment.systemPackages = with pkgs; [
     unstable.neovim
-    neovide
     vim
     wget
     fish
-    firefox
-    unstable.flameshot
+    firefox-bin
+    # unstable.flameshot
     libsForQt5.full
     libsForQt5.qt5.full
     libsForQt5.qt5.qttools
@@ -23,13 +22,14 @@
     libsForQt5.kguiaddons
     wl-clipboard
     zoxide
-    unstable.alacritty
+    alacritty
     keepassxc
     bash
     waybar
     autotiling
     signal-desktop
-    electron
+    electron_33-bin
+    electron-bin
     vesktop
     thunderbird
     power-profiles-daemon
@@ -111,7 +111,7 @@
     cowsay
     dotacat
     superTuxKart
-    ciscoPacketTracer8
+    # ciscoPacketTracer8
     platformio
     platformio-core
     ffmpeg

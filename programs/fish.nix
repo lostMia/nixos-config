@@ -8,7 +8,7 @@
 
       eval (dircolors -c ~/.config/nixos/resources/.dircolors)
 
-      export VISUAL=neovide
+      export VISUAL=nvim
       export EDITOR=$VISUAL
       #export NIX_LD="$(nix-build '<nixpkgs>' -A nix-ld)/bin/nix-ld"
 

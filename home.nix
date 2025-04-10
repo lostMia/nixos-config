@@ -116,6 +116,30 @@
     # EDITOR = "emacs";
   };
 
+  # systemd.user = {
+  #   services.matteo-syncthing = {
+  #     Unit = {
+  #       Description = "Syncthing Dir Change Checker";
+  #     };
+  #
+  #     Service = {
+  #       Type = "oneshot";
+  #       ExecStart = "${pkgs.bash}/bin/bash /home/mia/.config/nixos/scripts/check_for_directory_change.sh";
+  #       Environment = "DISPLAY=:0.0";
+  #       Path = with pkgs; [ libnotify dbus coreutils bash which ];
+  #     };
+  #   };
+  #
+  #   timers.matteo-syncthing = {
+  #     Timer = {
+  #       OnBootSec = "1m";
+  #       OnUnitActiveSec = "1m";
+  #       Unit = "matteo-syncthing.service";
+  #     };
+  #     Install.WantedBy = [ "default.target" ];
+  #   };
+  # };
+
   # home.file
 
   # Let Home Manager install and manage itself.
