@@ -18,6 +18,7 @@ if [[ "$1" == "python" || "$1" == "py" ]]; then
       in stable.mkShell {
         buildInputs = [
           stable.python312
+          stable.python312Packages.venvShellHook
           stable.python312Packages.numpy
           stable.python312Packages.matplotlib
           unstable.python312Packages.mysql-connector
@@ -25,7 +26,14 @@ if [[ "$1" == "python" || "$1" == "py" ]]; then
         ];
 
         shellHook = ''
-          source venv/bin/activate
+          if [ ! -d .venv ]; then
+            python -m venv .venv
+            source .venv/bin/activate
+            pip install --upgrade pip setuptools wheel
+            # pip install [regular pip package(s)] 
+          else
+            source .venv/bin/activate
+          fi
         '';
       };
   };

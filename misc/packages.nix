@@ -9,6 +9,7 @@
 
   environment.systemPackages = with pkgs; [
     unstable.neovim
+    neovide
     vim
     wget
     fish
