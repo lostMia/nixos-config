@@ -156,6 +156,7 @@
     tcpdump
     iperf
     pinentry-all
+    tor-browser
 
     # Audio
     pavucontrol
