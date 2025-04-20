@@ -157,6 +157,7 @@
     iperf
     pinentry-all
     tor-browser
+    qbittorrent
 
     # Audio
     pavucontrol
