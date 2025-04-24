@@ -158,6 +158,7 @@
     pinentry-all
     tor-browser
     qbittorrent
+    comic-mono
 
     # Audio
     pavucontrol
