@@ -159,6 +159,8 @@
     tor-browser
     qbittorrent
     comic-mono
+    comic-relief
+    cum # because..... because? okay?
 
     # Audio
     pavucontrol

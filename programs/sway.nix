@@ -136,6 +136,7 @@
 
       # Function Keys
         bindsym $mod+Shift+m exec sleep 0.1 && swaymsg output eDP-1 dpms toggle
+        bindsym $mod+adiaeresis exec sleep 0.1 && swaymsg output eDP-1 dpms toggle
         bindsym $mod+j exec swaymsg output eDP-1 transform 180 clockwise
         bindsym $mod+Shift+l exec swayosd-client --brightness -5
         bindsym $mod+Shift+h exec swayosd-client --brightness +5
@@ -268,6 +269,13 @@
         # bindsym Return mode "default"
         # bindsym Escape mode "default"
         # bindsym $mod+r mode "resize"
+
+      # Misc
+        # German key name lookup
+        # u U udiaeresis
+        # o O odiaeresis
+        # a A adiaeresis
+        # s S ssharp'
     '';
   };
 }

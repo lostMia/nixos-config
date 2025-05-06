@@ -77,7 +77,6 @@
       "poweroff" = "sudo ectool led power off";
       "powernormal" = "sudo ectool led power auto";
       "tty" = "ls /dev/tty*";
-      "touka" = "cowsay -f bunny";
       "f" = "fuck";
       "getinput" = "bash ~/.config/nixos/scripts/get_aoc_input.sh";
       "ai" = "ollama run llama3.2";
@@ -90,6 +89,8 @@
       "vpne" = "sudo systemctl start wg-quick-home.service";
       "vpnd" = "sudo systemctl stop wg-quick-home.service";
       "ns" = "nix-shell -p";
+      "quote" = "bash ~/.config/nixos/scripts/edit_zitate.sh";
+      # "ls" = "eza -g";
     };
 
     functions = {
@@ -97,7 +98,7 @@
         set dir $argv[1]
         if [ "dir" = "" ]
           builtin cd $HOME
-        else
+            else
           builtin cd $dir
         end
         ls

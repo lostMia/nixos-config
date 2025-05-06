@@ -115,17 +115,20 @@
 
     # Collection of custom Nix Packages.
     packages = {
-      x86_64-linux.flameshot = stable.callPackage ./src/flameshot.nix {
-        enableWlrSupport = true;
-      };
-      x86_64-linux.rmatrix =
-        stable.callPackage ./src/rmatrix.nix {
-        };
-      x86_64-linux.shell-script =
-        stable.callPackage ./src/shell-test.nix {
-        };
-      x86_64-linux.idle-master =
-        stable.callPackage ./src/idle-master.nix {
+      # x86_64-linux.flameshot = stable.callPackage ./src/flameshot.nix {
+      #   enableWlrSupport = true;
+      # };
+      # x86_64-linux.rmatrix =
+      #   stable.callPackage ./src/rmatrix.nix {
+      #   };
+      # x86_64-linux.shell-script =
+      #   stable.callPackage ./src/shell-test.nix {
+      #   };
+      # x86_64-linux.idle-master =
+      #   stable.callPackage ./src/idle-master.nix {
+      #   };
+      x86_64-linux.waybar-timer =
+        stable.callPackage ./src/waybar-timer.nix {
         };
     };
   };
