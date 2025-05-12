@@ -113,7 +113,7 @@
       };
     };
 
-    # Collection of custom Nix Packages.
+    # Collection of custom Nix Packages. (No clue how to actually integrate these into my nixpkgs)
     packages = {
       # x86_64-linux.flameshot = stable.callPackage ./src/flameshot.nix {
       #   enableWlrSupport = true;

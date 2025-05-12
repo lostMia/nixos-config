@@ -2,6 +2,7 @@
   pkgs,
   nur,
   unstable,
+  packages,
   ...
 }: {
   # Allow unfree packages
@@ -161,6 +162,10 @@
     comic-mono
     comic-relief
     cum # because..... because? okay?
+    # packages.waybar-timer
+    obs-studio
+    unstable.openshot-qt
+    flowblade
 
     # Audio
     pavucontrol
