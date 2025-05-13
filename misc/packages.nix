@@ -164,8 +164,7 @@
     cum # because..... because? okay?
     # packages.waybar-timer
     obs-studio
-    unstable.openshot-qt
-    flowblade
+    kdePackages.kdenlive
 
     # Audio
     pavucontrol
