@@ -29,7 +29,7 @@
     bash
     waybar
     autotiling
-    signal-desktop
+    unstable.signal-desktop
     electron_33-bin
     electron-bin
     vesktop
