@@ -165,6 +165,7 @@
     # packages.waybar-timer
     obs-studio
     kdePackages.kdenlive
+    jrnl
 
     # Audio
     pavucontrol
