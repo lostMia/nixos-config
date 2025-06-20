@@ -5,7 +5,7 @@ swayidle -w -d \
   resume 'bash -c "brightnessctl -d framework_laptop::kbd_backlight set 4"' \
   timeout 170 'bash -c "brightnessctl g > /tmp/current_brightness && brightnessctl -e s 30%-"' \
   resume 'bash -c "if [ -f /tmp/current_brightness ]; then brightnessctl set $(cat /tmp/current_brightness); fi"' \
-  timeout 180 '$HOME/.config/nixos/scripts/lockscript' \
+  timeout 175 '$HOME/.config/nixos/scripts/lockscript' \
   timeout 200 'swaymsg "output * dpms off"' \
   resume 'swaymsg "output * dpms on"' \
   after-resume 'swaymsg "output * dpms on"' \

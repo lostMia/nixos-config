@@ -3,8 +3,8 @@
     sleep.extraConfig = ''
       AllowSuspendThenHibernate=yes
       AllowSuspend=yes
-      SuspendEstimationSec=2min
-      HibernateDelaySec=60min
+      SuspendEstimationSec=3min
+      HibernateDelaySec=180min
       SuspendState=freeze
       HibernateMode=shutdown
     '';

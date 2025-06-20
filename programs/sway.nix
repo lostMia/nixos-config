@@ -138,11 +138,11 @@
         bindsym $mod+Shift+m exec sleep 0.1 && swaymsg output eDP-1 dpms toggle
         bindsym $mod+adiaeresis exec sleep 0.1 && swaymsg output eDP-1 dpms toggle
         bindsym $mod+j exec swaymsg output eDP-1 transform 180 clockwise
-        bindsym $mod+Shift+l exec swayosd-client --brightness -5
-        bindsym $mod+Shift+h exec swayosd-client --brightness +5
+        bindsym $mod+Shift+l exec swayosd-client --brightness -3
+        bindsym $mod+Shift+h exec swayosd-client --brightness +3
         bindsym $mod+m exec swayosd-client --output-volume mute-toggle --max-volume 200
-        bindsym $mod+l exec swayosd-client --output-volume -5 --max-volume 200
-        bindsym $mod+h exec swayosd-client --output-volume +5 --max-volume 200
+        bindsym $mod+l exec swayosd-client --output-volume -3 --max-volume 200
+        bindsym $mod+h exec swayosd-client --output-volume +3 --max-volume 200
 
       # Moving around:
         bindsym $mod+$left focus left
@@ -201,7 +201,7 @@
         blur_brightness 1
 
         corner_radius 12
-        default_dim_inactive 0.10
+        default_dim_inactive 0.06
 
       # Layout stuff:
         gaps inner 2
