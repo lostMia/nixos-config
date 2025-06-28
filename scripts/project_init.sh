@@ -5,11 +5,11 @@ PACKAGE_NAME="temp"
 if [[ "$1" == "python" || "$1" == "py" ]]; then
   python -m venv venv
 
-  echo '''
+  echo "
 {
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/release-24.11";
-    unstablepkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs.url = \"github:nixos/nixpkgs/release-25.05\";
+    unstablepkgs.url = \"github:NixOS/nixpkgs/nixos-unstable\";
   };
 
   outputs = { self, nixpkgs, unstablepkgs }: {
@@ -22,8 +22,7 @@ if [[ "$1" == "python" || "$1" == "py" ]]; then
           stable.python312
           stable.python312Packages.venvShellHook
           stable.python312Packages.numpy
-          stable.python312Packages.matplotlib
-          unstable.python312Packages.mysql-connector
+          stable.python312Packages.python-dotenv
           # ...
         ];
 
@@ -39,7 +38,7 @@ if [[ "$1" == "python" || "$1" == "py" ]]; then
         '';
       };
   };
-}''' >> flake.nix
+}" >> flake.nix
 elif [[ "$1" == "rust" || "$1" == "rs" ]]; then
   if [ -n "$2" ]; then
     PACKAGE_NAME=$2
@@ -50,30 +49,30 @@ elif [[ "$1" == "rust" || "$1" == "rs" ]]; then
   nix run nixpkgs#cargo update
 
   # Package 
-  echo '''
+  echo "
 { 
   pkgs ? import <nixpkgs> { } 
 }:
 pkgs.rustPlatform.buildRustPackage rec {
-  pname = "'''$PACKAGE_NAME'''";
+  pname = \""$PACKAGE_NAME"\";
   version = "0.1";
   cargoLock.lockFile = ./Cargo.lock;
   src = pkgs.lib.cleanSource ./.;
-}''' >> default.nix
+}" >> default.nix
 
   # Flake
-  echo '''
+  echo " 
 {
-  description = "'''$PACKAGE_NAME'''";
+  description = \""$PACKAGE_NAME"\";
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    unstablepkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs.url = \"github:nixos/nixpkgs/nixos-unstable\";
+    unstablepkgs.url = \"github:NixOS/nixpkgs/nixos-unstable\";
   };
   outputs = { self, nixpkgs, unstablepkgs }:
     let
       stable = nixpkgs.legacyPackages.x86_64-linux;
       unstable = unstablepkgs.legacyPackages.x86_64-linux;
-      supportedSystems = [ "x86_64-linux" ];
+      supportedSystems = [ \"x86_64-linux\" ];
       forAllSystems = nixpkgs.lib.genAttrs supportedSystems;
       pkgsFor = nixpkgs.legacyPackages;
     in {
@@ -81,7 +80,7 @@ pkgs.rustPlatform.buildRustPackage rec {
         default = pkgsFor.${system}.callPackage ./. { };
       });
     };
-}''' >> flake.nix
+}" >> flake.nix
 else
     echo "Usage: $0 {python|rust} [Project name]"
     exit 1

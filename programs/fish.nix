@@ -90,6 +90,7 @@
       "vpnd" = "sudo systemctl stop wg-quick-home.service";
       "ns" = "nix-shell -p";
       "quote" = "bash ~/.config/nixos/scripts/edit_zitate.sh";
+      "gs" = "git status";
       # "ls" = "eza -g";
     };
 

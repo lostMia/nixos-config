@@ -15,6 +15,10 @@
     wget
     fish
     firefox-bin
+    # firefox-unwrapped
+    # firefox
+    # firefox-esr
+    # firefox-bin-unwrapped
     # unstable.flameshot
     libsForQt5.full
     libsForQt5.qt5.full
@@ -30,7 +34,6 @@
     waybar
     autotiling
     unstable.signal-desktop
-    electron_33-bin
     electron-bin
     vesktop
     thunderbird
@@ -166,6 +169,7 @@
     obs-studio
     kdePackages.kdenlive
     jrnl
+    discordchatexporter-desktop
 
     # Audio
     pavucontrol

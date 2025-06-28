@@ -27,14 +27,14 @@
   # - - - - - - - - - - - - - - - - - - - - - - - - Inputs - - - - - - - - - - - - - - - - - - - - - - - - #
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/release-24.11"; # Stable
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05"; # Stable
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable"; # Unstable
     nixpkgs-very-unstable.url = "github:NixOS/nixpkgs/nixos-unstable-small"; # Unstable - Small (Living on the edqe....)
     nurpkgs.url = "github:nix-community/NUR"; # NUR Repo
     hardware.url = "github:NixOS/nixos-hardware"; # NixOS Hardware
     home-manager = {
       # Home-Manager
-      url = "github:nix-community/home-manager/release-24.11";
+      url = "github:nix-community/home-manager/release-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     # agenix.url = "github:ryantm/agenix";

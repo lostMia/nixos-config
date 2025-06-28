@@ -1,6 +1,6 @@
 {pkgs, ...}: {
   # Disable pulseaudio.
-  hardware.pulseaudio.enable = false;
+  services.pulseaudio.enable = false;
 
   # Enabel pipewire.
   services.pipewire = {

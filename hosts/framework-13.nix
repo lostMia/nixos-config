@@ -63,9 +63,8 @@
   };
 
   fonts.packages = with pkgs; [
-    (nerdfonts.override {fonts = ["Hack"];})
-    comic-mono
-    comic-relief
+    nerd-fonts.hack
+    nerd-fonts.comic-shanns-mono
   ];
 
   # Automatic upgrades and stuffs.
