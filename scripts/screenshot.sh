@@ -4,17 +4,17 @@
 
 # old one using satty instead of flameshot
 # grim -g "$(slurp -c '#ff0000ff')" -t ppm - | satty --filename - --copy-command=wl-copy --early-exit
-hyprpicker -r -z &
+# hyprpicker -r -z &
 
 geometry=$(slurp -c '#ff0000ff')
 
-if [[ "$?" != "0" ]]
-then
-  pkill hyprpicker || true
-  exit
-fi
+# if [[ "$?" != "0" ]]
+# then
+#   pkill hyprpicker || true
+#   exit
+# fi
 
 
 grim -g "$geometry" -t ppm - | satty --filename - --copy-command=wl-copy --early-exit &
 
-pkill hyprpicker || true
+# pkill hyprpicker || true

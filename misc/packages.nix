@@ -169,7 +169,8 @@
     obs-studio
     kdePackages.kdenlive
     jrnl
-    discordchatexporter-desktop
+    appimage-run
+    appimageupdate
 
     # Audio
     pavucontrol
