@@ -1,8 +1,31 @@
 #!/usr/bin/env bash
 
 path="$HOME/Pictures/Screenshots/screen.png"
-grim "$path" &&
-corrupter -add 0 -bheight 20 -stdabber 10 -boffset 50 "$path" "$path" &&
 
-swaylock -c $HOME/.config/swaylock/config &&
-swaymsg "output * dpms on"
+prepare_lock() {
+  # Screenshot main screen and save it at $path
+  grim -o "eDP-1" "$path"
+  # Corrupt and overwrite the image
+  corrupter -add 0 -bheight 20 -stdabber 10 -boffset 50 "$path" "$path"
+}
+
+lock_screen() {
+  swaylock -c $HOME/.config/swaylock/config
+  swaymsg "output * dpms on"
+}
+
+if [[ $# -ge 1 ]]; then
+  if [[ $1 == "prepare" ]]; then
+    prepare_lock
+    exit
+  elif [[ $1 == "show" ]]; then
+    lock_screen
+    exit
+  else
+    echo "Usage $0 [prepare|show]"
+    exit
+  fi
+fi
+
+prepare_lock
+lock_screen
