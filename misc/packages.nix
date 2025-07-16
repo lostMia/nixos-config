@@ -171,6 +171,7 @@
     jrnl
     appimage-run
     appimageupdate
+    playerctl
 
     # Audio
     pavucontrol
