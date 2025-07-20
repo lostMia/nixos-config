@@ -172,6 +172,7 @@
     appimage-run
     appimageupdate
     playerctl
+    wayfreeze
 
     # Audio
     pavucontrol
