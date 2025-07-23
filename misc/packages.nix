@@ -173,6 +173,7 @@
     appimageupdate
     playerctl
     wayfreeze
+    gdb
 
     # Audio
     pavucontrol
