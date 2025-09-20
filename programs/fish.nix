@@ -75,6 +75,7 @@
       "homer" = "home-manager switch --flake ~/.config/nixos --impure";
       "backup" = "~/.config/nixos/scripts/backup.sh & disown";
       "poweroff" = "sudo ectool led power off";
+      "poweron" = "sudo ectool led power auto";
       "powernormal" = "sudo ectool led power auto";
       "tty" = "ls /dev/tty*";
       "f" = "fuck";

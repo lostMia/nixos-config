@@ -68,7 +68,7 @@
         #xkb_options grp:rctrl_toggle,altwin:swap_lalt_lwin
 
         input 2362:628:PIXA3854:00_093A:0274_Touchpad {
-            pointer_accel 0.3
+            pointer_accel 0.8
             tap enabled
             accel_profile flat
             scroll_method two_finger
@@ -92,7 +92,7 @@
       ## Autostart
         exec autotiling                                                           # Automatically tiles in whatever direction is the longest
         exec $HOME/.config/nixos/scripts/idlescript                               # Manages suspending and locking
-        exec $HOME/.config/nixos/scripts/batteryscript.sh                         # Sends battery notifications when necessary
+        exec $0.8E/.config/nixos/scripts/batteryscript.sh                         # Sends battery notifications when necessary
         exec $HOME/.config/nixos/scripts/check_for_directory_change.sh            # Checks for any changes in the syncthing directory
         exec nm-applet                                                            # Networkmanager applet
         exec blueman-applet                                                       # Bluetoothmanager applet

@@ -2,13 +2,15 @@
 
 # Systemd automatically suspends after 3 minutes and 
 # hibernates after 3 hours.
+#
+# timeout 15 'bash -c "$HOME/.config/nixos/scripts/keyboard_fade_brightness.sh 1 0 0.05"' \
 
 swayidle -w -d \
-  timeout 15 'bash -c "$HOME/.config/nixos/scripts/keyboard_fade_brightness.sh 4 0 0.05"' \
-    resume 'bash -c "brightnessctl -d framework_laptop::kbd_backlight set 4"' \
+  timeout 15 'bash -c "brightnessctl -d framework_laptop::kbd_backlight set 0"' \
+    resume 'bash -c "brightnessctl -d framework_laptop::kbd_backlight set 1"' \
   timeout 170 'bash -c "brightnessctl g > /tmp/current_brightness && brightnessctl -e s 30%- && $HOME/.config/nixos/scripts/lockscript prepare"' \
     resume 'bash -c "if [ -f /tmp/current_brightness ]; then brightnessctl set $(cat /tmp/current_brightness); fi"' \
-  timeout 180 'playerctl stop && systemctl suspend' \
+  timeout 180 'playerctl stop & systemctl suspend-then-hibernate' \
   after-resume '$HOME/.config/nixos/scripts/lockscript show' \
   
   # bad idea apparently, because this causes swaylock to sometimes not be responsive 

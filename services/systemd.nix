@@ -4,7 +4,7 @@
       AllowSuspendThenHibernate=yes
       AllowSuspend=yes
       SuspendDelaySec=3min
-      HibernateDelaySec=180min
+      HibernateDelaySec=120min
       SuspendState=freeze
       HibernateMode=shutdown
     '';
