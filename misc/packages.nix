@@ -88,6 +88,7 @@
     gnome-themes-extra
     gimp
     vscode
+    jetbrains.idea-community-bin
 
     # Python
     (python312.withPackages (ps: [
