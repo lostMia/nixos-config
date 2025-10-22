@@ -91,6 +91,7 @@
     gimp
     vscode
     jetbrains.idea-community-bin
+    jetbrains.idea-ultimate
 
     # Python
     (python312.withPackages (ps: [

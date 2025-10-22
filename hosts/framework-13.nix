@@ -11,6 +11,7 @@
     ../modules/virtualisation.nix
     ../modules/cups.nix
     ../services/systemd.nix
+    ../services/security.nix
     ../services/syncthing.nix
     ../services/ssh.nix
     ../services/mysql.nix

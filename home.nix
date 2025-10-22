@@ -86,6 +86,11 @@
     size = 64;
   };
 
+  services.gnome-keyring = {
+    enable = true;
+    components = ["secrets" "ssh" "pkcs11"];
+  };
+
   dconf.settings = {
     "org/gnome/desktop/interface" = {
       color-scheme = "prefer-dark";

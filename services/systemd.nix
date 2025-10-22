@@ -26,7 +26,6 @@
       HandleLidSwitchDocked=suspend-then-hibernate
     '';
     logind.powerKey = "ignore";
-    gnome.gnome-keyring.enable = true;
 
     greetd = {
       enable = true;

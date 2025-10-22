@@ -12,7 +12,8 @@
     extraConfig = {
       credential = {
         helper = "${pkgs.git-credential-manager}/bin/git-credential-manager";
-        credentialStore = "cache";
+        # credentialStore = "cache"; Only temporarily stores credentials in the store which is rather annoying.
+        credentialStore = "secretservice";
       };
       # credential."https://git.htlec.org" = {
       #   helper = "${pkgs.git-credential-manager}/bin/git-credential-manager";
