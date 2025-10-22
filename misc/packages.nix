@@ -42,6 +42,7 @@
     alejandra
     git
     git-lfs
+    git-credential-manager
     gcc
     rofi
     teams-for-linux
@@ -86,6 +87,7 @@
     gtk3
     gtk4
     gnome-themes-extra
+    gnome-keyring
     gimp
     vscode
     jetbrains.idea-community-bin
