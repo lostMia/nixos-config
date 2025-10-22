@@ -45,7 +45,7 @@
     git-credential-manager
     gcc
     rofi
-    teams-for-linux
+    unstable.teams-for-linux
     wayland
     woomer
     xdg-utils
