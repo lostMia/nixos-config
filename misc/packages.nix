@@ -90,7 +90,7 @@
     gnome-keyring
     gimp
     vscode
-    jetbrains.idea-community-bin
+    # jetbrains.idea-community-bin
     jetbrains.idea-ultimate
 
     # Python
