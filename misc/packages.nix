@@ -133,7 +133,9 @@
     rpi-imager
     cups
     google-chrome
-    chromium
+    # chromium
+    chromedriver
+    geckodriver
     geogebra6
     hyprpicker
     vlc
