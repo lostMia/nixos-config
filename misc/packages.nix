@@ -133,7 +133,7 @@
     rpi-imager
     cups
     google-chrome
-    # chromium
+    chromium
     chromedriver
     geogebra6
     hyprpicker
