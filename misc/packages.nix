@@ -135,7 +135,6 @@
     google-chrome
     # chromium
     chromedriver
-    geckodriver
     geogebra6
     hyprpicker
     vlc
