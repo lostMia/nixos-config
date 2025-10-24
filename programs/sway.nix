@@ -81,6 +81,11 @@
             pointer_accel -0.5
         }
 
+        input 1241:64523:USB_Gaming_Mouse {
+            accel_profile flat
+            pointer_accel -0.3
+        }
+
       ### Border colors and looks
         client.focused           #ff4060   #222222 #ff4060 #ff4060  #ff4060
         client.focused_inactive  #222222   #222222 #ff4060 #222222 #222222

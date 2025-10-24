@@ -133,6 +133,7 @@
     rpi-imager
     cups
     google-chrome
+    chromium
     geogebra6
     hyprpicker
     vlc
