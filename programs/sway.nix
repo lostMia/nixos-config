@@ -39,6 +39,11 @@
       for_window [app_id="flameshot"] border pixel 0, floating enable, fullscreen disable, move absolute position 0 0
       for_window [app_id="com.gabm.satty"] floating enable
 
+      ### Teams fix
+      exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK XDG_CURRENT_DESKTOP
+      exec hash dbus-update-activation-environment 2>/dev/null && \
+          dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK XDG_CURRENT_DESKTOP XDG_CURRENT_DESKTOP=sway
+
       ### Variables
         set $mod Mod4
         set $left b
