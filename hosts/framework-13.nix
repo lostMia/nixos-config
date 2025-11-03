@@ -42,7 +42,7 @@
   console.keyMap = "bone";
 
   # Select internationalisation properties.
-  i18n.defaultLocale = "de_AT.UTF-8";
+  i18n.defaultLocale = "en_US.UTF-8";
   i18n.extraLocaleSettings = {
     LC_ADDRESS = "de_AT.UTF-8";
     LC_IDENTIFICATION = "de_AT.UTF-8";
@@ -53,6 +53,9 @@
     LC_PAPER = "de_AT.UTF-8";
     LC_TELEPHONE = "de_AT.UTF-8";
     LC_TIME = "de_AT.UTF-8";
+    LC_COLLATE = "de_AT.UTF-8";
+    LC_CTYPE = "de_AT.UTF-8";
+    LC_MESSAGES = "de_AT.UTF-8";
   };
 
   environment.variables = {
