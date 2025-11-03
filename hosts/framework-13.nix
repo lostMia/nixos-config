@@ -54,8 +54,6 @@
     LC_TELEPHONE = "de_AT.UTF-8";
     LC_TIME = "de_AT.UTF-8";
     LC_COLLATE = "de_AT.UTF-8";
-    LC_CTYPE = "de_AT.UTF-8";
-    LC_MESSAGES = "de_AT.UTF-8";
   };
 
   environment.variables = {
