@@ -92,6 +92,7 @@
     vscode
     # jetbrains.idea-community-bin
     jetbrains.idea-ultimate
+    awscli2
 
     # Python
     (python312.withPackages (ps: [
