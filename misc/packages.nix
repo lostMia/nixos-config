@@ -181,6 +181,7 @@
     playerctl
     wayfreeze
     gdb
+    remmina
 
     # Audio
     pavucontrol

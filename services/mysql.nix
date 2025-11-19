@@ -2,6 +2,11 @@
   services.mysql = {
     enable = true;
     package = pkgs.mariadb;
+    settings = {
+      mysqld = {
+        lower_case_table_names = 1;
+      };
+    };
     # initialScript = pkgs.writeText "mariadb-init.sql" ''
     #   -- Regular Testing Database
     #   CREATE DATABASE IF NOT EXISTS mydb;

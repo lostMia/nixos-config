@@ -3,7 +3,7 @@
 PACKAGE_NAME="temp"
 
 if [[ "$1" == "python" || "$1" == "py" ]]; then
-  python -m venv venv
+  python -m venv .venv
 
   echo "
 {
@@ -15,8 +15,19 @@ if [[ "$1" == "python" || "$1" == "py" ]]; then
   outputs = { self, nixpkgs, unstablepkgs }: {
     devShell.x86_64-linux =
       let
-        stable = nixpkgs.legacyPackages.x86_64-linux;
-        unstable = unstablepkgs.legacyPackages.x86_64-linux;
+        stable = import nixpkgs {
+          system = 'x86_64-linux';
+          config = {
+            allowUnfree = true;
+          };
+        };
+
+        unstable = import unstablepkgs {
+          system = 'x86_64-linux';
+          config = {
+            allowUnfree = true;
+          };
+        };
       in stable.mkShell {
         buildInputs = [
           stable.python312
