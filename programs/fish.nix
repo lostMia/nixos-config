@@ -92,8 +92,7 @@
       "ns" = "nix-shell -p";
       "quote" = "bash ~/.config/nixos/scripts/edit_zitate.sh";
       "gs" = "git status";
-      "menu" = "open 'https://www.stoanergroben.at/mittagsmenue.pdf'";
-      # "ls" = "eza -g";
+      "menu" = "bash ~/.config/nixos/scripts/open_menu.sh";
     };
 
     functions = {

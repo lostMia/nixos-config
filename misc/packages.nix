@@ -131,7 +131,6 @@
     unzip
     thefuck
     unstable.nodePackages.npm
-    rpi-imager
     cups
     google-chrome
     chromium
@@ -182,6 +181,7 @@
     wayfreeze
     gdb
     remmina
+    poppler_utils
 
     # Audio
     pavucontrol
