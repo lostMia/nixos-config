@@ -19,7 +19,7 @@
     ../users/mia.nix
 
     # Work related configurations (shh :3)
-    # ../work/work.nix
+    ../work/work.nix
 
     ../misc/udev-rules.nix
     ../misc/packages.nix
