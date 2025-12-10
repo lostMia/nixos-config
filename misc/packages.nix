@@ -148,9 +148,9 @@
     galculator
     sshpass
     jre8
-    adoptopenjdk-icedtea-web
     nss.tools
     nss
+    nspr
     wireshark
     cron
     apacheHttpd
@@ -182,6 +182,8 @@
     gdb
     remmina
     poppler_utils
+    # jetbrains.jdk
+    jetbrains.jdk-no-jcef
 
     # Audio
     pavucontrol
