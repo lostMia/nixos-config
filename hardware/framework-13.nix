@@ -29,7 +29,7 @@
     loader = {
       systemd-boot.enable = false;
       efi.canTouchEfiVariables = true;
-      timeout = 0;
+      timeout = 3;
       grub = {
         extraEntries = ''
           menuentry "Windows" {
@@ -41,7 +41,6 @@
             chainloader /EFI/Microsoft/Boot/bootmgfw.efi
           }
         '';
-        timeoutStyle = "hidden";
         configurationLimit = 5;
         enable = true;
         devices = ["nodev"];
