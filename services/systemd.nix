@@ -30,7 +30,7 @@
     # displayManager.ly = {
     #   enable = true;
     # };
-    
+
     greetd = {
       enable = true;
       settings = {

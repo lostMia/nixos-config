@@ -12,7 +12,7 @@
       export EDITOR=$VISUAL
       #export NIX_LD="$(nix-build '<nixpkgs>' -A nix-ld)/bin/nix-ld"
 
-      pay-respects fish | source
+      # pay-respects fish | source
       zoxide init fish | source
       # any-nix-shell fish --info-right | source
 
