@@ -20,18 +20,22 @@
   };
 
   services = {
-    logind.extraConfig = ''
-      HandleLidSwitch=suspend-then-hibernate
-      HandleLidSwitchExternalPower=suspend-then-hibernate
-      HandleLidSwitchDocked=suspend-then-hibernate
-    '';
-    logind.powerKey = "ignore";
+    logind.settings.Login = {
+      HandleLidSwitch = "suspend-then-hibernate";
+      HandleLidSwitchExternalPower = "suspend-then-hibernate";
+      HandleLidSwitchDocked = "suspend-then-hibernate";
+      HandlePowerKey = "ignore";
+    };
 
+    # displayManager.ly = {
+    #   enable = true;
+    # };
+    
     greetd = {
       enable = true;
       settings = {
         default_session = {
-          command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd sway";
+          command = "${pkgs.tuigreet}/bin/tuigreet --time --cmd sway";
           user = "mia";
         };
       };

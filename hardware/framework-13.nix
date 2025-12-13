@@ -54,9 +54,6 @@
   hardware = {
     acpilight.enable = lib.mkDefault true;
     sensor.iio.enable = lib.mkDefault true;
-    graphics.extraPackages = [
-      pkgs.amdvlk
-    ];
     cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
   };
 

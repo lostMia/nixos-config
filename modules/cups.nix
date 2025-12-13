@@ -6,7 +6,7 @@
       cnijfilter2
       cnijfilter_4_00
       cnijfilter_2_80
-      labelife-label-printer
+      # labelife-label-printer
       lprint
     ];
   };

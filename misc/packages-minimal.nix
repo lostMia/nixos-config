@@ -53,8 +53,8 @@
     python312.withPackages
     fd
     tealdeer
-    greetd.greetd
-    greetd.tuigreet
+    greetd
+    tuigreet
     nwg-displays
     fishPlugins.foreign-env
     wl-mirror

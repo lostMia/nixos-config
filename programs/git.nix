@@ -6,10 +6,11 @@
   programs.git = {
     enable = true;
     lfs.enable = true;
-    userName = "lostmia";
-    userEmail = "miaunterladstaetter@gmail.com";
-
-    extraConfig = {
+    settings = {
+      user = {
+        email = "miaunterladstaetter@gmail.com";
+        name = "lostmia";
+      };
       credential = {
         helper = "${pkgs.git-credential-manager}/bin/git-credential-manager";
         # credentialStore = "cache"; Only temporarily stores credentials in the store which is rather annoying.

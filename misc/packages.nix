@@ -20,8 +20,6 @@
     # firefox-esr
     # firefox-bin-unwrapped
     # unstable.flameshot
-    libsForQt5.full
-    libsForQt5.qt5.full
     libsForQt5.qt5.qttools
     libsForQt5.qt5.qtsvg
     libsForQt5.qt5.qtbase
@@ -86,7 +84,7 @@
     gtk2
     gtk3
     gtk4
-    gnome-themes-extra
+    # gnome-themes-extra
     gnome-keyring
     gimp
     vscode
@@ -107,8 +105,8 @@
     gnumake
     fd
     tealdeer
-    greetd.greetd
-    greetd.tuigreet
+    greetd
+    tuigreet
     uwufetch
     graphite-cursors
     nwg-look
@@ -129,7 +127,7 @@
     stress
     zip
     unzip
-    thefuck
+    pay-respects
     unstable.nodePackages.npm
     cups
     google-chrome
@@ -181,7 +179,7 @@
     wayfreeze
     gdb
     remmina
-    poppler_utils
+    poppler-utils
     # jetbrains.jdk
     jetbrains.jdk-no-jcef
 
@@ -204,11 +202,6 @@
     };
     nix-ld = {
       enable = true;
-      libraries = with pkgs; [
-        zlib
-        libglvnd
-        stdenv.cc.cc.lib
-      ];
     };
     steam.enable = true;
     wireshark.enable = true;
@@ -218,6 +211,7 @@
     gvfs.enable = true;
     udisks2.enable = true;
     devmon.enable = true;
+    upower.enable = true;
     power-profiles-daemon.enable = true;
     dbus.enable = true;
     ollama = {
