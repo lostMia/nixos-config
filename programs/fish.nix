@@ -6,7 +6,7 @@
       set -x UUID_BACKUP "1D15-EA5E"
       set -x UUID_BACKUP2 "2D15-EA5E"
 
-      eval (dircolors -c ~/.config/nixos/resources/.dircolors)
+      # eval (dircolors -c ~/.config/nixos/resources/.dircolors)
 
       export VISUAL=neovide
       export EDITOR=$VISUAL
@@ -17,7 +17,8 @@
       # any-nix-shell fish --info-right | source
 
       #echo -e "\e[1m/ᐠ - ˕ -マ"
-      echo -e "\e[1m ᨐ "
+      # echo -e "\e[1m ᨐ "
+      echo "this is a test :)"
     '';
 
     shellAliases = {

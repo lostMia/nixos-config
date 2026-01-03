@@ -32,7 +32,7 @@
     # };
 
     greetd = {
-      enable = true;
+      enable = false;
       settings = {
         default_session = {
           command = "${pkgs.tuigreet}/bin/tuigreet --time --cmd sway";

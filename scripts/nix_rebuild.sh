@@ -28,14 +28,14 @@ notify-send "Build done!" -u low --icon=$HOME/.config/dunst/images/nixos.png
 echo -e "\n\e[1m - - - - - - - - Commit - - - - - - - -\e[0m\n"
 
 # git
-gen=$(nixos-rebuild list-generations | grep current)
+gen=$(nixos-rebuild list-generations | grep True | awk '{ print $1, $2, $3, $4, $5 }')
 git commit -am "$gen"
 git push
 
 echo -e "\n\e[1m - - - - - Generation Cleanup - - - - -\e[0m\n"
 
 # clean up old nixos generations
-sudo bash $HOME/.config/nixos/scripts/trim_generations.sh 5 5 system
+sudo bash $HOME/.config/nixos/scripts/trim_generations.sh 50 60 system
 # clean up old home-manager generations
 home-manager expire-generations "-15 days"
 

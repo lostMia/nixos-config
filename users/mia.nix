@@ -7,6 +7,13 @@
     packages = [];
   };
 
+  users.users.root = {
+    packages = [
+      pkgs.bashInteractive
+    ];
+    shell = pkgs.bashInteractive;
+  };
+
   # fish ><> :>
-  users.defaultUserShell = pkgs.fish;
+  users.defaultUserShell = pkgs.bash;
 }

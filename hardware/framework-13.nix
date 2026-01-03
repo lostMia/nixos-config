@@ -68,7 +68,6 @@
     "/boot" = {
       device = "/dev/disk/by-uuid/CC55-CE6E";
       fsType = "vfat";
-      options = ["fmask=0077" "dmask=0077"];
     };
   };
 
