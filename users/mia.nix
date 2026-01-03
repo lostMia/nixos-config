@@ -15,5 +15,5 @@
   };
 
   # fish ><> :>
-  users.defaultUserShell = pkgs.bash;
+  users.defaultUserShell = pkgs.fish;
 }
