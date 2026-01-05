@@ -14,7 +14,7 @@
     ../services/security.nix
     ../services/syncthing.nix
     ../services/ssh.nix
-    ../services/mysql.nix
+    ../services/db.nix
     # ../services/cron.nix
     ../users/mia.nix
 

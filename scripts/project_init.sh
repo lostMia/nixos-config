@@ -16,24 +16,24 @@ if [[ "$1" == "python" || "$1" == "py" ]]; then
     devShell.x86_64-linux =
       let
         stable = import nixpkgs {
-          system = 'x86_64-linux';
+          system = \"x86_64-linux\";
           config = {
             allowUnfree = true;
           };
         };
 
         unstable = import unstablepkgs {
-          system = 'x86_64-linux';
+          system = \"x86_64-linux\";
           config = {
             allowUnfree = true;
           };
         };
       in stable.mkShell {
         buildInputs = [
-          stable.python312
-          stable.python312Packages.venvShellHook
-          stable.python312Packages.numpy
-          stable.python312Packages.python-dotenv
+          stable.python313
+          stable.python313Packages.venvShellHook
+          stable.python313Packages.numpy
+          stable.python313Packages.python-dotenv
           # ...
         ];
 
