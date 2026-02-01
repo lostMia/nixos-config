@@ -16,6 +16,7 @@
         # credentialStore = "cache"; Only temporarily stores credentials in the store which is rather annoying.
         credentialStore = "secretservice";
       };
+      pull.rebase = true;
       # credential."https://git.htlec.org" = {
       #   helper = "${pkgs.git-credential-manager}/bin/git-credential-manager";
       #   provider = "generic";

@@ -33,7 +33,7 @@
     autotiling
     unstable.signal-desktop
     electron-bin
-    vesktop
+    # vesktop
     thunderbird
     power-profiles-daemon
     brightnessctl
@@ -89,7 +89,7 @@
     gimp
     vscode
     # jetbrains.idea-community-bin
-    jetbrains.idea-ultimate
+    jetbrains.idea
     awscli2
 
     # Python
@@ -172,7 +172,7 @@
     # packages.waybar-timer
     obs-studio
     kdePackages.kdenlive
-    jrnl
+    unstable.jrnl
     appimage-run
     appimageupdate
     playerctl
@@ -182,6 +182,7 @@
     poppler-utils
     # jetbrains.jdk
     jetbrains.jdk-no-jcef
+    antares
 
     # Audio
     pavucontrol
