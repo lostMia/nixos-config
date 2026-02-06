@@ -33,7 +33,7 @@
     autotiling
     unstable.signal-desktop
     electron-bin
-    # vesktop
+    vesktop
     thunderbird
     power-profiles-daemon
     brightnessctl
