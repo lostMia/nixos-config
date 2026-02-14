@@ -1,9 +1,13 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  unstable,
+  ...
+}: {
   environment.systemPackages = with pkgs; [
     swayfx
     sway-audio-idle-inhibit
     swayidle
-    swayosd
+    unstable.swayosd
   ];
 
   # Configure keymap in X11
