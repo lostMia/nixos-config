@@ -12,6 +12,7 @@
     ./programs/sway.nix
     ./programs/swaylock.nix
     ./programs/rofi.nix
+    ./programs/keepassxc.nix
     # ./programs/auto-cpu.nix # Read the comment in the file.
   ];
 

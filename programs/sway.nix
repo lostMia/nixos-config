@@ -32,9 +32,10 @@
         set $crust     #11111b
 
       ### Flameshot fix
-        exec_always systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK
-        exec_always hash dbus-update-activation-environment 2>/dev/null && \
-            dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
+        # exec_always systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK
+        # exec_always hash dbus-update-activation-environment 2>/dev/null && \
+        #     dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
+        exec_always dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
 
       for_window [app_id="flameshot"] border pixel 0, floating enable, fullscreen disable, move absolute position 0 0
       for_window [app_id="com.gabm.satty"] floating enable
@@ -105,6 +106,7 @@
         exec $0.8E/.config/nixos/scripts/batteryscript.sh                         # Sends battery notifications when necessary
         exec $HOME/.config/nixos/scripts/check_for_directory_change.sh            # Checks for any changes in the syncthing directory
         exec nm-applet                                                            # Networkmanager applet
+        # exec soteria                                                              # Polkit agent
         exec blueman-applet                                                       # Bluetoothmanager applet
         exec blueman-tray                                                         # Bluetoothmanager tray icon
         exec signal-desktop                                                       # Signal (Even though sebi refuses to use it pwp)

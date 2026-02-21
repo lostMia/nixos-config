@@ -27,7 +27,6 @@
     wl-clipboard
     zoxide
     alacritty
-    keepassxc
     bash
     waybar
     autotiling
@@ -161,6 +160,7 @@
     platformio-core
     openocd
     gamemode
+    polkit_gnome
     tcpdump
     iperf
     pinentry-all
