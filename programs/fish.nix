@@ -94,6 +94,7 @@
       "quote" = "bash ~/.config/nixos/scripts/edit_zitate.sh";
       "gs" = "git status";
       "menu" = "bash ~/.config/nixos/scripts/open_menu.sh";
+      "enc" = "gpg --pinentry-mode loopback --passphrase-file";
     };
 
     functions = {
