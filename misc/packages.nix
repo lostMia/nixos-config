@@ -67,6 +67,7 @@
     jq
     satty
     unstable.protonvpn-gui
+    unstable.proton-vpn-cli
     fastfetch
     sublime3
     corrupter
