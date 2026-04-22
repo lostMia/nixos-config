@@ -8,7 +8,7 @@ if [[ "$1" == "python" || "$1" == "py" ]]; then
   echo "
 {
   inputs = {
-    nixpkgs.url = \"github:nixos/nixpkgs/release-25.05\";
+    nixpkgs.url = \"github:nixos/nixpkgs/release-25.11\";
     unstablepkgs.url = \"github:NixOS/nixpkgs/nixos-unstable\";
   };
 

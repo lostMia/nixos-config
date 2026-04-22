@@ -184,6 +184,7 @@
     # jetbrains.jdk
     jetbrains.jdk-no-jcef
     antares
+    claude-code
 
     # Audio
     pavucontrol
