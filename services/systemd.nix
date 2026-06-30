@@ -1,13 +1,13 @@
 {pkgs, ...}: {
   systemd = {
-    sleep.extraConfig = ''
-      AllowSuspendThenHibernate=yes
-      AllowSuspend=yes
-      SuspendDelaySec=3min
-      HibernateDelaySec=120min
-      SuspendState=freeze
-      HibernateMode=shutdown
-    '';
+    sleep.settings.Sleep = {
+      AllowSuspendThenHibernate = true;
+      AllowSuspend = true;
+      SuspendDelaySec = "3min";
+      HibernateDelaySec = "120min";
+      SuspendState = "freeze";
+      HibernateMode = "shutdown";
+    };
 
     services = {
       "NetworkManager-wait-online".enable = false;

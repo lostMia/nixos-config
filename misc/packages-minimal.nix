@@ -50,7 +50,7 @@
     corrupter
     xdg-desktop-portal
     xdg-desktop-portal-wlr
-    python312.withPackages
+    python314.withPackages
     fd
     tealdeer
     greetd

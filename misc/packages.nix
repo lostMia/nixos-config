@@ -23,7 +23,6 @@
     libsForQt5.qt5.qttools
     libsForQt5.qt5.qtsvg
     libsForQt5.qt5.qtbase
-    libsForQt5.kguiaddons
     wl-clipboard
     zoxide
     alacritty
@@ -31,8 +30,8 @@
     waybar
     autotiling
     unstable.signal-desktop
-    electron-bin
-    vesktop
+    # electron-bin
+    unstable.vesktop
     thunderbird
     power-profiles-daemon
     brightnessctl
@@ -53,7 +52,7 @@
     networkmanagerapplet
     blueman
     fw-ectool
-    xfce.thunar
+    thunar
     nautilus
     killall
     # libreoffice-qt6-still
@@ -66,7 +65,7 @@
     file
     jq
     satty
-    unstable.protonvpn-gui
+    unstable.proton-vpn
     unstable.proton-vpn-cli
     fastfetch
     sublime3
@@ -93,7 +92,7 @@
     awscli2
 
     # Python
-    (python312.withPackages (ps: [
+    (python314.withPackages (ps: [
       ps.requests
       ps.matplotlib
       ps.numpy
@@ -118,7 +117,7 @@
     fortune
     cowsay
     dotacat
-    superTuxKart
+    supertuxkart
     # ciscoPacketTracer8
     platformio
     platformio-core
@@ -128,7 +127,6 @@
     zip
     unzip
     pay-respects
-    unstable.nodePackages.npm
     cups
     google-chrome
     chromium
@@ -218,7 +216,7 @@
     dbus.enable = true;
     ollama = {
       enable = true;
-      acceleration = "rocm";
+      package = pkgs.ollama-rocm;
       rocmOverrideGfx = "11.0.2";
     };
   };
