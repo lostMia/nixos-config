@@ -97,6 +97,7 @@
       "enc" = "openssl rand -out key.bin 512 && gpg --symmetric --pinentry-mode loopback --passphrase-file key.bin";
       "dec" = "gpg --pinentry-mode loopback --passphrase-file key.bin";
       "aiby" = "~/.config/nixos/scripts/aiby.sh";
+      "cleanup" = "~/.config/nixos/scripts/cleanup.sh";
     };
 
     functions = {
