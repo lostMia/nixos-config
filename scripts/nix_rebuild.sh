@@ -35,7 +35,7 @@ git push
 echo -e "\n\e[1m - - - - - Generation Cleanup - - - - -\e[0m\n"
 
 # clean up old nixos generations
-sudo bash $HOME/.config/nixos/scripts/trim_generations.sh 50 60 system
+sudo bash $HOME/.config/nixos/scripts/trim_generations.sh 25 30 system
 # clean up old home-manager generations
 home-manager expire-generations "-15 days"
 
