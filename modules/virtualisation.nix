@@ -1,12 +1,16 @@
 {...}: {
-  virtualisation.docker.enable = true;
-  virtualisation.libvirtd.enable = true;
-  programs.virt-manager.enable = true;
-
-  virtualisation.libvirtd = {
-    allowedBridges = [
-      "virbr0"
-      "br0"
-    ];
+  virtualisation = {
+    docker = {
+      enable = true;
+      storageDriver = "btrfs";
+    };
+    libvirtd = {
+      enable = true;
+      allowedBridges = [
+        "virbr0"
+        "br0"
+      ];
+    };
   };
+  programs.virt-manager.enable = true;
 }

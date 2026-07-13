@@ -89,7 +89,9 @@
     vscode
     # jetbrains.idea-community-bin
     jetbrains.idea
+    jetbrains.clion
     awscli2
+    codex
 
     # Python
     (python314.withPackages (ps: [
@@ -182,6 +184,7 @@
     # jetbrains.jdk
     jetbrains.jdk-no-jcef
     antares
+    solaar
 
     # Audio
     pavucontrol
