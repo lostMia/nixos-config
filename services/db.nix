@@ -1,6 +1,6 @@
 {pkgs, ...}: {
   services.mysql = {
-    enable = true;
+    # enable = true;
     package = pkgs.mariadb;
     settings = {
       mysqld = {

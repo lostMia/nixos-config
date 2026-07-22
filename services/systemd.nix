@@ -11,7 +11,7 @@
 
     services = {
       "NetworkManager-wait-online".enable = false;
-      "docker".enable = false;
+      # "docker".enable = false;
       "syncthing-init".enable = false;
       "systemd-networkd-wait-online.service".enable = false;
       # "cups".enable = false;

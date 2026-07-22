@@ -88,7 +88,7 @@
     gimp
     vscode
     # jetbrains.idea-community-bin
-    jetbrains.idea
+    unstable.jetbrains.idea
     jetbrains.clion
     awscli2
     codex

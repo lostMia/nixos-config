@@ -8,7 +8,7 @@ if [[ "$1" == "python" || "$1" == "py" ]]; then
   echo "
 {
   inputs = {
-    nixpkgs.url = \"github:nixos/nixpkgs/release-25.11\";
+    nixpkgs.url = \"github:nixos/nixpkgs/release-26.05\";
     unstablepkgs.url = \"github:NixOS/nixpkgs/nixos-unstable\";
   };
 
@@ -30,10 +30,9 @@ if [[ "$1" == "python" || "$1" == "py" ]]; then
         };
       in stable.mkShell {
         buildInputs = [
-          stable.python313
-          stable.python313Packages.venvShellHook
-          stable.python313Packages.numpy
-          stable.python313Packages.python-dotenv
+          stable.python314
+          stable.python314Packages.venvShellHook
+          stable.python314Packages.python-dotenv
           # ...
         ];
 
