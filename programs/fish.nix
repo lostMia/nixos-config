@@ -75,9 +75,9 @@
       "goarnix" = "sudo nixos-rebuild switch --flake ~/.config/nixos";
       "homer" = "home-manager switch --flake ~/.config/nixos --impure";
       "backup" = "~/.config/nixos/scripts/backup.sh & disown";
-      "poweroff" = "sudo ectool led power off";
-      "poweron" = "sudo ectool led power auto";
-      "powernormal" = "sudo ectool led power auto";
+      "ledoff" = "sudo ectool led power off";
+      "ledon" = "sudo ectool led power auto";
+      "lednormal" = "sudo ectool led power auto";
       "tty" = "ls /dev/tty*";
       "f" = "fuck";
       "getinput" = "bash ~/.config/nixos/scripts/get_aoc_input.sh";

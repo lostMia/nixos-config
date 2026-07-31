@@ -91,7 +91,7 @@
     unstable.jetbrains.idea
     jetbrains.clion
     awscli2
-    codex
+    unstable.codex
 
     # Python
     (python314.withPackages (ps: [
