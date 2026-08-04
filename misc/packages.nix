@@ -89,7 +89,7 @@
     vscode
     # jetbrains.idea-community-bin
     unstable.jetbrains.idea
-    jetbrains.clion
+    # jetbrains.clion
     awscli2
     unstable.codex
 
