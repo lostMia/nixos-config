@@ -37,7 +37,11 @@
       url = "github:nix-community/home-manager/release-26.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    # agenix.url = "github:ryantm/agenix";
+
+    codex-desktop-linux = {
+      url = "github:ilysenko/codex-desktop-linux/main";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   # - - - - - - - - - - - - - - - - - - - - - - - - Outputs - - - - - - - - - - - - - - - - - - - - - - - #
@@ -50,7 +54,6 @@
     nurpkgs,
     hardware,
     home-manager,
-    # agenix,
     ...
   } @ inputs: let
     stable = import nixpkgs {

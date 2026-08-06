@@ -5,7 +5,7 @@
     settings = {
       window.opacity = 0.0;
       font = {
-        size = 16.0;
+        size = 14.0;
 
         normal = {
           family = "HackNerdFont";

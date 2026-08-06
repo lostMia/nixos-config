@@ -1,12 +1,16 @@
 {
+  inputs,
   pkgs,
   nur,
   unstable,
-  packages,
   ...
 }: {
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
+
+  imports = [
+    inputs.codex-desktop-linux.nixosModules.default
+  ];
 
   environment.systemPackages = with pkgs; [
     unstable.neovim
@@ -145,7 +149,7 @@
     wev
     galculator
     sshpass
-    jre8
+    jdk25
     nss.tools
     nss
     nspr
@@ -208,6 +212,10 @@
     };
     steam.enable = true;
     wireshark.enable = true;
+    codexDesktopLinux = {
+      enable = true;
+      cliPackage = pkgs.codex;
+    };
   };
 
   services = {

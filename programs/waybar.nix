@@ -196,7 +196,7 @@
 
         "temperature" = {
           interval = 1;
-          thermal-zone = 2;
+          thermal-zone = 3;
           critical-threshold = 80;
           format = "{icon} {temperatureC}°C";
           format-icons = [
