@@ -1,6 +1,6 @@
 {
   "nodes": {
-    "codex-desktop-linux": {
+    "codex-desktop": {
       "inputs": {
         "flake-utils": "flake-utils",
         "nixpkgs": [
@@ -8,11 +8,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1785909397,
-        "narHash": "sha256-mUiYbEEBgYQks6kvvYyrWWjg9qzdlrxtvuBujdbv9yI=",
+        "lastModified": 1786116699,
+        "narHash": "sha256-y6OUjOs3fHW7msTy0vK66gG/7VgYtd1arGqcTiuEfq4=",
         "owner": "ilysenko",
         "repo": "codex-desktop-linux",
-        "rev": "ee3f5708961060a9b4a722a5765df8c9694287e1",
+        "rev": "d48fa56a712a9a2635e984c6f384b01a498a4d31",
         "type": "github"
       },
       "original": {
@@ -198,7 +198,7 @@
     },
     "root": {
       "inputs": {
-        "codex-desktop-linux": "codex-desktop-linux",
+        "codex-desktop": "codex-desktop",
         "hardware": "hardware",
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs_2",

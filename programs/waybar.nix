@@ -197,17 +197,20 @@
         "temperature" = {
           interval = 1;
           thermal-zone = 3;
-          critical-threshold = 80;
+          critical-threshold = 100;
           format = "{icon} {temperatureC}°C";
           format-icons = [
             ""
             ""
             ""
             ""
-            ""
+            ""
             ""
             ""
+            ""
             ""
+            ""
+            ""
             ""
           ];
         };

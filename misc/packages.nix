@@ -9,7 +9,7 @@
   nixpkgs.config.allowUnfree = true;
 
   imports = [
-    inputs.codex-desktop-linux.nixosModules.default
+    inputs.codex-desktop.nixosModules.default
   ];
 
   environment.systemPackages = with pkgs; [
@@ -214,7 +214,7 @@
     wireshark.enable = true;
     codexDesktopLinux = {
       enable = true;
-      cliPackage = pkgs.codex;
+      cliPackage = unstable.codex;
     };
   };
 
