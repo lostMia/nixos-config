@@ -190,6 +190,7 @@
     antares
     solaar
     unixodbc
+    unixodbcDrivers.msodbcsql18
 
     # Audio
     pavucontrol
@@ -197,6 +198,10 @@
     pamixer
     pipewire
     wireplumber
+  ];
+
+  environment.unixODBCDrivers = with pkgs.unixODBCDrivers; [
+    msodbcsql18
   ];
 
   programs = {
