@@ -189,6 +189,7 @@
     jetbrains.jdk-no-jcef
     antares
     solaar
+    unixodbc
 
     # Audio
     pavucontrol
