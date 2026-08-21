@@ -191,6 +191,7 @@
     solaar
     unixodbc
     unixodbcDrivers.msodbcsql18
+    ripgrep
 
     # Audio
     pavucontrol
