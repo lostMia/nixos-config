@@ -3,6 +3,7 @@
   pkgs,
   nur,
   unstable,
+  very-unstable,
   ...
 }: {
   # Allow unfree packages
@@ -95,7 +96,7 @@
     unstable.jetbrains.idea
     # jetbrains.clion
     awscli2
-    unstable.codex
+    very-unstable.codex
 
     # Python
     (python314.withPackages (ps: [
@@ -104,6 +105,7 @@
       ps.numpy
       ps.pyperclip
       ps.mysql-connector
+      ps.uploadserver
     ]))
 
     cmake
@@ -192,6 +194,7 @@
     unixodbc
     unixodbcDrivers.msodbcsql18
     ripgrep
+    teamviewer
 
     # Audio
     pavucontrol
@@ -201,7 +204,7 @@
     wireplumber
   ];
 
-  environment.unixODBCDrivers = with pkgs.unixODBCDrivers; [
+  environment.unixODBCDrivers = with pkgs.unixodbcDrivers; [
     msodbcsql18
   ];
 
@@ -221,7 +224,7 @@
     wireshark.enable = true;
     codexDesktopLinux = {
       enable = true;
-      cliPackage = unstable.codex;
+      cliPackage = very-unstable.codex;
     };
   };
 

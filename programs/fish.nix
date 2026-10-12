@@ -98,6 +98,7 @@
       "dec" = "gpg --pinentry-mode loopback --passphrase-file key.bin";
       "aiby" = "~/.config/nixos/scripts/aiby.sh";
       "nix-cleanup" = "~/.config/nixos/scripts/cleanup.sh";
+      "wsetup" = "~/.config/nixos/scripts/wsetup.sh";
     };
 
     functions = {

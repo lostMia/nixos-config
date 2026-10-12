@@ -96,6 +96,28 @@
       scale = 1.0
       transform = "normal"
       adaptive_sync = false
+
+
+      [[profile]]
+      name = "work3"
+
+      [[profile.output]]
+      enable = true
+      search = ["m=0x0BCA", "s=", "v=BOE"]
+      mode = "2256x1504@59.999Hz"
+      position = "2629,1600"
+      scale = 1.0
+      transform = "normal"
+      adaptive_sync = false
+
+      [[profile.output]]
+      enable = true
+      search = ["m=HP Z30i", "s=CN45070KGL", "v=Hewlett Packard"]
+      mode = "2560x1600@59.972Hz"
+      position = "2466,0"
+      scale = 1.0
+      transform = "normal"
+      adaptive_sync = false
     '';
   };
 }

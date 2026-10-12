@@ -26,6 +26,10 @@
       "kernel.sysrq" = 1;
     };
 
+    tmp = {
+      cleanOnBoot = true;
+    };
+
     loader = {
       systemd-boot.enable = false;
       efi.canTouchEfiVariables = true;

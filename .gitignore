@@ -3,8 +3,8 @@ hardware-optimization
 result
 scripts/SL_saturday_my_dudes.sh
 scripts/w.py
-scripts/lina.sh
 scripts/open_menu.sh
-scripts/alive_check.sh
 scripts/update.sh
-scripts/aiby.sh
+scripts/wsetup.sh
+
+version_pin

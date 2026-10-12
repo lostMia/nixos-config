@@ -92,6 +92,11 @@
             pointer_accel -0.3
         }
 
+        input 1133:16478:Logitech_M720_Triathlon {
+            # accel_profile flat
+            pointer_accel -0.5
+        }
+
       ### Border colors and looks
         client.focused           #ff4060   #222222 #ff4060 #ff4060  #ff4060
         client.focused_inactive  #222222   #222222 #ff4060 #222222 #222222
