@@ -3,7 +3,7 @@ hardware-optimization
 result
 scripts/SL_saturday_my_dudes.sh
 scripts/w.py
-scripts/open_menu.sh
+scripts/menu.sh
 scripts/update.sh
 scripts/wsetup.sh
 

@@ -93,7 +93,7 @@
       "ns" = "nix-shell -p";
       "quote" = "bash ~/.config/nixos/scripts/edit_zitate.sh";
       "gs" = "git status";
-      "menu" = "bash ~/.config/nixos/scripts/open_menu.sh";
+      "menu" = "bash ~/.config/nixos/scripts/menu.sh";
       "enc" = "openssl rand -out key.bin 512 && gpg --symmetric --pinentry-mode loopback --passphrase-file key.bin";
       "dec" = "gpg --pinentry-mode loopback --passphrase-file key.bin";
       "aiby" = "~/.config/nixos/scripts/aiby.sh";
